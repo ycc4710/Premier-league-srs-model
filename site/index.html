@@ -19,6 +19,11 @@
     </header>
 
     <main>
+        <nav class="tabs-nav">
+            <button class="tab-btn active" data-tab="ratings">Team Ratings</button>
+            <button class="tab-btn" data-tab="probability">This Week's Probability Prediction</button>
+            <button class="tab-btn" data-tab="simulation">End of Season Simulation</button>
+        </nav>
         <div id="loading" class="loading">
             <div class="spinner"></div>
             <p>Loading SRS data...</p>
@@ -29,68 +34,87 @@
         </div>
 
         <div id="content" style="display: none;">
-            <!-- SRS Bar Chart -->
-            <section class="card">
-                <h2>Team Ratings</h2>
-                <p class="section-desc">SRS measures how many points better or worse a team is compared to average. An SRS of 0 is league average.</p>
-                <div class="chart-container">
-                    <canvas id="srs-chart"></canvas>
-                </div>
-            </section>
-
-            <!-- Rankings Table -->
-            <section class="card">
-                <h2>Full Rankings</h2>
-                <div class="table-controls">
-                    <div class="filter-group">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="East">East</button>
-                        <button class="filter-btn" data-filter="West">West</button>
+            <div id="tab-ratings" class="tab-content active">
+                <!-- SRS Bar Chart -->
+                <section class="card">
+                    <h2>Team Ratings</h2>
+                    <p class="section-desc">SRS measures how many points better or worse a team is compared to average. An SRS of 0 is league average.</p>
+                    <div class="chart-container">
+                        <canvas id="srs-chart"></canvas>
                     </div>
-                </div>
-                <div class="table-wrapper">
-                    <table id="rankings-table">
-                        <thead>
-                            <tr>
-                                <th data-sort="srs_rank" class="sortable sort-active sort-asc">#</th>
-                                <th data-sort="name" class="sortable">Team</th>
-                                <th data-sort="srs" class="sortable num">SRS</th>
-                                <th data-sort="mov" class="sortable num">MOV</th>
-                                <th data-sort="sos" class="sortable num">SOS</th>
-                                <th data-sort="record" class="sortable num">Record</th>
-                                <th data-sort="win_pct" class="sortable num">Win%</th>
-                                <th data-sort="standings_rank" class="sortable num">Stnd. #</th>
-                                <th class="num">Diff</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rankings-body"></tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Scatter Plot: SRS vs Standings -->
-            <section class="card">
-                <h2>SRS vs. Actual Standings</h2>
-                <p class="section-desc">Teams above the diagonal are ranked higher by SRS than their win-loss record suggests (underrated). Teams below are overrated by their record.</p>
-                <div class="chart-container chart-square">
-                    <canvas id="comparison-chart"></canvas>
-                </div>
-            </section>
-
-            <!-- How SRS Works -->
-            <section class="card info-card">
-                <h2>How SRS Works</h2>
-                <div class="info-content">
-                    <p><strong>SRS (Simple Rating System)</strong> rates teams based on point differential adjusted for strength of schedule.</p>
-                    <ul>
-                        <li><strong>SRS</strong> = MOV + SOS</li>
-                        <li><strong>MOV</strong> (Margin of Victory) = average point differential per game</li>
-                        <li><strong>SOS</strong> (Strength of Schedule) = average SRS of opponents</li>
-                    </ul>
-                    <p>An average team has an SRS of <strong>0.00</strong>. A team with SRS of +5.0 is 5 points per game better than average, accounting for who they've played.</p>
-                    <p>The rating is calculated by solving a system of 30 linear equations simultaneously, ensuring each team's SOS reflects the true strength of their opponents.</p>
-                </div>
-            </section>
+                </section>
+                <!-- Rankings Table -->
+                <section class="card">
+                    <h2>Full Rankings</h2>
+                    <div class="table-controls">
+                        <div class="filter-group">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="East">East</button>
+                            <button class="filter-btn" data-filter="West">West</button>
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="rankings-table">
+                            <thead>
+                                <tr>
+                                    <th data-sort="srs_rank" class="sortable sort-active sort-asc">#</th>
+                                    <th data-sort="name" class="sortable">Team</th>
+                                    <th data-sort="srs" class="sortable num">SRS</th>
+                                    <th data-sort="mov" class="sortable num">MOV</th>
+                                    <th data-sort="sos" class="sortable num">SOS</th>
+                                    <th data-sort="record" class="sortable num">Record</th>
+                                    <th data-sort="win_pct" class="sortable num">Win%</th>
+                                    <th data-sort="standings_rank" class="sortable num">Stnd. #</th>
+                                    <th class="num">Diff</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rankings-body"></tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- Scatter Plot: SRS vs Standings -->
+                <section class="card">
+                    <h2>SRS vs. Actual Standings</h2>
+                    <p class="section-desc">Teams above the diagonal are ranked higher by SRS than their win-loss record suggests (underrated). Teams below are overrated by their record.</p>
+                    <div class="chart-container chart-square">
+                        <canvas id="comparison-chart"></canvas>
+                    </div>
+                </section>
+                <!-- How SRS Works -->
+                <section class="card info-card">
+                    <h2>How SRS Works</h2>
+                    <div class="info-content">
+                        <p><strong>SRS (Simple Rating System)</strong> rates teams based on point differential adjusted for strength of schedule.</p>
+                        <ul>
+                            <li><strong>SRS</strong> = MOV + SOS</li>
+                            <li><strong>MOV</strong> (Margin of Victory) = average point differential per game</li>
+                            <li><strong>SOS</strong> (Strength of Schedule) = average SRS of opponents</li>
+                        </ul>
+                        <p>An average team has an SRS of <strong>0.00</strong>. A team with SRS of +5.0 is 5 points per game better than average, accounting for who they've played.</p>
+                        <p>The rating is calculated by solving a system of 30 linear equations simultaneously, ensuring each team's SOS reflects the true strength of their opponents.</p>
+                    </div>
+                </section>
+            </div>
+            <div id="tab-probability" class="tab-content" style="display:none">
+                <section class="card">
+                    <h2>This Week's Probability Prediction</h2>
+                    <div id="probability-controls">
+                        <button id="fetch-schedule-btn">Fetch This Week's NBA Schedule</button>
+                    </div>
+                    <div id="probability-results"></div>
+                </section>
+            </div>
+            <div id="tab-simulation" class="tab-content" style="display:none">
+                <section class="card">
+                    <h2>End of Season Simulation</h2>
+                    <form id="simulation-controls">
+                        <label>Standard Error: <input type="number" id="sim-std-error" value="7" min="1" max="20" step="0.1"></label>
+                        <label>Num Simulations: <input type="number" id="sim-num" value="1000" min="100" max="10000" step="100"></label>
+                        <button type="submit">Run Simulation</button>
+                    </form>
+                    <div id="simulation-results"></div>
+                </section>
+            </div>
         </div>
     </main>
 

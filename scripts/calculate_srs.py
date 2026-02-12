@@ -34,8 +34,8 @@ def calculate_srs(game_results, teams):
         if team_a not in team_idx or team_b not in team_idx:
             continue
         i, j = team_idx[team_a], team_idx[team_b]
-        total_margin[i] += margin
-        total_margin[j] -= margin
+        total_margin[i] -= margin  # Flip sign: positive margin means home win
+        total_margin[j] += margin
         games_played[i] += 1
         games_played[j] += 1
         matchup_counts[i][j] += 1

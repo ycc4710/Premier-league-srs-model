@@ -6,18 +6,34 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from scripts.config import (
-    ALL_TEAMS,
-    EASTERN_CONFERENCE,
-    WESTERN_CONFERENCE,
-    SEASON_DISPLAY,
-    SEASON_END_YEAR,
-    OUTPUT_PATH,
-    ABBR_TO_TEAM_NAME,
-    TEAM_LOGO_IDS,
-)
-from scripts.fetch_data import fetch_games, fetch_standings, games_to_pairs
-from scripts.calculate_srs import calculate_srs
+try:
+    from config import (
+        ALL_TEAMS,
+        EASTERN_CONFERENCE,
+        WESTERN_CONFERENCE,
+        SEASON_DISPLAY,
+        SEASON_END_YEAR,
+        OUTPUT_PATH,
+        ABBR_TO_TEAM_NAME,
+        TEAM_LOGO_IDS,
+    )
+except ImportError:
+    from scripts.config import (
+        ALL_TEAMS,
+        EASTERN_CONFERENCE,
+        WESTERN_CONFERENCE,
+        SEASON_DISPLAY,
+        SEASON_END_YEAR,
+        OUTPUT_PATH,
+        ABBR_TO_TEAM_NAME,
+        TEAM_LOGO_IDS,
+    )
+try:
+    from fetch_data import fetch_games, fetch_standings, games_to_pairs
+    from calculate_srs import calculate_srs
+except ImportError:
+    from scripts.fetch_data import fetch_games, fetch_standings, games_to_pairs
+    from scripts.calculate_srs import calculate_srs
 
 logging.basicConfig(
     level=logging.INFO,

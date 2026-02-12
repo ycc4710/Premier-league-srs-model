@@ -7,15 +7,26 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup, Comment
 
-from scripts.config import (
-    SCHEDULE_URL,
-    STANDINGS_URL,
-    SCHEDULE_MONTHS,
-    SEASON_END_YEAR,
-    REQUEST_DELAY,
-    USER_AGENT,
-    TEAM_NAME_TO_ABBR,
-)
+try:
+    from config import (
+        SCHEDULE_URL,
+        STANDINGS_URL,
+        SCHEDULE_MONTHS,
+        SEASON_END_YEAR,
+        REQUEST_DELAY,
+        USER_AGENT,
+        TEAM_NAME_TO_ABBR,
+    )
+except ImportError:
+    from scripts.config import (
+        SCHEDULE_URL,
+        STANDINGS_URL,
+        SCHEDULE_MONTHS,
+        SEASON_END_YEAR,
+        REQUEST_DELAY,
+        USER_AGENT,
+        TEAM_NAME_TO_ABBR,
+    )
 
 logger = logging.getLogger(__name__)
 
