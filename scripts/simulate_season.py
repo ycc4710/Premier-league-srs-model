@@ -70,6 +70,8 @@ def run_simulation(num_sim=DEFAULT_NUM_SIM):
         "division_wins": 0,
         "playoff_berths": 0,
         "wins": [],  # store all win counts for stddev
+        "playoff_sim": [],  # store 1/0 for each sim
+        "division_sim": [], # store 1/0 for each sim
     } for team in teams}
     abbr_to_team = {team["abbreviation"]: team for team in teams}
     divisions = {team["abbreviation"]: team.get("division", team.get("conference", "")) for team in teams}
@@ -96,24 +98,39 @@ def run_simulation(num_sim=DEFAULT_NUM_SIM):
             div_teams = [a for a, d in divisions.items() if d == div]
             div_winner = max(div_teams, key=lambda a: sim_wins[a])
             division_winners[div] = div_winner
-        for winner in division_winners.values():
-            results[winner]["division_wins"] += 1
+        # Track division win for each team
+        for abbr in abbr_to_team:
+            won_div = int(abbr in division_winners.values())
+            results[abbr]["division_wins"] += won_div
+            results[abbr]["division_sim"].append(won_div)
         # Playoff berths (top 8 in each conference)
         confs = {team["abbreviation"]: team["conference"] for team in teams}
+        playoff_teams = set()
         for conf in ["East", "West"]:
             conf_teams = [a for a, c in confs.items() if c == conf]
             sorted_conf = sorted(conf_teams, key=lambda a: sim_wins[a], reverse=True)
             for abbr in sorted_conf[:8]:
                 results[abbr]["playoff_berths"] += 1
+                playoff_teams.add(abbr)
+        # Track playoff for each team
+        for abbr in abbr_to_team:
+            made_playoffs = int(abbr in playoff_teams)
+            results[abbr]["playoff_sim"].append(made_playoffs)
         for abbr in sim_wins:
             results[abbr]["wins"].append(sim_wins[abbr])
     # Aggregate results
     output = {}
     for abbr, res in results.items():
         win_arr = np.array(res["wins"])
+        playoff_arr = np.array(res["playoff_sim"])
+        division_arr = np.array(res["division_sim"])
+        playoff_prob = playoff_arr.mean() if len(playoff_arr) else 0
+        division_prob = division_arr.mean() if len(division_arr) else 0
         output[abbr] = {
-            "playoff_prob": res["playoff_berths"] / num_sim if num_sim else 0,
-            "division_prob": res["division_wins"] / num_sim if num_sim else 0,
+            "playoff_prob": playoff_prob,
+            "playoff_prob_stderr": float(np.sqrt(playoff_prob * (1 - playoff_prob) / len(playoff_arr))) if len(playoff_arr) > 1 else 0,
+            "division_prob": division_prob,
+            "division_prob_stderr": float(np.sqrt(division_prob * (1 - division_prob) / len(division_arr))) if len(division_arr) > 1 else 0,
             "expected_wins": float(np.mean(win_arr)) if len(win_arr) else 0,
             "std_wins": float(np.std(win_arr, ddof=1)) if len(win_arr) > 1 else 0,
         }
