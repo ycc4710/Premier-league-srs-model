@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA SRS Ratings</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>NBA SRS Ratings</h1>
+            <div class="header-meta">
+                <span id="season-label" class="season-badge"></span>
+                <span id="last-updated" class="updated-text"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading SRS data...</p>
+        </div>
+
+        <div id="error" class="error-message" style="display: none;">
+            <p>Failed to load SRS data. Please try again later.</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <!-- SRS Bar Chart -->
+            <section class="card">
+                <h2>Team Ratings</h2>
+                <p class="section-desc">SRS measures how many points better or worse a team is compared to average. An SRS of 0 is league average.</p>
+                <div class="chart-container">
+                    <canvas id="srs-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Rankings Table -->
+            <section class="card">
+                <h2>Full Rankings</h2>
+                <div class="table-controls">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="East">East</button>
+                        <button class="filter-btn" data-filter="West">West</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table id="rankings-table">
+                        <thead>
+                            <tr>
+                                <th data-sort="srs_rank" class="sortable sort-active sort-asc">#</th>
+                                <th data-sort="name" class="sortable">Team</th>
+                                <th data-sort="srs" class="sortable num">SRS</th>
+                                <th data-sort="mov" class="sortable num">MOV</th>
+                                <th data-sort="sos" class="sortable num">SOS</th>
+                                <th data-sort="record" class="sortable num">Record</th>
+                                <th data-sort="win_pct" class="sortable num">Win%</th>
+                                <th data-sort="standings_rank" class="sortable num">Stnd. #</th>
+                                <th class="num">Diff</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankings-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Scatter Plot: SRS vs Standings -->
+            <section class="card">
+                <h2>SRS vs. Actual Standings</h2>
+                <p class="section-desc">Teams above the diagonal are ranked higher by SRS than their win-loss record suggests (underrated). Teams below are overrated by their record.</p>
+                <div class="chart-container chart-square">
+                    <canvas id="comparison-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- How SRS Works -->
+            <section class="card info-card">
+                <h2>How SRS Works</h2>
+                <div class="info-content">
+                    <p><strong>SRS (Simple Rating System)</strong> rates teams based on point differential adjusted for strength of schedule.</p>
+                    <ul>
+                        <li><strong>SRS</strong> = MOV + SOS</li>
+                        <li><strong>MOV</strong> (Margin of Victory) = average point differential per game</li>
+                        <li><strong>SOS</strong> (Strength of Schedule) = average SRS of opponents</li>
+                    </ul>
+                    <p>An average team has an SRS of <strong>0.00</strong>. A team with SRS of +5.0 is 5 points per game better than average, accounting for who they've played.</p>
+                    <p>The rating is calculated by solving a system of 30 linear equations simultaneously, ensuring each team's SOS reflects the true strength of their opponents.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Data sourced from <a href="https://www.basketball-reference.com" target="_blank" rel="noopener">Basketball-Reference.com</a>. Updated daily.</p>
+        <p class="footer-note">SRS methodology based on the <a href="https://www.sports-reference.com/blog/2015/03/srs-calculation-details/" target="_blank" rel="noopener">Sports Reference SRS</a>.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
