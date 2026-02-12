@@ -20,7 +20,12 @@
 
   // ── Bootstrap ──────────────────────────────────────────────
 
-  document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("DOMContentLoaded", () => {
+    init();
+    setupTabs();
+    setupProbabilityTab();
+    setupSimulationTab();
+  });
 
   async function init() {
     try {
@@ -554,5 +559,113 @@
       }
     }
     return "";
+  }
+
+  // ── Tab Logic ───────────────────────────────────────────────
+  function setupTabs() {
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const tab = btn.dataset.tab;
+        document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
+        document.querySelectorAll(".tab-content").forEach((c) => c.style.display = "none");
+        document.getElementById(`tab-${tab}`).classList.add("active");
+        document.getElementById(`tab-${tab}`).style.display = "block";
+      });
+    });
+  }
+
+  // ── Probability Tab ─────────────────────────────────────────
+  function setupProbabilityTab() {
+    const btn = document.getElementById("fetch-schedule-btn");
+    if (!btn) return;
+    btn.addEventListener("click", async () => {
+      btn.disabled = true;
+      btn.textContent = "Loading...";
+      try {
+        const resp = await fetch("data/weekly_schedule.json");
+        if (!resp.ok) throw new Error("Schedule not found");
+        const schedule = await resp.json();
+        const resultsDiv = document.getElementById("probability-results");
+        // Filter for games in the next 7 days (Sunday-Saturday)
+        const today = new Date();
+        const dayOfWeek = today.getDay(); // 0=Sunday
+        const weekStart = new Date(today);
+        weekStart.setDate(today.getDate() - dayOfWeek);
+        const weekEnd = new Date(weekStart);
+        weekEnd.setDate(weekStart.getDate() + 6);
+        const weekGames = schedule.filter(game => {
+          const gameDate = new Date(game.date);
+          return gameDate >= weekStart && gameDate <= weekEnd;
+        });
+        weekGames.sort((a, b) => new Date(a.date) - new Date(b.date));
+        resultsDiv.innerHTML = renderProbabilityResults(weekGames);
+      } catch (err) {
+        document.getElementById("probability-results").textContent = "Failed to load schedule.";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Fetch This Week's NBA Schedule";
+      }
+    });
+  }
+
+  function renderProbabilityResults(schedule) {
+    if (!schedule || !schedule.length) return "No games found.";
+    // Use teamsData for SRS
+    let html = '<table class="prob-table"><thead><tr><th>Date</th><th>Away</th><th>Home</th><th>Predicted Margin</th><th>Home Win Probability</th></tr></thead><tbody>';
+    const abbrMap = {};
+    for (const t of teamsData) abbrMap[t.abbreviation] = t;
+    for (const game of schedule) {
+      const home = abbrMap[game.home];
+      const away = abbrMap[game.away];
+      if (!home || !away) {
+        html += `<tr><td>${game.date}</td><td>${game.away}</td><td>${game.home}</td><td>-</td><td>-</td></tr>`;
+        continue;
+      }
+      const margin = home.srs - away.srs;
+      const homeWinProb = 1 / (1 + Math.pow(10, -(margin) / 10));
+      html += `<tr><td>${game.date}</td><td>${game.away}</td><td>${game.home}</td><td>${margin > 0 ? '+' : ''}${margin.toFixed(2)}</td><td>${(homeWinProb * 100).toFixed(1)}%</td></tr>`;
+    }
+    html += '</tbody></table>';
+    return html;
+  }
+
+  // ── Simulation Tab ─────────────────────────────────────────
+  function setupSimulationTab() {
+    const form = document.getElementById("simulation-controls");
+    if (!form) return;
+    async function runSim() {
+      const stdError = parseFloat(document.getElementById("sim-std-error").value);
+      const numSim = parseInt(document.getElementById("sim-num").value);
+      const resultsDiv = document.getElementById("simulation-results");
+      resultsDiv.textContent = "Running simulation...";
+      try {
+        // Trigger backend simulation automatically (Flask server)
+        await fetch(`http://localhost:5000/run_simulation?std_error=${stdError}&num_sim=${numSim}`);
+        const resp = await fetch("data/simulation_results.json?" + Date.now());
+        if (!resp.ok) throw new Error("Simulation results not found");
+        const results = await resp.json();
+        resultsDiv.innerHTML = renderSimulationResults(results);
+      } catch (err) {
+        resultsDiv.textContent = "Failed to load simulation results.";
+      }
+    }
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      await runSim();
+    });
+    document.getElementById("sim-std-error").addEventListener("change", runSim);
+    document.getElementById("sim-num").addEventListener("change", runSim);
+  }
+
+  function renderSimulationResults(results) {
+    if (!results) return "No results.";
+    let html = '<table class="sim-table"><thead><tr><th>Team</th><th>Div. Prob</th><th>Playoff Prob</th><th>Avg Wins</th></tr></thead><tbody>';
+    for (const [abbr, res] of Object.entries(results)) {
+      html += `<tr><td>${abbr}</td><td>${(res.division_prob * 100).toFixed(1)}%</td><td>${(res.playoff_prob * 100).toFixed(1)}%</td><td>${res.avg_wins.toFixed(1)}</td></tr>`;
+    }
+    html += '</tbody></table>';
+    return html;
   }
 })();
