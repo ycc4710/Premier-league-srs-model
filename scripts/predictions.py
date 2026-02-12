@@ -66,7 +66,6 @@ def predict_games(upcoming_games, srs_ratings):
             favored = away
             underdog = home
             spread = margin
-            home_win_prob = 1 - home_win_prob
 
         predictions.append({
             "date": game.get("date", ""),

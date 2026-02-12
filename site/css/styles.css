@@ -332,7 +332,99 @@ main { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
     transition: width 0.3s;
 }
 
-/* ── Simulation ── */
+/* ── Simulation Controls ── */
+.sim-controls {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--bg);
+    border-radius: 8px;
+}
+
+.sim-slider-group {
+    flex: 1;
+    min-width: 180px;
+}
+
+.sim-slider-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.sim-slider-group label strong {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.sim-slider-group input[type="range"] {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--border);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.sim-slider-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.sim-slider-group input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}
+
+.run-sim-btn {
+    padding: 0.6rem 1.5rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+.run-sim-btn:hover { background: var(--accent-hover); }
+.run-sim-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.sim-status {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    min-height: 1.2em;
+}
+
+/* ── Simulation Table ── */
 .pct-high { color: var(--positive); font-weight: 700; }
 .pct-med { color: #d97706; font-weight: 600; }
 .pct-low { color: var(--text-secondary); }

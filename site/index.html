@@ -116,22 +116,29 @@
         <div id="tab-simulation" class="tab-content" style="display: none;">
             <section class="card">
                 <h2>Monte Carlo Season Simulation</h2>
-                <p class="section-desc" id="sim-desc">Projected final standings based on 10,000 simulations of remaining games using SRS-derived win probabilities.</p>
+                <p class="section-desc">Simulate the rest of the NBA season using SRS-derived win probabilities. Adjust standard error and number of simulations below.</p>
+
+                <div class="sim-controls">
+                    <div class="sim-slider-group">
+                        <label for="slider-std-error">Standard Error: <strong id="std-error-value">12.0</strong></label>
+                        <input type="range" id="slider-std-error" min="4" max="20" step="0.5" value="12">
+                        <div class="slider-labels"><span>4</span><span>12</span><span>20</span></div>
+                    </div>
+                    <div class="sim-slider-group">
+                        <label for="slider-num-sims">Simulations: <strong id="num-sims-value">1,000</strong></label>
+                        <input type="range" id="slider-num-sims" min="100" max="50000" step="100" value="1000">
+                        <div class="slider-labels"><span>100</span><span>10k</span><span>50k</span></div>
+                    </div>
+                    <button id="run-sim-btn" class="run-sim-btn">Run Simulation</button>
+                </div>
+
+                <div id="sim-status" class="sim-status"></div>
             </section>
 
             <div id="simulation-empty" class="card" style="display: none;">
-                <p class="empty-state">No simulation data available. This will appear when remaining schedule data is available.</p>
+                <p class="empty-state">No remaining schedule data available. Run the data pipeline to generate it.</p>
             </div>
 
-            <!-- Playoff Probability Chart -->
-            <section class="card" id="sim-chart-section" style="display: none;">
-                <h2>Playoff Probability</h2>
-                <div class="chart-container">
-                    <canvas id="playoff-chart"></canvas>
-                </div>
-            </section>
-
-            <!-- Simulation Table -->
             <section class="card" id="sim-table-section" style="display: none;">
                 <h2>Projected Standings</h2>
                 <div class="table-controls">
@@ -148,12 +155,12 @@
                                 <th class="num">#</th>
                                 <th>Team</th>
                                 <th class="num">Current</th>
-                                <th class="num">Proj. Wins</th>
-                                <th class="num">90% Range</th>
+                                <th class="num">Proj. W-L</th>
+                                <th class="num">Win SD</th>
                                 <th class="num">Playoff%</th>
-                                <th class="num">Play-In%</th>
-                                <th class="num">#1 Seed%</th>
-                                <th class="num">Lottery%</th>
+                                <th class="num">PO SD</th>
+                                <th class="num">Div. Win%</th>
+                                <th class="num">DW SD</th>
                             </tr>
                         </thead>
                         <tbody id="simulation-body"></tbody>

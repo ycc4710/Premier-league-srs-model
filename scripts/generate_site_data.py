@@ -15,13 +15,15 @@ from scripts.config import (
     OUTPUT_PATH,
     ABBR_TO_TEAM_NAME,
     TEAM_LOGO_IDS,
+    DIVISIONS,
+    TEAM_TO_DIVISION,
 )
 from scripts.fetch_data import (
     fetch_games, fetch_standings, fetch_upcoming_games,
     fetch_remaining_games, games_to_pairs,
 )
 from scripts.calculate_srs import calculate_srs
-from scripts.predictions import predict_games, monte_carlo_season
+from scripts.predictions import predict_games
 
 logging.basicConfig(
     level=logging.INFO,
@@ -139,60 +141,42 @@ def generate():
     # ── 6. Fetch upcoming games and generate predictions ──
     predictions = []
     try:
-        upcoming = fetch_upcoming_games(SEASON_END_YEAR, days_ahead=7)
+        upcoming = fetch_upcoming_games(SEASON_END_YEAR, days_ahead=10)
         if upcoming:
             predictions = predict_games(upcoming, srs_data)
             logger.info("Generated %d game predictions", len(predictions))
     except Exception as e:
         logger.warning("Failed to fetch upcoming games: %s", e)
 
-    # ── 7. Fetch remaining games and run Monte Carlo ──
+    # ── 7. Fetch remaining games for client-side Monte Carlo ──
     simulation = {}
     try:
         remaining = fetch_remaining_games(SEASON_END_YEAR)
         if remaining:
-            # Build current standings dict for simulation
             current_standings = {}
             for team in teams_for_srs:
                 s = standings_map.get(team, {})
+                conf = s.get("conference")
+                if not conf:
+                    conf = "East" if team in EASTERN_CONFERENCE else "West"
                 current_standings[team] = {
                     "wins": s.get("wins", 0),
                     "losses": s.get("losses", 0),
-                    "conference": s.get("conference",
-                                       "East" if team in EASTERN_CONFERENCE else "West"),
+                    "conference": conf,
+                    "division": TEAM_TO_DIVISION.get(team, ""),
                 }
-            sim_results = monte_carlo_season(remaining, current_standings, srs_data)
 
-            # Convert to list sorted by avg_wins descending
-            sim_list = []
-            for team, res in sim_results.items():
-                sim_list.append({
-                    "abbreviation": team,
-                    "name": ABBR_TO_TEAM_NAME.get(team, team),
-                    "team_id": TEAM_LOGO_IDS.get(team, 0),
-                    "conference": res["conference"],
-                    "current_wins": current_standings[team]["wins"],
-                    "current_losses": current_standings[team]["losses"],
-                    "avg_wins": res["avg_wins"],
-                    "avg_losses": res["avg_losses"],
-                    "win_range_low": res["win_range_low"],
-                    "win_range_high": res["win_range_high"],
-                    "playoff_pct": res["playoff_pct"],
-                    "top_seed_pct": res["top_seed_pct"],
-                    "play_in_pct": res["play_in_pct"],
-                    "lottery_pct": res["lottery_pct"],
-                })
-            sim_list.sort(key=lambda t: t["avg_wins"], reverse=True)
-            for i, t in enumerate(sim_list, 1):
-                t["projected_rank"] = i
             simulation = {
-                "remaining_games": len(remaining),
-                "num_simulations": 10000,
-                "teams": sim_list,
+                "remaining_games": [
+                    {"home_team": g["home_team"], "away_team": g["away_team"]}
+                    for g in remaining
+                ],
+                "current_standings": current_standings,
+                "divisions": DIVISIONS,
             }
-            logger.info("Ran Monte Carlo simulation with %d remaining games", len(remaining))
+            logger.info("Included %d remaining games for client-side simulation", len(remaining))
     except Exception as e:
-        logger.warning("Failed to run Monte Carlo simulation: %s", e)
+        logger.warning("Failed to fetch remaining games: %s", e)
 
     # ── 8. Write output JSON ──
     output = {

@@ -94,3 +94,18 @@ TEAM_LOGO_IDS = {
 }
 
 ALL_TEAMS = sorted(TEAM_NAME_TO_ABBR.values())
+
+# NBA Divisions
+DIVISIONS = {
+    "Atlantic": ["BOS", "BKN", "NYK", "PHI", "TOR"],
+    "Central": ["CHI", "CLE", "DET", "IND", "MIL"],
+    "Southeast": ["ATL", "CHA", "MIA", "ORL", "WAS"],
+    "Northwest": ["DEN", "MIN", "OKC", "POR", "UTA"],
+    "Pacific": ["GSW", "LAC", "LAL", "PHX", "SAC"],
+    "Southwest": ["DAL", "HOU", "MEM", "NOP", "SAS"],
+}
+
+TEAM_TO_DIVISION = {}
+for _div, _teams in DIVISIONS.items():
+    for _team in _teams:
+        TEAM_TO_DIVISION[_team] = _div

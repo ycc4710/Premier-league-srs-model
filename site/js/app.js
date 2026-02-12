@@ -3,35 +3,35 @@
  *
  * Three-tab app:
  * 1. Rankings - SRS bar chart, sortable table, scatter plot
- * 2. Predictions - This week's game picks with spreads and probabilities
- * 3. Simulation - Monte Carlo projected standings and playoff probabilities
+ * 2. Predictions - Next 10 days game picks with spreads and probabilities
+ * 3. Simulation - Client-side Monte Carlo with interactive sliders
  */
 
 (function () {
   "use strict";
 
-  let teamsData = [];
-  let predictionsData = [];
-  let simulationData = {};
-  let currentFilter = "all";
-  let simFilter = "all";
-  let currentSort = { key: "srs_rank", dir: "asc" };
-  let chartsRendered = { rankings: false, simulation: false };
+  var HOME_COURT_ADV = 3.0;
+
+  var teamsData = [];
+  var predictionsData = [];
+  var simulationData = {};
+  var lastSimResults = null;
+  var currentFilter = "all";
+  var simFilter = "all";
+  var currentSort = { key: "srs_rank", dir: "asc" };
+  var chartsRendered = { rankings: false };
 
   // ── Bootstrap ──────────────────────────────────────────────
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", function () {
     init();
-    setupTabs();
-    setupProbabilityTab();
-    setupSimulationTab();
   });
 
   async function init() {
     try {
-      const resp = await fetch("data/srs_data.json");
+      var resp = await fetch("data/srs_data.json");
       if (!resp.ok) throw new Error("HTTP " + resp.status);
-      const data = await resp.json();
+      var data = await resp.json();
 
       teamsData = data.teams || [];
       predictionsData = data.predictions || [];
@@ -47,8 +47,8 @@
 
       document.getElementById("loading").style.display = "none";
 
-      // Setup tabs and show the first one
       setupTabs();
+      setupSimControls();
       showTab("rankings");
     } catch (err) {
       console.error("Failed to load SRS data:", err);
@@ -68,21 +68,15 @@
   }
 
   function showTab(tabId) {
-    // Update buttons
     document.querySelectorAll(".tab-btn").forEach(function (b) {
       b.classList.toggle("active", b.dataset.tab === tabId);
     });
-
-    // Hide all tabs
     document.querySelectorAll(".tab-content").forEach(function (el) {
       el.style.display = "none";
     });
-
-    // Show selected tab
     var tabEl = document.getElementById("tab-" + tabId);
     if (tabEl) tabEl.style.display = "block";
 
-    // Lazy-render tab content
     if (tabId === "rankings" && !chartsRendered.rankings) {
       renderBarChart(teamsData);
       renderTable(teamsData);
@@ -92,9 +86,8 @@
       chartsRendered.rankings = true;
     } else if (tabId === "predictions") {
       renderPredictions(predictionsData);
-    } else if (tabId === "simulation" && !chartsRendered.simulation) {
-      renderSimulation(simulationData);
-      chartsRendered.simulation = true;
+    } else if (tabId === "simulation") {
+      initSimTab();
     }
   }
 
@@ -384,102 +377,261 @@
 
   // ── Simulation ─────────────────────────────────────────────
 
-  function renderSimulation(sim) {
+  function setupSimControls() {
+    var stdSlider = document.getElementById("slider-std-error");
+    var simSlider = document.getElementById("slider-num-sims");
+    var stdLabel = document.getElementById("std-error-value");
+    var simLabel = document.getElementById("num-sims-value");
+    var runBtn = document.getElementById("run-sim-btn");
+
+    if (!stdSlider || !simSlider || !runBtn) return;
+
+    stdSlider.addEventListener("input", function () {
+      stdLabel.textContent = parseFloat(stdSlider.value).toFixed(1);
+    });
+    simSlider.addEventListener("input", function () {
+      simLabel.textContent = parseInt(simSlider.value).toLocaleString();
+    });
+
+    runBtn.addEventListener("click", function () {
+      runMonteCarloSim();
+    });
+
+    // Filter buttons
+    document.querySelectorAll(".sim-filter-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        simFilter = btn.dataset.filter;
+        document.querySelectorAll(".sim-filter-btn").forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        if (lastSimResults) renderSimTable(lastSimResults);
+      });
+    });
+  }
+
+  function initSimTab() {
+    var sim = simulationData;
     var emptyEl = document.getElementById("simulation-empty");
-    var chartSection = document.getElementById("sim-chart-section");
     var tableSection = document.getElementById("sim-table-section");
 
-    if (!sim || !sim.teams || sim.teams.length === 0) {
+    if (!sim || !sim.remaining_games || sim.remaining_games.length === 0) {
       emptyEl.style.display = "block";
-      chartSection.style.display = "none";
       tableSection.style.display = "none";
       return;
     }
-
     emptyEl.style.display = "none";
-    chartSection.style.display = "block";
-    tableSection.style.display = "block";
 
-    // Update description
-    document.getElementById("sim-desc").textContent =
-      "Projected final standings based on " + sim.num_simulations.toLocaleString() +
-      " simulations of " + sim.remaining_games + " remaining games using SRS-derived win probabilities.";
-
-    // Playoff probability chart
-    renderPlayoffChart(sim.teams);
-
-    // Simulation table
-    renderSimTable(sim.teams);
-    setupSimFilterButtons(sim.teams);
+    // Auto-run if no results yet
+    if (!lastSimResults) {
+      runMonteCarloSim();
+    }
   }
 
-  function renderPlayoffChart(teams) {
-    var sorted = teams.slice().sort(function (a, b) { return a.playoff_pct - b.playoff_pct; });
-    var labels = sorted.map(function (t) { return t.abbreviation; });
-    var playoffPcts = sorted.map(function (t) { return t.playoff_pct; });
-    var playInPcts = sorted.map(function (t) { return t.play_in_pct; });
+  // Normal CDF using error function approximation
+  function normalCDF(x) {
+    return 0.5 * (1 + erf(x / Math.SQRT2));
+  }
 
-    var ctx = document.getElementById("playoff-chart").getContext("2d");
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: "Playoff %",
-            data: playoffPcts,
-            backgroundColor: "rgba(5, 150, 105, 0.75)",
-            borderColor: "rgb(5, 150, 105)",
-            borderWidth: 1,
-          },
-          {
-            label: "Play-In %",
-            data: playInPcts,
-            backgroundColor: "rgba(245, 158, 11, 0.6)",
-            borderColor: "rgb(245, 158, 11)",
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        indexAxis: "y",
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          tooltip: {
-            callbacks: {
-              label: function (ctx) {
-                return ctx.dataset.label + ": " + ctx.raw.toFixed(1) + "%";
-              },
-            },
-          },
-        },
-        scales: {
-          x: {
-            stacked: true,
-            title: { display: true, text: "Probability %" },
-            max: 100,
-            grid: { color: "rgba(128,128,128,0.15)" },
-          },
-          y: {
-            stacked: true,
-            grid: { display: false },
-            ticks: { font: { size: 11, weight: "bold" } },
-          },
-        },
-      },
+  // Error function approximation (Abramowitz & Stegun)
+  function erf(x) {
+    var sign = x >= 0 ? 1 : -1;
+    x = Math.abs(x);
+    var t = 1.0 / (1.0 + 0.3275911 * x);
+    var y = 1.0 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+    return sign * y;
+  }
+
+  function winProbability(margin, stdDev) {
+    return normalCDF(margin / stdDev);
+  }
+
+  function runMonteCarloSim() {
+    var sim = simulationData;
+    if (!sim || !sim.remaining_games || sim.remaining_games.length === 0) return;
+
+    var stdError = parseFloat(document.getElementById("slider-std-error").value);
+    var numSims = parseInt(document.getElementById("slider-num-sims").value);
+    var statusEl = document.getElementById("sim-status");
+    var runBtn = document.getElementById("run-sim-btn");
+    var tableSection = document.getElementById("sim-table-section");
+
+    runBtn.disabled = true;
+    runBtn.textContent = "Running...";
+    statusEl.textContent = "Simulating " + numSims.toLocaleString() + " seasons...";
+
+    // Use setTimeout to allow UI to update before blocking computation
+    setTimeout(function () {
+      var t0 = performance.now();
+      var results = computeMonteCarlo(sim, stdError, numSims);
+      var elapsed = ((performance.now() - t0) / 1000).toFixed(2);
+
+      lastSimResults = results;
+      statusEl.textContent = "Completed " + numSims.toLocaleString() +
+        " simulations of " + sim.remaining_games.length + " remaining games in " + elapsed + "s" +
+        " (SE = " + stdError.toFixed(1) + ")";
+      tableSection.style.display = "block";
+      renderSimTable(results);
+
+      runBtn.disabled = false;
+      runBtn.textContent = "Run Simulation";
+    }, 20);
+  }
+
+  function computeMonteCarlo(sim, stdError, numSims) {
+    var standings = sim.current_standings;
+    var games = sim.remaining_games;
+    var divisions = sim.divisions || {};
+
+    // Build team list and index
+    var teams = Object.keys(standings);
+    var teamIdx = {};
+    teams.forEach(function (t, i) { teamIdx[t] = i; });
+    var n = teams.length;
+
+    // Build SRS lookup from teamsData
+    var srsMap = {};
+    teamsData.forEach(function (t) { srsMap[t.abbreviation] = t.srs; });
+
+    // Pre-compute win probabilities
+    var gameProbs = [];
+    games.forEach(function (g) {
+      var hi = teamIdx[g.home_team];
+      var ai = teamIdx[g.away_team];
+      if (hi === undefined || ai === undefined) return;
+      var homeSRS = srsMap[g.home_team] || 0;
+      var awaySRS = srsMap[g.away_team] || 0;
+      var margin = homeSRS - awaySRS + HOME_COURT_ADV;
+      var prob = winProbability(margin, stdError);
+      gameProbs.push([hi, ai, prob]);
     });
 
-    document.getElementById("playoff-chart").parentElement.style.height =
-      Math.max(400, sorted.length * 22) + "px";
+    // Build division lookup: team index -> division name
+    var teamDiv = new Array(n);
+    // Build conf lookup
+    var teamConf = new Array(n);
+    teams.forEach(function (t, i) {
+      teamConf[i] = standings[t].conference;
+      teamDiv[i] = standings[t].division || "";
+    });
+
+    // Base wins/losses
+    var baseWins = new Float64Array(n);
+    var baseLosses = new Float64Array(n);
+    teams.forEach(function (t, i) {
+      baseWins[i] = standings[t].wins;
+      baseLosses[i] = standings[t].losses;
+    });
+
+    // Accumulators
+    var totalWins = new Float64Array(n);
+    var totalWinsSq = new Float64Array(n);
+    var playoffCount = new Float64Array(n);
+    var divWinCount = new Float64Array(n);
+
+    // Build division groups (by index)
+    var divGroups = {};
+    for (var divName in divisions) {
+      divGroups[divName] = [];
+      divisions[divName].forEach(function (t) {
+        if (teamIdx[t] !== undefined) divGroups[divName].push(teamIdx[t]);
+      });
+    }
+
+    // Run simulations
+    var nGames = gameProbs.length;
+    for (var s = 0; s < numSims; s++) {
+      // Clone base wins/losses
+      var simWins = new Float64Array(baseWins);
+      var simLosses = new Float64Array(baseLosses);
+
+      // Simulate each game
+      for (var g = 0; g < nGames; g++) {
+        var hi = gameProbs[g][0];
+        var ai = gameProbs[g][1];
+        var prob = gameProbs[g][2];
+        if (Math.random() < prob) {
+          simWins[hi]++;
+          simLosses[ai]++;
+        } else {
+          simWins[ai]++;
+          simLosses[hi]++;
+        }
+      }
+
+      // Accumulate win totals
+      for (var i = 0; i < n; i++) {
+        totalWins[i] += simWins[i];
+        totalWinsSq[i] += simWins[i] * simWins[i];
+      }
+
+      // Determine playoff teams by conference (top 6 in each)
+      var confTeams = { "East": [], "West": [] };
+      for (var i = 0; i < n; i++) {
+        var c = teamConf[i];
+        if (confTeams[c]) confTeams[c].push(i);
+      }
+      for (var c in confTeams) {
+        confTeams[c].sort(function (a, b) { return simWins[b] - simWins[a]; });
+        // Top 6 make playoffs
+        for (var k = 0; k < Math.min(6, confTeams[c].length); k++) {
+          playoffCount[confTeams[c][k]]++;
+        }
+      }
+
+      // Determine division winners
+      for (var divName in divGroups) {
+        var members = divGroups[divName];
+        if (members.length === 0) continue;
+        var bestIdx = members[0];
+        var bestWins = simWins[bestIdx];
+        for (var k = 1; k < members.length; k++) {
+          if (simWins[members[k]] > bestWins) {
+            bestIdx = members[k];
+            bestWins = simWins[bestIdx];
+          }
+        }
+        divWinCount[bestIdx]++;
+      }
+    }
+
+    // Build results array
+    var results = [];
+    for (var i = 0; i < n; i++) {
+      var avgWins = totalWins[i] / numSims;
+      var avgLosses = 82 - avgWins;
+      var variance = (totalWinsSq[i] / numSims) - (avgWins * avgWins);
+      var winSD = Math.sqrt(Math.max(0, variance));
+      var playoffPct = (playoffCount[i] / numSims) * 100;
+      var playoffSD = Math.sqrt(playoffPct * (100 - playoffPct) / numSims);
+      var divPct = (divWinCount[i] / numSims) * 100;
+      var divSD = Math.sqrt(divPct * (100 - divPct) / numSims);
+
+      results.push({
+        abbreviation: teams[i],
+        name: getTeamName(teams[i]),
+        team_id: getTeamId(teams[i]),
+        conference: teamConf[i],
+        division: teamDiv[i],
+        current_wins: baseWins[i],
+        current_losses: baseLosses[i],
+        avg_wins: avgWins,
+        avg_losses: avgLosses,
+        win_sd: winSD,
+        playoff_pct: playoffPct,
+        playoff_sd: playoffSD,
+        div_win_pct: divPct,
+        div_win_sd: divSD,
+      });
+    }
+
+    results.sort(function (a, b) { return b.avg_wins - a.avg_wins; });
+    return results;
   }
 
-  function renderSimTable(teams) {
+  function renderSimTable(results) {
     var filtered = simFilter === "all"
-      ? teams
-      : teams.filter(function (t) { return t.conference === simFilter; });
+      ? results
+      : results.filter(function (t) { return t.conference === simFilter; });
 
-    // Sort by avg_wins descending
     filtered = filtered.slice().sort(function (a, b) { return b.avg_wins - a.avg_wins; });
 
     var tbody = document.getElementById("simulation-body");
@@ -501,25 +653,14 @@
           '<span class="conf-badge ' + confBadge + '">' + (team.conference === "East" ? "E" : "W") + '</span>' +
         '</div></td>' +
         '<td class="num">' + team.current_wins + '-' + team.current_losses + '</td>' +
-        '<td class="num" style="font-weight:700">' + team.avg_wins.toFixed(1) + '</td>' +
-        '<td class="num win-range">' + team.win_range_low + '-' + team.win_range_high + '</td>' +
+        '<td class="num" style="font-weight:700">' + team.avg_wins.toFixed(1) + '-' + team.avg_losses.toFixed(1) + '</td>' +
+        '<td class="num win-range">' + team.win_sd.toFixed(1) + '</td>' +
         '<td class="num ' + pctClass(team.playoff_pct) + '">' + team.playoff_pct.toFixed(1) + '%</td>' +
-        '<td class="num ' + pctClass(team.play_in_pct) + '">' + team.play_in_pct.toFixed(1) + '%</td>' +
-        '<td class="num ' + pctClass(team.top_seed_pct) + '">' + team.top_seed_pct.toFixed(1) + '%</td>' +
-        '<td class="num ' + pctClass(team.lottery_pct) + '">' + team.lottery_pct.toFixed(1) + '%</td>';
+        '<td class="num win-range">' + team.playoff_sd.toFixed(1) + '%</td>' +
+        '<td class="num ' + pctClass(team.div_win_pct) + '">' + team.div_win_pct.toFixed(1) + '%</td>' +
+        '<td class="num win-range">' + team.div_win_sd.toFixed(1) + '%</td>';
 
       tbody.appendChild(row);
-    });
-  }
-
-  function setupSimFilterButtons(teams) {
-    document.querySelectorAll(".sim-filter-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        simFilter = btn.dataset.filter;
-        document.querySelectorAll(".sim-filter-btn").forEach(function (b) { b.classList.remove("active"); });
-        btn.classList.add("active");
-        renderSimTable(teams);
-      });
     });
   }
 
@@ -534,7 +675,6 @@
   }
 
   function formatGameDate(dateStr) {
-    // Parse YYYY-MM-DD
     var parts = dateStr.split("-");
     if (parts.length === 3) {
       var d = new Date(parts[0], parts[1] - 1, parts[2]);
@@ -552,7 +692,6 @@
   }
 
   function getLogoUrl(abbr) {
-    // Lookup team_id from teamsData
     for (var i = 0; i < teamsData.length; i++) {
       if (teamsData[i].abbreviation === abbr && teamsData[i].team_id) {
         return "https://cdn.nba.com/logos/nba/" + teamsData[i].team_id + "/primary/L/logo.svg";
@@ -561,111 +700,17 @@
     return "";
   }
 
-  // ── Tab Logic ───────────────────────────────────────────────
-  function setupTabs() {
-    document.querySelectorAll(".tab-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        const tab = btn.dataset.tab;
-        document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
-        document.querySelectorAll(".tab-content").forEach((c) => c.style.display = "none");
-        document.getElementById(`tab-${tab}`).classList.add("active");
-        document.getElementById(`tab-${tab}`).style.display = "block";
-      });
-    });
-  }
-
-  // ── Probability Tab ─────────────────────────────────────────
-  function setupProbabilityTab() {
-    const btn = document.getElementById("fetch-schedule-btn");
-    if (!btn) return;
-    btn.addEventListener("click", async () => {
-      btn.disabled = true;
-      btn.textContent = "Loading...";
-      try {
-        const resp = await fetch("data/weekly_schedule.json");
-        if (!resp.ok) throw new Error("Schedule not found");
-        const schedule = await resp.json();
-        const resultsDiv = document.getElementById("probability-results");
-        // Filter for games in the next 7 days (Sunday-Saturday)
-        const today = new Date();
-        const dayOfWeek = today.getDay(); // 0=Sunday
-        const weekStart = new Date(today);
-        weekStart.setDate(today.getDate() - dayOfWeek);
-        const weekEnd = new Date(weekStart);
-        weekEnd.setDate(weekStart.getDate() + 6);
-        const weekGames = schedule.filter(game => {
-          const gameDate = new Date(game.date);
-          return gameDate >= weekStart && gameDate <= weekEnd;
-        });
-        weekGames.sort((a, b) => new Date(a.date) - new Date(b.date));
-        resultsDiv.innerHTML = renderProbabilityResults(weekGames);
-      } catch (err) {
-        document.getElementById("probability-results").textContent = "Failed to load schedule.";
-      } finally {
-        btn.disabled = false;
-        btn.textContent = "Fetch This Week's NBA Schedule";
-      }
-    });
-  }
-
-  function renderProbabilityResults(schedule) {
-    if (!schedule || !schedule.length) return "No games found.";
-    // Use teamsData for SRS
-    let html = '<table class="prob-table"><thead><tr><th>Date</th><th>Away</th><th>Home</th><th>Predicted Margin</th><th>Home Win Probability</th></tr></thead><tbody>';
-    const abbrMap = {};
-    for (const t of teamsData) abbrMap[t.abbreviation] = t;
-    for (const game of schedule) {
-      const home = abbrMap[game.home];
-      const away = abbrMap[game.away];
-      if (!home || !away) {
-        html += `<tr><td>${game.date}</td><td>${game.away}</td><td>${game.home}</td><td>-</td><td>-</td></tr>`;
-        continue;
-      }
-      const margin = home.srs - away.srs;
-      const homeWinProb = 1 / (1 + Math.pow(10, -(margin) / 10));
-      html += `<tr><td>${game.date}</td><td>${game.away}</td><td>${game.home}</td><td>${margin > 0 ? '+' : ''}${margin.toFixed(2)}</td><td>${(homeWinProb * 100).toFixed(1)}%</td></tr>`;
+  function getTeamName(abbr) {
+    for (var i = 0; i < teamsData.length; i++) {
+      if (teamsData[i].abbreviation === abbr) return teamsData[i].name;
     }
-    html += '</tbody></table>';
-    return html;
+    return abbr;
   }
 
-  // ── Simulation Tab ─────────────────────────────────────────
-  function setupSimulationTab() {
-    const form = document.getElementById("simulation-controls");
-    if (!form) return;
-    async function runSim() {
-      const stdError = parseFloat(document.getElementById("sim-std-error").value);
-      const numSim = parseInt(document.getElementById("sim-num").value);
-      const resultsDiv = document.getElementById("simulation-results");
-      resultsDiv.textContent = "Running simulation...";
-      try {
-        // Trigger backend simulation automatically (Flask server)
-        await fetch(`http://localhost:5000/run_simulation?std_error=${stdError}&num_sim=${numSim}`);
-        const resp = await fetch("data/simulation_results.json?" + Date.now());
-        if (!resp.ok) throw new Error("Simulation results not found");
-        const results = await resp.json();
-        resultsDiv.innerHTML = renderSimulationResults(results);
-      } catch (err) {
-        resultsDiv.textContent = "Failed to load simulation results.";
-      }
+  function getTeamId(abbr) {
+    for (var i = 0; i < teamsData.length; i++) {
+      if (teamsData[i].abbreviation === abbr) return teamsData[i].team_id;
     }
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      await runSim();
-    });
-    document.getElementById("sim-std-error").addEventListener("change", runSim);
-    document.getElementById("sim-num").addEventListener("change", runSim);
-  }
-
-  function renderSimulationResults(results) {
-    if (!results) return "No results.";
-    let html = '<table class="sim-table"><thead><tr><th>Team</th><th>Div. Prob</th><th>Playoff Prob</th><th>Avg Wins</th></tr></thead><tbody>';
-    for (const [abbr, res] of Object.entries(results)) {
-      html += `<tr><td>${abbr}</td><td>${(res.division_prob * 100).toFixed(1)}%</td><td>${(res.playoff_prob * 100).toFixed(1)}%</td><td>${res.avg_wins.toFixed(1)}</td></tr>`;
-    }
-    html += '</tbody></table>';
-    return html;
+    return 0;
   }
 })();
