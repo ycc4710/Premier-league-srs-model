@@ -7,25 +7,40 @@ import os
 from datetime import datetime
 from calculate_srs import calculate_srs
 
-# Load all games
+
+# Load all games for the season
 base_dir = os.path.dirname(__file__)
-schedule_path = os.path.join(base_dir, '..', 'site', 'data', 'weekly_schedule.json')
-srs_out_path = os.path.join(base_dir, '..', 'site', 'data', 'srs_data.json')
+season_path = os.path.join(base_dir, '..', 'site', 'data', 'srs_data.json')
+games_path = os.path.join(base_dir, '..', 'site', 'data', 'simulation_results.json')
 
-with open(schedule_path) as f:
-    games = json.load(f)
+# Prefer simulation_results.json if it exists, else fallback to srs_data.json (for games)
+if os.path.exists(games_path):
+    with open(games_path) as f:
+        games_data = json.load(f)
+    games = games_data if isinstance(games_data, list) else games_data.get('games', [])
+else:
+    # fallback: try to load from srs_data.json if it contains games
+    with open(season_path) as f:
+        srs_data = json.load(f)
+    games = srs_data.get('games', []) if isinstance(srs_data, dict) else []
+    if not games:
+        # fallback: try weekly_schedule.json (legacy)
+        schedule_path = os.path.join(base_dir, '..', 'site', 'data', 'weekly_schedule.json')
+        with open(schedule_path) as f:
+            games = json.load(f)
 
-# Build game_results: (home_abbr, away_abbr, margin) for all games played
-# For SRS, margin is positive for home win, negative for home loss
-# Here, we don't have scores, so this is a placeholder. You must add scores to weekly_schedule.json for true SRS.
-# For now, we skip games without scores.
+
+# Build game_results: (home_abbr, away_abbr, margin) for all games played (with scores)
 game_results = []
 teams = set()
 for game in games:
-    if "home_score" in game and "away_score" in game:
-        margin = game["home_score"] - game["away_score"]
-        home_abbr = game.get("home_abbr") or game["home"]
-        away_abbr = game.get("away_abbr") or game["away"]
+    # Accept both old and new keys
+    home_abbr = game.get("home_abbr") or game.get("home_team") or game.get("home")
+    away_abbr = game.get("away_abbr") or game.get("away_team") or game.get("away")
+    home_pts = game.get("home_pts") if "home_pts" in game else game.get("home_score")
+    away_pts = game.get("away_pts") if "away_pts" in game else game.get("away_score")
+    if home_abbr and away_abbr and home_pts is not None and away_pts is not None:
+        margin = home_pts - away_pts
         game_results.append((home_abbr, away_abbr, margin))
         teams.add(home_abbr)
         teams.add(away_abbr)

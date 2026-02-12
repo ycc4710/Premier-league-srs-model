@@ -130,17 +130,16 @@ def fetch_games(season_end_year=SEASON_END_YEAR):
             home_cell = cells[4]
             home_pts_cell = cells[5]
 
-            # Skip games that haven't been played yet (no score)
             visitor_pts_text = visitor_pts_cell.get_text(strip=True)
             home_pts_text = home_pts_cell.get_text(strip=True)
-            if not visitor_pts_text or not home_pts_text:
-                continue
-
             try:
-                visitor_pts = int(visitor_pts_text)
-                home_pts = int(home_pts_text)
+                visitor_pts = int(visitor_pts_text) if visitor_pts_text else None
             except ValueError:
-                continue
+                visitor_pts = None
+            try:
+                home_pts = int(home_pts_text) if home_pts_text else None
+            except ValueError:
+                home_pts = None
 
             # Extract team names from links
             visitor_link = visitor_cell.find("a")
