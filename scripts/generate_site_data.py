@@ -2,6 +2,7 @@
 
 import json
 import logging
+import math
 import os
 import sys
 from datetime import datetime, timezone
@@ -138,6 +139,30 @@ def generate():
 
     teams_output.sort(key=lambda t: t["srs_rank"])
 
+    # ── 5b. Compute model diagnostics ──
+    total_pts = 0
+    home_margin_sum = 0
+    squared_errors = []
+    for g in games:
+        home_pts, away_pts = g["home_pts"], g["away_pts"]
+        total_pts += home_pts + away_pts
+        home_margin_sum += home_pts - away_pts
+        # SRS predicted margin = home_srs - away_srs (no HCA in base SRS)
+        home_srs = srs_data.get(g["home_team"], {}).get("srs", 0.0)
+        away_srs = srs_data.get(g["away_team"], {}).get("srs", 0.0)
+        predicted = home_srs - away_srs
+        actual = home_pts - away_pts
+        squared_errors.append((predicted - actual) ** 2)
+
+    n_games = len(games)
+    model_stats = {
+        "rmse": round(math.sqrt(sum(squared_errors) / n_games), 2) if n_games else 0,
+        "avg_ppg": round(total_pts / (n_games * 2), 1) if n_games else 0,
+        "home_advantage": round(home_margin_sum / n_games, 2) if n_games else 0,
+    }
+    logger.info("Model stats: RMSE=%.2f, Avg PPG=%.1f, Home Adv=%.2f",
+                model_stats["rmse"], model_stats["avg_ppg"], model_stats["home_advantage"])
+
     # ── 6. Fetch upcoming games and generate predictions ──
     predictions = []
     try:
@@ -184,6 +209,7 @@ def generate():
             "season": SEASON_DISPLAY,
             "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "total_games": len(games),
+            "model_stats": model_stats,
         },
         "teams": teams_output,
         "predictions": predictions,

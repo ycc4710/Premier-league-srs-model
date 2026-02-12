@@ -17,7 +17,6 @@
   var simulationData = {};
   var lastSimResults = null;
   var currentFilter = "all";
-  var simFilter = "all";
   var currentSort = { key: "srs_rank", dir: "asc" };
   var chartsRendered = { rankings: false };
 
@@ -44,6 +43,15 @@
       document.getElementById("last-updated").textContent =
         "Updated " + formatDate(updated) +
         " \u00B7 " + data.metadata.total_games + " games";
+
+      // Model stats
+      var stats = data.metadata.model_stats;
+      if (stats) {
+        document.getElementById("stat-rmse").textContent = stats.rmse.toFixed(2);
+        document.getElementById("stat-ppg").textContent = stats.avg_ppg.toFixed(1);
+        document.getElementById("stat-hca").textContent = (stats.home_advantage > 0 ? "+" : "") + stats.home_advantage.toFixed(2) + " pts";
+        document.getElementById("model-stats").style.display = "flex";
+      }
 
       document.getElementById("loading").style.display = "none";
 
@@ -396,16 +404,6 @@
     runBtn.addEventListener("click", function () {
       runMonteCarloSim();
     });
-
-    // Filter buttons
-    document.querySelectorAll(".sim-filter-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        simFilter = btn.dataset.filter;
-        document.querySelectorAll(".sim-filter-btn").forEach(function (b) { b.classList.remove("active"); });
-        btn.classList.add("active");
-        if (lastSimResults) renderSimTable(lastSimResults);
-      });
-    });
   }
 
   function initSimTab() {
@@ -525,6 +523,7 @@
     var totalWins = new Float64Array(n);
     var totalWinsSq = new Float64Array(n);
     var playoffCount = new Float64Array(n);
+    var playInCount = new Float64Array(n);
     var divWinCount = new Float64Array(n);
 
     // Build division groups (by index)
@@ -563,7 +562,7 @@
         totalWinsSq[i] += simWins[i] * simWins[i];
       }
 
-      // Determine playoff teams by conference (top 6 in each)
+      // Determine playoff + play-in teams by conference
       var confTeams = { "East": [], "West": [] };
       for (var i = 0; i < n; i++) {
         var c = teamConf[i];
@@ -574,6 +573,10 @@
         // Top 6 make playoffs
         for (var k = 0; k < Math.min(6, confTeams[c].length); k++) {
           playoffCount[confTeams[c][k]]++;
+        }
+        // 7-10 are play-in
+        for (var k = 6; k < Math.min(10, confTeams[c].length); k++) {
+          playInCount[confTeams[c][k]]++;
         }
       }
 
@@ -602,6 +605,8 @@
       var winSD = Math.sqrt(Math.max(0, variance));
       var playoffPct = (playoffCount[i] / numSims) * 100;
       var playoffSD = Math.sqrt(playoffPct * (100 - playoffPct) / numSims);
+      var playInPct = (playInCount[i] / numSims) * 100;
+      var playInSD = Math.sqrt(playInPct * (100 - playInPct) / numSims);
       var divPct = (divWinCount[i] / numSims) * 100;
       var divSD = Math.sqrt(divPct * (100 - divPct) / numSims);
 
@@ -618,6 +623,8 @@
         win_sd: winSD,
         playoff_pct: playoffPct,
         playoff_sd: playoffSD,
+        play_in_pct: playInPct,
+        play_in_sd: playInSD,
         div_win_pct: divPct,
         div_win_sd: divSD,
       });
@@ -628,18 +635,19 @@
   }
 
   function renderSimTable(results) {
-    var filtered = simFilter === "all"
-      ? results
-      : results.filter(function (t) { return t.conference === simFilter; });
+    var east = results.filter(function (t) { return t.conference === "East"; });
+    var west = results.filter(function (t) { return t.conference === "West"; });
+    east.sort(function (a, b) { return b.avg_wins - a.avg_wins; });
+    west.sort(function (a, b) { return b.avg_wins - a.avg_wins; });
 
-    filtered = filtered.slice().sort(function (a, b) { return b.avg_wins - a.avg_wins; });
+    fillSimBody(document.getElementById("sim-body-east"), east);
+    fillSimBody(document.getElementById("sim-body-west"), west);
+  }
 
-    var tbody = document.getElementById("simulation-body");
+  function fillSimBody(tbody, teams) {
     tbody.innerHTML = "";
-
-    filtered.forEach(function (team, idx) {
+    teams.forEach(function (team, idx) {
       var row = document.createElement("tr");
-      var confBadge = team.conference === "East" ? "conf-east" : "conf-west";
       var logoUrl = team.team_id
         ? "https://cdn.nba.com/logos/nba/" + team.team_id + "/primary/L/logo.svg"
         : "";
@@ -650,13 +658,14 @@
           (logoUrl ? '<img class="team-logo" src="' + logoUrl + '" alt="' + team.abbreviation + '" loading="lazy" onerror="this.style.display=\'none\'">' : '') +
           '<span class="team-name">' + team.name + '</span>' +
           '<span class="team-abbr">' + team.abbreviation + '</span>' +
-          '<span class="conf-badge ' + confBadge + '">' + (team.conference === "East" ? "E" : "W") + '</span>' +
         '</div></td>' +
         '<td class="num">' + team.current_wins + '-' + team.current_losses + '</td>' +
         '<td class="num" style="font-weight:700">' + team.avg_wins.toFixed(1) + '-' + team.avg_losses.toFixed(1) + '</td>' +
         '<td class="num win-range">' + team.win_sd.toFixed(1) + '</td>' +
         '<td class="num ' + pctClass(team.playoff_pct) + '">' + team.playoff_pct.toFixed(1) + '%</td>' +
         '<td class="num win-range">' + team.playoff_sd.toFixed(1) + '%</td>' +
+        '<td class="num ' + pctClass(team.play_in_pct) + '">' + team.play_in_pct.toFixed(1) + '%</td>' +
+        '<td class="num win-range">' + team.play_in_sd.toFixed(1) + '%</td>' +
         '<td class="num ' + pctClass(team.div_win_pct) + '">' + team.div_win_pct.toFixed(1) + '%</td>' +
         '<td class="num win-range">' + team.div_win_sd.toFixed(1) + '%</td>';
 

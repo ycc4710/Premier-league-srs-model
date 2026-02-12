@@ -42,6 +42,11 @@
             <section class="card">
                 <h2>Team Ratings</h2>
                 <p class="section-desc">SRS measures how many points better or worse a team is compared to average. An SRS of 0 is league average.</p>
+                <div id="model-stats" class="model-stats" style="display:none;">
+                    <div class="stat-pill"><span class="stat-label">Model RMSE</span><span id="stat-rmse" class="stat-value"></span></div>
+                    <div class="stat-pill"><span class="stat-label">Avg PPG</span><span id="stat-ppg" class="stat-value"></span></div>
+                    <div class="stat-pill"><span class="stat-label">Home Adv</span><span id="stat-hca" class="stat-value"></span></div>
+                </div>
                 <div class="chart-container">
                     <canvas id="srs-chart"></canvas>
                 </div>
@@ -139,34 +144,54 @@
                 <p class="empty-state">No remaining schedule data available. Run the data pipeline to generate it.</p>
             </div>
 
-            <section class="card" id="sim-table-section" style="display: none;">
-                <h2>Projected Standings</h2>
-                <div class="table-controls">
-                    <div class="filter-group">
-                        <button class="sim-filter-btn active" data-filter="all">All</button>
-                        <button class="sim-filter-btn" data-filter="East">East</button>
-                        <button class="sim-filter-btn" data-filter="West">West</button>
+            <div id="sim-table-section" class="sim-conf-grid" style="display: none;">
+                <section class="card">
+                    <h2>Eastern Conference</h2>
+                    <div class="table-wrapper">
+                        <table class="simulation-table">
+                            <thead>
+                                <tr>
+                                    <th class="num">#</th>
+                                    <th>Team</th>
+                                    <th class="num">Current</th>
+                                    <th class="num">Proj. W-L</th>
+                                    <th class="num">Win SD</th>
+                                    <th class="num">Playoff%</th>
+                                    <th class="num">PO SD</th>
+                                    <th class="num">Play-In%</th>
+                                    <th class="num">PI SD</th>
+                                    <th class="num">Div. Win%</th>
+                                    <th class="num">DW SD</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sim-body-east"></tbody>
+                        </table>
                     </div>
-                </div>
-                <div class="table-wrapper">
-                    <table id="simulation-table">
-                        <thead>
-                            <tr>
-                                <th class="num">#</th>
-                                <th>Team</th>
-                                <th class="num">Current</th>
-                                <th class="num">Proj. W-L</th>
-                                <th class="num">Win SD</th>
-                                <th class="num">Playoff%</th>
-                                <th class="num">PO SD</th>
-                                <th class="num">Div. Win%</th>
-                                <th class="num">DW SD</th>
-                            </tr>
-                        </thead>
-                        <tbody id="simulation-body"></tbody>
-                    </table>
-                </div>
-            </section>
+                </section>
+                <section class="card">
+                    <h2>Western Conference</h2>
+                    <div class="table-wrapper">
+                        <table class="simulation-table">
+                            <thead>
+                                <tr>
+                                    <th class="num">#</th>
+                                    <th>Team</th>
+                                    <th class="num">Current</th>
+                                    <th class="num">Proj. W-L</th>
+                                    <th class="num">Win SD</th>
+                                    <th class="num">Playoff%</th>
+                                    <th class="num">PO SD</th>
+                                    <th class="num">Play-In%</th>
+                                    <th class="num">PI SD</th>
+                                    <th class="num">Div. Win%</th>
+                                    <th class="num">DW SD</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sim-body-west"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
 
