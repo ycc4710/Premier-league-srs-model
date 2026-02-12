@@ -18,6 +18,15 @@
         </div>
     </header>
 
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+        <div class="tab-nav-inner">
+            <button class="tab-btn active" data-tab="rankings">Rankings</button>
+            <button class="tab-btn" data-tab="predictions">This Week's Picks</button>
+            <button class="tab-btn" data-tab="simulation">Season Simulation</button>
+        </div>
+    </nav>
+
     <main>
         <div id="loading" class="loading">
             <div class="spinner"></div>
@@ -28,8 +37,8 @@
             <p>Failed to load SRS data. Please try again later.</p>
         </div>
 
-        <div id="content" style="display: none;">
-            <!-- SRS Bar Chart -->
+        <!-- ═══ TAB 1: Rankings ═══ -->
+        <div id="tab-rankings" class="tab-content" style="display: none;">
             <section class="card">
                 <h2>Team Ratings</h2>
                 <p class="section-desc">SRS measures how many points better or worse a team is compared to average. An SRS of 0 is league average.</p>
@@ -38,7 +47,6 @@
                 </div>
             </section>
 
-            <!-- Rankings Table -->
             <section class="card">
                 <h2>Full Rankings</h2>
                 <div class="table-controls">
@@ -68,16 +76,14 @@
                 </div>
             </section>
 
-            <!-- Scatter Plot: SRS vs Standings -->
             <section class="card">
                 <h2>SRS vs. Actual Standings</h2>
-                <p class="section-desc">Teams above the diagonal are ranked higher by SRS than their win-loss record suggests (underrated). Teams below are overrated by their record.</p>
+                <p class="section-desc">Teams above the diagonal are ranked higher by SRS than their record suggests (underrated). Below the diagonal = overrated by record.</p>
                 <div class="chart-container chart-square">
                     <canvas id="comparison-chart"></canvas>
                 </div>
             </section>
 
-            <!-- How SRS Works -->
             <section class="card info-card">
                 <h2>How SRS Works</h2>
                 <div class="info-content">
@@ -88,7 +94,70 @@
                         <li><strong>SOS</strong> (Strength of Schedule) = average SRS of opponents</li>
                     </ul>
                     <p>An average team has an SRS of <strong>0.00</strong>. A team with SRS of +5.0 is 5 points per game better than average, accounting for who they've played.</p>
-                    <p>The rating is calculated by solving a system of 30 linear equations simultaneously, ensuring each team's SOS reflects the true strength of their opponents.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ═══ TAB 2: This Week's Predictions ═══ -->
+        <div id="tab-predictions" class="tab-content" style="display: none;">
+            <section class="card">
+                <h2>This Week's Game Predictions</h2>
+                <p class="section-desc">SRS-based predictions for upcoming games. Predicted spread uses each team's SRS rating plus a 3-point home court advantage. Win probability is derived from a normal distribution with ~12 point standard deviation (calibrated to NBA variance).</p>
+            </section>
+
+            <div id="predictions-empty" class="card" style="display: none;">
+                <p class="empty-state">No upcoming games found. Predictions will appear when the schedule is available.</p>
+            </div>
+
+            <div id="predictions-list"></div>
+        </div>
+
+        <!-- ═══ TAB 3: Season Simulation ═══ -->
+        <div id="tab-simulation" class="tab-content" style="display: none;">
+            <section class="card">
+                <h2>Monte Carlo Season Simulation</h2>
+                <p class="section-desc" id="sim-desc">Projected final standings based on 10,000 simulations of remaining games using SRS-derived win probabilities.</p>
+            </section>
+
+            <div id="simulation-empty" class="card" style="display: none;">
+                <p class="empty-state">No simulation data available. This will appear when remaining schedule data is available.</p>
+            </div>
+
+            <!-- Playoff Probability Chart -->
+            <section class="card" id="sim-chart-section" style="display: none;">
+                <h2>Playoff Probability</h2>
+                <div class="chart-container">
+                    <canvas id="playoff-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Simulation Table -->
+            <section class="card" id="sim-table-section" style="display: none;">
+                <h2>Projected Standings</h2>
+                <div class="table-controls">
+                    <div class="filter-group">
+                        <button class="sim-filter-btn active" data-filter="all">All</button>
+                        <button class="sim-filter-btn" data-filter="East">East</button>
+                        <button class="sim-filter-btn" data-filter="West">West</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table id="simulation-table">
+                        <thead>
+                            <tr>
+                                <th class="num">#</th>
+                                <th>Team</th>
+                                <th class="num">Current</th>
+                                <th class="num">Proj. Wins</th>
+                                <th class="num">90% Range</th>
+                                <th class="num">Playoff%</th>
+                                <th class="num">Play-In%</th>
+                                <th class="num">#1 Seed%</th>
+                                <th class="num">Lottery%</th>
+                            </tr>
+                        </thead>
+                        <tbody id="simulation-body"></tbody>
+                    </table>
                 </div>
             </section>
         </div>

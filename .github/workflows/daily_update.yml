@@ -29,11 +29,13 @@ jobs:
 
       - name: Generate SRS data
         run: python -m scripts.generate_site_data
+        env:
+          PYTHONUNBUFFERED: "1"
 
       - name: Check for changes
         id: check_changes
         run: |
-          if git diff --quiet site/data/srs_data.json 2>/dev/null; then
+          if git diff --quiet site/data/ 2>/dev/null; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -44,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/data/srs_data.json
+          git add site/data/
           git commit -m "Update SRS data $(date -u +%Y-%m-%d)"
           git push
 

@@ -1,4 +1,4 @@
-"""Generate site data JSON by fetching games, calculating SRS, and merging standings."""
+"""Generate site data JSON by fetching games, calculating SRS, predictions, and simulation."""
 
 import json
 import logging
@@ -16,8 +16,12 @@ from scripts.config import (
     ABBR_TO_TEAM_NAME,
     TEAM_LOGO_IDS,
 )
-from scripts.fetch_data import fetch_games, fetch_standings, games_to_pairs
+from scripts.fetch_data import (
+    fetch_games, fetch_standings, fetch_upcoming_games,
+    fetch_remaining_games, games_to_pairs,
+)
 from scripts.calculate_srs import calculate_srs
+from scripts.predictions import predict_games, monte_carlo_season
 
 logging.basicConfig(
     level=logging.INFO,
@@ -26,48 +30,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def generate():
-    """Main pipeline: fetch data, calculate SRS, write JSON."""
-    logger.info("Starting SRS data generation for %s season", SEASON_DISPLAY)
-
-    # Fetch game data
-    try:
-        games = fetch_games(SEASON_END_YEAR)
-    except Exception as e:
-        logger.error("Failed to fetch games: %s", e)
-        sys.exit(1)
-
-    if not games:
-        logger.error("No games found. Exiting without updating data.")
-        sys.exit(1)
-
-    # Fetch standings
-    try:
-        standings_list = fetch_standings(SEASON_END_YEAR)
-    except Exception as e:
-        logger.warning("Failed to fetch standings: %s. Will compute from game data.", e)
-        standings_list = []
-
-    # Convert to game pairs for SRS calculation
-    game_pairs = games_to_pairs(games)
-
-    # Determine which teams have played
-    active_teams = set()
-    for team_a, team_b, _ in game_pairs:
-        active_teams.add(team_a)
-        active_teams.add(team_b)
-    teams_for_srs = sorted(active_teams)
-
-    # Calculate SRS
-    logger.info("Calculating SRS for %d teams from %d games", len(teams_for_srs), len(game_pairs))
-    srs_data = calculate_srs(game_pairs, teams_for_srs)
-
-    # Build standings lookup
+def _build_standings_map(games, standings_list, teams_for_srs):
+    """Build a standings lookup dict, falling back to game data if needed."""
     standings_map = {}
     for s in standings_list:
         standings_map[s["team"]] = s
 
-    # If we didn't get standings from B-Ref, compute W-L from game data
     if not standings_map:
         logger.info("Computing standings from game data")
         wins = {}
@@ -94,12 +62,50 @@ def generate():
                 "win_pct": round(w / total, 3) if total > 0 else 0.0,
             }
 
-    # Merge SRS with standings and build output
+    return standings_map
+
+
+def generate():
+    """Main pipeline: fetch data, calculate SRS, predict, simulate, write JSON."""
+    logger.info("Starting SRS data generation for %s season", SEASON_DISPLAY)
+
+    # ── 1. Fetch completed game data ──
+    try:
+        games = fetch_games(SEASON_END_YEAR)
+    except Exception as e:
+        logger.error("Failed to fetch games: %s", e)
+        sys.exit(1)
+
+    if not games:
+        logger.error("No games found. Exiting without updating data.")
+        sys.exit(1)
+
+    # ── 2. Fetch standings ──
+    try:
+        standings_list = fetch_standings(SEASON_END_YEAR)
+    except Exception as e:
+        logger.warning("Failed to fetch standings: %s. Will compute from game data.", e)
+        standings_list = []
+
+    # ── 3. Calculate SRS ──
+    game_pairs = games_to_pairs(games)
+    active_teams = set()
+    for team_a, team_b, _ in game_pairs:
+        active_teams.add(team_a)
+        active_teams.add(team_b)
+    teams_for_srs = sorted(active_teams)
+
+    logger.info("Calculating SRS for %d teams from %d games", len(teams_for_srs), len(game_pairs))
+    srs_data = calculate_srs(game_pairs, teams_for_srs)
+
+    # ── 4. Build standings ──
+    standings_map = _build_standings_map(games, standings_list, teams_for_srs)
+
+    # ── 5. Build team output ──
     teams_output = []
     for team in teams_for_srs:
         srs_info = srs_data.get(team, {"srs": 0, "mov": 0, "sos": 0, "games_played": 0})
         standing = standings_map.get(team, {})
-
         conf = standing.get("conference")
         if not conf:
             conf = "East" if team in EASTERN_CONFERENCE else "West"
@@ -118,19 +124,77 @@ def generate():
             "games_played": srs_info["games_played"],
         })
 
-    # Sort by SRS descending and assign ranks
+    # Assign SRS ranks
     teams_output.sort(key=lambda t: t["srs"], reverse=True)
     for i, team in enumerate(teams_output, 1):
         team["srs_rank"] = i
 
-    # Assign standings rank (by win_pct descending)
+    # Assign standings ranks
     standings_sorted = sorted(teams_output, key=lambda t: t["win_pct"], reverse=True)
     for i, team in enumerate(standings_sorted, 1):
         team["standings_rank"] = i
 
-    # Re-sort by SRS rank for output
     teams_output.sort(key=lambda t: t["srs_rank"])
 
+    # ── 6. Fetch upcoming games and generate predictions ──
+    predictions = []
+    try:
+        upcoming = fetch_upcoming_games(SEASON_END_YEAR, days_ahead=7)
+        if upcoming:
+            predictions = predict_games(upcoming, srs_data)
+            logger.info("Generated %d game predictions", len(predictions))
+    except Exception as e:
+        logger.warning("Failed to fetch upcoming games: %s", e)
+
+    # ── 7. Fetch remaining games and run Monte Carlo ──
+    simulation = {}
+    try:
+        remaining = fetch_remaining_games(SEASON_END_YEAR)
+        if remaining:
+            # Build current standings dict for simulation
+            current_standings = {}
+            for team in teams_for_srs:
+                s = standings_map.get(team, {})
+                current_standings[team] = {
+                    "wins": s.get("wins", 0),
+                    "losses": s.get("losses", 0),
+                    "conference": s.get("conference",
+                                       "East" if team in EASTERN_CONFERENCE else "West"),
+                }
+            sim_results = monte_carlo_season(remaining, current_standings, srs_data)
+
+            # Convert to list sorted by avg_wins descending
+            sim_list = []
+            for team, res in sim_results.items():
+                sim_list.append({
+                    "abbreviation": team,
+                    "name": ABBR_TO_TEAM_NAME.get(team, team),
+                    "team_id": TEAM_LOGO_IDS.get(team, 0),
+                    "conference": res["conference"],
+                    "current_wins": current_standings[team]["wins"],
+                    "current_losses": current_standings[team]["losses"],
+                    "avg_wins": res["avg_wins"],
+                    "avg_losses": res["avg_losses"],
+                    "win_range_low": res["win_range_low"],
+                    "win_range_high": res["win_range_high"],
+                    "playoff_pct": res["playoff_pct"],
+                    "top_seed_pct": res["top_seed_pct"],
+                    "play_in_pct": res["play_in_pct"],
+                    "lottery_pct": res["lottery_pct"],
+                })
+            sim_list.sort(key=lambda t: t["avg_wins"], reverse=True)
+            for i, t in enumerate(sim_list, 1):
+                t["projected_rank"] = i
+            simulation = {
+                "remaining_games": len(remaining),
+                "num_simulations": 10000,
+                "teams": sim_list,
+            }
+            logger.info("Ran Monte Carlo simulation with %d remaining games", len(remaining))
+    except Exception as e:
+        logger.warning("Failed to run Monte Carlo simulation: %s", e)
+
+    # ── 8. Write output JSON ──
     output = {
         "metadata": {
             "season": SEASON_DISPLAY,
@@ -138,15 +202,16 @@ def generate():
             "total_games": len(games),
         },
         "teams": teams_output,
+        "predictions": predictions,
+        "simulation": simulation,
     }
 
-    # Ensure output directory exists
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-
     with open(OUTPUT_PATH, "w") as f:
         json.dump(output, f, indent=2)
 
-    logger.info("Wrote SRS data to %s (%d teams, %d games)", OUTPUT_PATH, len(teams_output), len(games))
+    logger.info("Wrote SRS data to %s (%d teams, %d games, %d predictions)",
+                OUTPUT_PATH, len(teams_output), len(games), len(predictions))
 
 
 if __name__ == "__main__":
