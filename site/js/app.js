@@ -44,13 +44,21 @@
         "Updated " + formatDate(updated) +
         " \u00B7 " + data.metadata.total_games + " games";
 
-      // Model stats
+      // Model stats — feed into predictions + simulation defaults
       var stats = data.metadata.model_stats;
       if (stats) {
+        HOME_COURT_ADV = stats.home_advantage;
         document.getElementById("stat-rmse").textContent = stats.rmse.toFixed(2);
         document.getElementById("stat-ppg").textContent = stats.avg_ppg.toFixed(1);
         document.getElementById("stat-hca").textContent = (stats.home_advantage > 0 ? "+" : "") + stats.home_advantage.toFixed(2) + " pts";
         document.getElementById("model-stats").style.display = "flex";
+        // Default sim slider to model RMSE
+        var stdSlider = document.getElementById("slider-std-error");
+        var stdLabel = document.getElementById("std-error-value");
+        if (stdSlider && stdLabel) {
+          stdSlider.value = stats.rmse;
+          stdLabel.textContent = stats.rmse.toFixed(1);
+        }
       }
 
       document.getElementById("loading").style.display = "none";

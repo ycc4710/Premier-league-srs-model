@@ -168,7 +168,7 @@ def generate():
     try:
         upcoming = fetch_upcoming_games(SEASON_END_YEAR, days_ahead=10)
         if upcoming:
-            predictions = predict_games(upcoming, srs_data)
+            predictions = predict_games(upcoming, srs_data, model_stats["home_advantage"])
             logger.info("Generated %d game predictions", len(predictions))
     except Exception as e:
         logger.warning("Failed to fetch upcoming games: %s", e)

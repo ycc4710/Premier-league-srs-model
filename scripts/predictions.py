@@ -22,9 +22,9 @@ GAME_STD_DEV = 12.0
 NUM_SIMULATIONS = 10000
 
 
-def predict_margin(home_srs, away_srs):
+def predict_margin(home_srs, away_srs, home_court_advantage=HOME_COURT_ADVANTAGE):
     """Predict the point margin for a game (from home team's perspective)."""
-    return home_srs - away_srs + HOME_COURT_ADVANTAGE
+    return home_srs - away_srs + home_court_advantage
 
 
 def win_probability(predicted_margin):
@@ -37,12 +37,13 @@ def win_probability(predicted_margin):
     return 0.5 * (1 + math.erf(predicted_margin / (GAME_STD_DEV * math.sqrt(2))))
 
 
-def predict_games(upcoming_games, srs_ratings):
+def predict_games(upcoming_games, srs_ratings, home_court_advantage=HOME_COURT_ADVANTAGE):
     """Generate predictions for a list of upcoming games.
 
     Args:
         upcoming_games: list of dicts with home_team, away_team, date, date_parsed
         srs_ratings: dict mapping team abbreviation to {srs, mov, sos, ...}
+        home_court_advantage: points of home court advantage to use
 
     Returns:
         list of prediction dicts sorted by date then by abs(spread) descending
@@ -55,7 +56,7 @@ def predict_games(upcoming_games, srs_ratings):
         home_srs = srs_ratings.get(home, {}).get("srs", 0.0)
         away_srs = srs_ratings.get(away, {}).get("srs", 0.0)
 
-        margin = predict_margin(home_srs, away_srs)
+        margin = predict_margin(home_srs, away_srs, home_court_advantage)
         home_win_prob = win_probability(margin)
 
         if margin >= 0:
