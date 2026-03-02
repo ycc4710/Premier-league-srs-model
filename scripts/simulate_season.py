@@ -1,6 +1,6 @@
 """
-NBA Monte Carlo Season Simulator
-Simulates the rest of the NBA season using SRS ratings.
+EPL Monte Carlo Season Simulator
+Simulates the rest of the EPL season using SRS ratings.
 """
 
 import json
@@ -12,7 +12,6 @@ from scipy.stats import norm
 
 DEFAULT_NUM_SIM = 1000
 
-
 # Load SRS data
 base_dir = os.path.dirname(__file__)
 srs_path = os.path.join(base_dir, '..', 'site', 'data', 'srs_data.json')
@@ -20,132 +19,147 @@ with open(srs_path) as f:
     srs_data = json.load(f)
 teams = srs_data["teams"]
 
-# Use fetch_games to get all 2026 games, then filter for games without a score
+# Fetch remaining (unplayed) games
 try:
-    from fetch_data import fetch_games
+    from fetch_data import fetch_remaining_games
 except ImportError:
-    from scripts.fetch_data import fetch_games
+    from scripts.fetch_data import fetch_remaining_games
 
-all_games = fetch_games(2026)
-schedule = []
-for g in all_games:
-    # Only simulate games without a score
-    if g.get("home_pts") is None or g.get("away_pts") is None:
-        schedule.append({
-            "home": g["home_team"],
-            "away": g["away_team"]
-        })
-
-# Placeholder: Simulate games
+remaining = fetch_remaining_games()
+schedule = [{"home": g["home_team"], "away": g["away_team"]} for g in remaining]
 
 
-# Calculate RMSE of SRS prediction errors from played games
 def calculate_srs_rmse():
-    # Use all played games from fetch_games
-    played_games = [g for g in all_games if g.get("home_pts") is not None and g.get("away_pts") is not None]
+    """Calculate RMSE of SRS prediction errors from played games."""
+    try:
+        try:
+            from fetch_data import fetch_games
+        except ImportError:
+            from scripts.fetch_data import fetch_games
+        played_games = fetch_games()
+    except Exception:
+        return 1.2  # fallback
+
     abbr_to_team = {team["abbreviation"]: team for team in teams}
     errors = []
     for g in played_games:
-        home = g["home_team"]
-        away = g["away_team"]
+        home, away = g["home_team"], g["away_team"]
         if home not in abbr_to_team or away not in abbr_to_team:
             continue
-        predicted_margin = abbr_to_team[home]["srs"] - abbr_to_team[away]["srs"]
-        actual_margin = g["home_pts"] - g["away_pts"]
-        errors.append(predicted_margin - actual_margin)
-    if errors:
-        return float(np.sqrt(np.mean(np.square(errors))))
-    else:
-        return 7.0  # fallback default
+        predicted = abbr_to_team[home]["srs"] - abbr_to_team[away]["srs"]
+        actual = g["home_pts"] - g["away_pts"]
+        errors.append(predicted - actual)
+    return float(np.sqrt(np.mean(np.square(errors)))) if errors else 1.2
+
 
 def simulate_game(home_srs, away_srs, std):
-    # Median margin is home_srs - away_srs
-    # Probability home wins = P(margin > 0) = 1 - CDF(0)
-    home_win_prob = 1 - norm.cdf(0, loc=home_srs - away_srs, scale=std)
-    return home_win_prob
+    """Return (prob_home_win, prob_draw, prob_away_win).
+
+    EPL draw rate ~25%; we scale win probs accordingly.
+    """
+    prob_home = 1 - norm.cdf(0, loc=home_srs - away_srs, scale=std)
+    draw_prob = 0.25
+    prob_home_adj = prob_home * (1 - draw_prob)
+    prob_away_adj = (1 - prob_home) * (1 - draw_prob)
+    return prob_home_adj, draw_prob, prob_away_adj
 
 
 def run_simulation(num_sim=DEFAULT_NUM_SIM):
-    results = {team["abbreviation"]: {
-        "division_wins": 0,
-        "playoff_berths": 0,
-        "wins": [],  # store all win counts for stddev
-        "playoff_sim": [],  # store 1/0 for each sim
-        "division_sim": [], # store 1/0 for each sim
-    } for team in teams}
     abbr_to_team = {team["abbreviation"]: team for team in teams}
-    divisions = {team["abbreviation"]: team.get("division", team.get("conference", "")) for team in teams}
     std = calculate_srs_rmse()
+
+    # Current points from srs_data
+    current_points = {
+        team["abbreviation"]: team["wins"] * 3 + team.get("draws", 0)
+        for team in teams
+    }
+
     if not schedule:
         print("Warning: Schedule is empty. No games to simulate.")
+
+    results = {abbr: {
+        "points": [],
+        "title_sim": [],
+        "top4_sim": [],
+        "top6_sim": [],
+        "relegation_sim": [],
+    } for abbr in abbr_to_team}
+
     for _ in range(num_sim):
-        sim_wins = {abbr: 0 for abbr in abbr_to_team}
+        sim_points = dict(current_points)
+
         for game in schedule:
-            home = game["home"]
-            away = game["away"]
+            home, away = game["home"], game["away"]
             if home not in abbr_to_team or away not in abbr_to_team:
                 continue
             home_srs = abbr_to_team[home]["srs"]
             away_srs = abbr_to_team[away]["srs"]
-            home_win_prob = simulate_game(home_srs, away_srs, std)
-            if random.random() < home_win_prob:
-                sim_wins[home] += 1
+            prob_home, prob_draw, prob_away = simulate_game(home_srs, away_srs, std)
+
+            r = random.random()
+            if r < prob_home:
+                sim_points[home] += 3
+            elif r < prob_home + prob_draw:
+                sim_points[home] += 1
+                sim_points[away] += 1
             else:
-                sim_wins[away] += 1
-        # Division winners
-        division_winners = {}
-        for abbr, div in divisions.items():
-            div_teams = [a for a, d in divisions.items() if d == div]
-            div_winner = max(div_teams, key=lambda a: sim_wins[a])
-            division_winners[div] = div_winner
-        # Track division win for each team
+                sim_points[away] += 3
+
+        # Final standings
+        ranked = sorted(abbr_to_team.keys(), key=lambda a: sim_points[a], reverse=True)
+
         for abbr in abbr_to_team:
-            won_div = int(abbr in division_winners.values())
-            results[abbr]["division_wins"] += won_div
-            results[abbr]["division_sim"].append(won_div)
-        # Playoff berths (top 8 in each conference)
-        confs = {team["abbreviation"]: team["conference"] for team in teams}
-        playoff_teams = set()
-        for conf in ["East", "West"]:
-            conf_teams = [a for a, c in confs.items() if c == conf]
-            sorted_conf = sorted(conf_teams, key=lambda a: sim_wins[a], reverse=True)
-            for abbr in sorted_conf[:8]:
-                results[abbr]["playoff_berths"] += 1
-                playoff_teams.add(abbr)
-        # Track playoff for each team
-        for abbr in abbr_to_team:
-            made_playoffs = int(abbr in playoff_teams)
-            results[abbr]["playoff_sim"].append(made_playoffs)
-        for abbr in sim_wins:
-            results[abbr]["wins"].append(sim_wins[abbr])
-    # Aggregate results
+            results[abbr]["points"].append(sim_points[abbr])
+            rank = ranked.index(abbr) + 1
+            results[abbr]["title_sim"].append(int(rank == 1))
+            results[abbr]["top4_sim"].append(int(rank <= 4))    # Champions League
+            results[abbr]["top6_sim"].append(int(rank <= 6))    # Europa League
+            results[abbr]["relegation_sim"].append(int(rank >= len(ranked) - 2))  # Bottom 3
+
+    # Aggregate
     output = {}
     for abbr, res in results.items():
-        win_arr = np.array(res["wins"])
-        playoff_arr = np.array(res["playoff_sim"])
-        division_arr = np.array(res["division_sim"])
-        playoff_prob = playoff_arr.mean() if len(playoff_arr) else 0
-        division_prob = division_arr.mean() if len(division_arr) else 0
+        pts_arr = np.array(res["points"])
+        def pct(arr):
+            a = np.array(arr)
+            p = a.mean()
+            se = float(np.sqrt(p * (1 - p) / len(a))) if len(a) > 1 else 0
+            return round(float(p * 100), 1), round(se * 100, 2)
+
+        title_pct, title_se = pct(res["title_sim"])
+        top4_pct, top4_se = pct(res["top4_sim"])
+        top6_pct, top6_se = pct(res["top6_sim"])
+        rel_pct, rel_se = pct(res["relegation_sim"])
+
         output[abbr] = {
-            "playoff_prob": playoff_prob,
-            "playoff_prob_stderr": float(np.sqrt(playoff_prob * (1 - playoff_prob) / len(playoff_arr))) if len(playoff_arr) > 1 else 0,
-            "division_prob": division_prob,
-            "division_prob_stderr": float(np.sqrt(division_prob * (1 - division_prob) / len(division_arr))) if len(division_arr) > 1 else 0,
-            "expected_wins": float(np.mean(win_arr)) if len(win_arr) else 0,
-            "std_wins": float(np.std(win_arr, ddof=1)) if len(win_arr) > 1 else 0,
+            "expected_points": round(float(np.mean(pts_arr)), 1),
+            "std_points": round(float(np.std(pts_arr, ddof=1)), 1) if len(pts_arr) > 1 else 0,
+            "title_pct": title_pct,
+            "title_pct_stderr": title_se,
+            "top4_pct": top4_pct,           # Champions League qualification
+            "top4_pct_stderr": top4_se,
+            "top6_pct": top6_pct,           # Europa League qualification
+            "top6_pct_stderr": top6_se,
+            "relegation_pct": rel_pct,      # Relegated (bottom 3)
+            "relegation_pct_stderr": rel_se,
         }
+
     return output
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--num_sim", type=int, default=DEFAULT_NUM_SIM)
+    parser.add_argument("--std_error", type=float, default=None,
+                        help="Override goal std dev (default: auto from RMSE)")
     args = parser.parse_args()
     results = run_simulation(args.num_sim)
-    out_path = os.path.join(os.path.dirname(__file__), '..', 'site', 'data', 'simulation_results.json')
+    out_path = os.path.join(base_dir, '..', 'site', 'data', 'simulation_results.json')
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)
+    print(f"Simulation complete. Results written to {out_path}")
+
 
 if __name__ == "__main__":
     main()

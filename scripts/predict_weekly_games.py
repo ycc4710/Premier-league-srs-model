@@ -1,12 +1,12 @@
 """
-Predict margin of victory and home win probability for upcoming NBA games using SRS ratings.
+Predict margin of victory and home win probability for upcoming EPL games using SRS ratings.
 Outputs predictions to weekly_schedule.json for frontend UI.
 """
 import json
 import os
 import numpy as np
 
-DEFAULT_STD_ERROR = 7.0  # Typical NBA RMSE for margin prediction
+DEFAULT_STD_ERROR = 1.2  # Typical goal difference RMSE for EPL margin prediction
 
 base_dir = os.path.dirname(__file__)
 srs_path = os.path.join(base_dir, '..', 'site', 'data', 'srs_data.json')
@@ -31,8 +31,8 @@ for game in schedule:
     away = game["away"]
     home_srs = teams.get(home, {}).get("srs", 0)
     away_srs = teams.get(away, {}).get("srs", 0)
-    mov_pred = home_srs - away_srs  # Predicted margin of victory
-    # Probability home wins: normal CDF
+    mov_pred = home_srs - away_srs  # Predicted goal difference
+    # Probability home wins: logistic function
     prob_home_win = float(1.0 / (1.0 + np.exp(-mov_pred / DEFAULT_STD_ERROR)))
     predictions.append({
         "home": home,

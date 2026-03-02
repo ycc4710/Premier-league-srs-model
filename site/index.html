@@ -3,14 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NBA SRS Ratings</title>
+    <title>EPL SRS Ratings</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+      /* ── Prediction details panel ── */
+      .pred-main { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+      .pred-details-btn {
+        margin-left: auto; background: none; border: 1px solid #d1d5db;
+        border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer;
+        color: #6b7280; white-space: nowrap;
+      }
+      .pred-details-btn:hover { background: #f3f4f6; color: #111; }
+      .pred-details {
+        margin-top: 12px; padding-top: 12px;
+        border-top: 1px solid #e5e7eb; font-size: 13px;
+      }
+      .adj-section { margin-bottom: 12px; }
+      .adj-title { font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+      .adj-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      .adj-table td { padding: 3px 8px 3px 0; }
+      .adj-table td:last-child { text-align: right; font-family: monospace; }
+      .adj-total td { border-top: 1px solid #e5e7eb; padding-top: 5px; }
+      .adj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+      @media (max-width: 480px) { .adj-grid { grid-template-columns: 1fr; } }
+      .adj-row { display: flex; justify-content: space-between; align-items: baseline; padding: 2px 0; }
+      .adj-label { color: #374151; }
+      .adj-val { font-family: monospace; font-size: 13px; }
+      .adj-pos { color: #059669; font-weight: 600; }
+      .adj-neg { color: #dc2626; font-weight: 600; }
+      .adj-neutral { color: #6b7280; }
+      /* Injury badges */
+      .inj-badge {
+        display: inline-block; background: #fef3c7; border: 1px solid #fcd34d;
+        border-radius: 4px; padding: 1px 6px; font-size: 12px; margin: 1px 2px;
+        cursor: default; color: #111827;
+      }
+      .inj-none { color: #9ca3af; font-size: 12px; }
+      /* Home Adv column */
+      #rankings-table th[data-sort="home_advantage"] { cursor: help; }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>NBA SRS Ratings</h1>
+            <h1>EPL SRS Ratings</h1>
             <div class="header-meta">
                 <span id="season-label" class="season-badge"></span>
                 <span id="last-updated" class="updated-text"></span>
@@ -18,7 +55,6 @@
         </div>
     </header>
 
-    <!-- Tab Navigation -->
     <nav class="tab-nav">
         <div class="tab-nav-inner">
             <button class="tab-btn active" data-tab="rankings">Rankings</button>
@@ -41,10 +77,10 @@
         <div id="tab-rankings" class="tab-content" style="display: none;">
             <section class="card">
                 <h2>Team Ratings</h2>
-                <p class="section-desc">SRS measures how many points better or worse a team is compared to average. An SRS of 0 is league average.</p>
+                <p class="section-desc">SRS measures how many goals better or worse a team is compared to average. An SRS of 0 is league average.</p>
                 <div id="model-stats" class="model-stats" style="display:none;">
                     <div class="stat-pill"><span class="stat-label">Model RMSE</span><span id="stat-rmse" class="stat-value"></span></div>
-                    <div class="stat-pill"><span class="stat-label">Avg PPG</span><span id="stat-ppg" class="stat-value"></span></div>
+                    <div class="stat-pill"><span class="stat-label">Avg Goals/Game</span><span id="stat-ppg" class="stat-value"></span></div>
                     <div class="stat-pill"><span class="stat-label">Home Adv</span><span id="stat-hca" class="stat-value"></span></div>
                 </div>
                 <div class="chart-container">
@@ -56,9 +92,7 @@
                 <h2>Full Rankings</h2>
                 <div class="table-controls">
                     <div class="filter-group">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="East">East</button>
-                        <button class="filter-btn" data-filter="West">West</button>
+                        <button class="filter-btn active" data-filter="all">All Teams</button>
                     </div>
                 </div>
                 <div class="table-wrapper">
@@ -70,6 +104,7 @@
                                 <th data-sort="srs" class="sortable num">SRS</th>
                                 <th data-sort="mov" class="sortable num">MOV</th>
                                 <th data-sort="sos" class="sortable num">SOS</th>
+                                <th data-sort="home_advantage" class="sortable num" title="Per-team home advantage (Bayesian-shrunk), in goals">Home Adv</th>
                                 <th data-sort="record" class="sortable num">Record</th>
                                 <th data-sort="win_pct" class="sortable num">Win%</th>
                                 <th data-sort="standings_rank" class="sortable num">Stnd. #</th>
@@ -92,26 +127,26 @@
             <section class="card info-card">
                 <h2>How SRS Works</h2>
                 <div class="info-content">
-                    <p><strong>SRS (Simple Rating System)</strong> rates teams based on point differential adjusted for strength of schedule.</p>
+                    <p><strong>SRS (Simple Rating System)</strong> rates teams based on goal differential adjusted for strength of schedule.</p>
                     <ul>
                         <li><strong>SRS</strong> = MOV + SOS</li>
-                        <li><strong>MOV</strong> (Margin of Victory) = average point differential per game</li>
+                        <li><strong>MOV</strong> (Margin of Victory) = average goal differential per game</li>
                         <li><strong>SOS</strong> (Strength of Schedule) = average SRS of opponents</li>
                     </ul>
-                    <p>An average team has an SRS of <strong>0.00</strong>. A team with SRS of +5.0 is 5 points per game better than average, accounting for who they've played.</p>
+                    <p>An average team has an SRS of <strong>0.00</strong>. A team with SRS of +1.0 scores about 1 more goal per game than average, accounting for who they've played.</p>
                 </div>
             </section>
         </div>
 
-        <!-- ═══ TAB 2: This Week's Predictions ═══ -->
+        <!-- ═══ TAB 2: Predictions ═══ -->
         <div id="tab-predictions" class="tab-content" style="display: none;">
             <section class="card">
-                <h2>This Week's Game Predictions</h2>
-                <p class="section-desc">SRS-based predictions for upcoming games. Predicted spread uses each team's SRS rating plus a 3-point home court advantage. Win probability is derived from a normal distribution with ~12 point standard deviation (calibrated to NBA variance).</p>
+                <h2>This Week's Match Predictions</h2>
+                <p class="section-desc">SRS-based predictions for upcoming matches. Predicted spread uses each team's SRS rating plus home advantage. Win probability is derived from a normal distribution calibrated to EPL variance (~1.2 goal standard deviation).</p>
             </section>
 
             <div id="predictions-empty" class="card" style="display: none;">
-                <p class="empty-state">No upcoming games found. Predictions will appear when the schedule is available.</p>
+                <p class="empty-state">No upcoming matches found. Predictions will appear when the schedule is available.</p>
             </div>
 
             <div id="predictions-list"></div>
@@ -121,13 +156,13 @@
         <div id="tab-simulation" class="tab-content" style="display: none;">
             <section class="card">
                 <h2>Monte Carlo Season Simulation</h2>
-                <p class="section-desc">Simulate the rest of the NBA season using SRS-derived win probabilities. Adjust standard error and number of simulations below.</p>
+                <p class="section-desc">Simulate the rest of the EPL season using SRS-derived win probabilities. Results show title, Champions League (top 4), Europa League (top 6), and relegation (bottom 3) odds.</p>
 
                 <div class="sim-controls">
                     <div class="sim-slider-group">
-                        <label for="slider-std-error">Standard Error: <strong id="std-error-value">12.0</strong></label>
-                        <input type="range" id="slider-std-error" min="4" max="20" step="0.5" value="12">
-                        <div class="slider-labels"><span>4</span><span>12</span><span>20</span></div>
+                        <label for="slider-std-error">Standard Error: <strong id="std-error-value">1.2</strong></label>
+                        <input type="range" id="slider-std-error" min="0.5" max="3" step="0.1" value="1.2">
+                        <div class="slider-labels"><span>0.5</span><span>1.2</span><span>3.0</span></div>
                     </div>
                     <div class="sim-slider-group">
                         <label for="slider-num-sims">Simulations: <strong id="num-sims-value">1,000</strong></label>
@@ -144,50 +179,25 @@
                 <p class="empty-state">No remaining schedule data available. Run the data pipeline to generate it.</p>
             </div>
 
-            <div id="sim-table-section" class="sim-conf-grid" style="display: none;">
+            <div id="sim-table-section" style="display: none;">
                 <section class="card">
-                    <h2>Eastern Conference</h2>
+                    <h2>Premier League Simulation Results</h2>
                     <div class="table-wrapper">
                         <table class="simulation-table">
                             <thead>
                                 <tr>
                                     <th class="num">#</th>
                                     <th>Team</th>
-                                    <th class="num">Current</th>
-                                    <th class="num">Proj. W-L</th>
-                                    <th class="num">Win SD</th>
-                                    <th class="num">Playoff%</th>
-                                    <th class="num">PO SD</th>
-                                    <th class="num">Play-In%</th>
-                                    <th class="num">PI SD</th>
-                                    <th class="num">Div. Win%</th>
-                                    <th class="num">DW SD</th>
+                                    <th class="num">Current Pts</th>
+                                    <th class="num">Proj. Pts</th>
+                                    <th class="num">Pts SD</th>
+                                    <th class="num">Title%</th>
+                                    <th class="num">Top 4%</th>
+                                    <th class="num">Top 6%</th>
+                                    <th class="num">Relegation%</th>
                                 </tr>
                             </thead>
-                            <tbody id="sim-body-east"></tbody>
-                        </table>
-                    </div>
-                </section>
-                <section class="card">
-                    <h2>Western Conference</h2>
-                    <div class="table-wrapper">
-                        <table class="simulation-table">
-                            <thead>
-                                <tr>
-                                    <th class="num">#</th>
-                                    <th>Team</th>
-                                    <th class="num">Current</th>
-                                    <th class="num">Proj. W-L</th>
-                                    <th class="num">Win SD</th>
-                                    <th class="num">Playoff%</th>
-                                    <th class="num">PO SD</th>
-                                    <th class="num">Play-In%</th>
-                                    <th class="num">PI SD</th>
-                                    <th class="num">Div. Win%</th>
-                                    <th class="num">DW SD</th>
-                                </tr>
-                            </thead>
-                            <tbody id="sim-body-west"></tbody>
+                            <tbody id="sim-body-epl"></tbody>
                         </table>
                     </div>
                 </section>
@@ -196,7 +206,7 @@
     </main>
 
     <footer>
-        <p>Data sourced from <a href="https://www.basketball-reference.com" target="_blank" rel="noopener">Basketball-Reference.com</a>. Updated daily.</p>
+        <p>Data sourced from <a href="https://www.football-data.org" target="_blank" rel="noopener">football-data.org</a>. Updated daily.</p>
         <p class="footer-note">SRS methodology based on the <a href="https://www.sports-reference.com/blog/2015/03/srs-calculation-details/" target="_blank" rel="noopener">Sports Reference SRS</a>.</p>
     </footer>
 
