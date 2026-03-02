@@ -16,3 +16,4 @@ env/
 *.swo
 *~
 .DS_Store
+site/data/srs_data.json
