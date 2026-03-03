@@ -31,6 +31,7 @@ jobs:
         run: python -m scripts.generate_site_data
         env:
           PYTHONUNBUFFERED: "1"
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }} 
 
       - name: Check for changes
         id: check_changes
