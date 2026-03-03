@@ -47,6 +47,7 @@
         document.getElementById("stat-rmse").textContent = stats.rmse.toFixed(2);
         // support both avg_ppg (old) and avg_gpg (new)
         var gpg = stats.avg_gpg || stats.avg_ppg || 0;
+        window._srsAvgGpg = gpg * 2;  // per-game total goals (gpg is per-team)
         document.getElementById("stat-ppg").textContent = gpg.toFixed(2);
         document.getElementById("stat-hca").textContent =
           (stats.home_advantage > 0 ? "+" : "") + stats.home_advantage.toFixed(2) + " goals";
@@ -353,6 +354,20 @@
           ? g.home_team + " -" + spreadAbs
           : g.away_team + " -" + spreadAbs;
 
+        // 跑模拟取众数
+        var avgGpg = (window._srsAvgGpg || 2.78);
+        var sim = simulateMatch(g.predicted_margin, avgGpg, 2000);
+        var verdictLabel = sim.verdict === "home"
+          ? "🏠 " + g.home_team + " 赢"
+          : sim.verdict === "away"
+          ? "✈️ " + g.away_team + " 赢"
+          : "🤝 平局";
+        var verdictClass = sim.verdict === "home" ? "verdict-home"
+          : sim.verdict === "away" ? "verdict-away" : "verdict-draw";
+        var hwPct = (sim.home_win * 100).toFixed(0);
+        var drPct = (sim.draw * 100).toFixed(0);
+        var awPct = (sim.away_win * 100).toFixed(0);
+
         // Format adjustment values with sign + color class
         function adjVal(v) {
           if (v === undefined) return "—";
@@ -385,6 +400,12 @@
 
         // ── Main prediction row ──
         html += '<div class="pred-main">';
+        html += '  <div class="verdict-badge ' + verdictClass + '">' + verdictLabel + '</div>';
+        html += '  <div class="verdict-dist">';
+        html += '    <span class="vd-home" style="width:' + hwPct + '%">' + hwPct + '%</span>';
+        html += '    <span class="vd-draw" style="width:' + drPct + '%">' + drPct + '%</span>';
+        html += '    <span class="vd-away" style="width:' + awPct + '%">' + awPct + '%</span>';
+        html += '  </div>';
         html += '  <div class="pred-teams">';
         html += '    <div class="pred-team-row">';
         html += '      <span class="pred-team-name">' + g.away_team + '</span>';
@@ -463,6 +484,38 @@
     details.style.display = isOpen ? "none" : "block";
     if (btn) btn.textContent = isOpen ? "▼ Details" : "▲ Details";
   };
+
+  // ── Per-match simulation (众数预测) ─────────────────────────────
+
+  function poissonRandom(lambda) {
+    var L = Math.exp(-lambda);
+    var k = 0, p = 1;
+    do { k++; p *= Math.random(); } while (p > L);
+    return k - 1;
+  }
+
+  function simulateMatch(predictedMargin, avgGoals, numSims) {
+    numSims = numSims || 2000;
+    avgGoals = avgGoals || 2.78;
+    var homeExp = Math.max(0.3, (avgGoals + predictedMargin) / 2);
+    var awayExp = Math.max(0.3, (avgGoals - predictedMargin) / 2);
+    var homeWins = 0, draws = 0, awayWins = 0;
+    for (var i = 0; i < numSims; i++) {
+      var hg = poissonRandom(homeExp);
+      var ag = poissonRandom(awayExp);
+      if (hg > ag) homeWins++;
+      else if (hg === ag) draws++;
+      else awayWins++;
+    }
+    return {
+      home_win: homeWins / numSims,
+      draw: draws / numSims,
+      away_win: awayWins / numSims,
+      verdict: homeWins >= draws && homeWins >= awayWins ? "home"
+               : awayWins >= draws && awayWins >= homeWins ? "away"
+               : "draw",
+    };
+  }
 
   // ── Simulation ─────────────────────────────────────────────
 
