@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-09T11:51:33Z",
+    "last_updated": "2026-03-10T11:48:47Z",
     "total_games": 291,
     "model_stats": {
       "rmse": 1.44,
@@ -498,25 +498,25 @@
       "away_team": "MCI",
       "home_srs": -0.65,
       "away_srs": 1.02,
-      "predicted_margin": -1.67,
-      "home_win_prob": 0.082,
+      "predicted_margin": -1.66,
+      "home_win_prob": 0.084,
       "favored": "MCI",
       "underdog": "WHU",
-      "spread": -1.67,
+      "spread": -1.66,
       "adjustments": {
         "srs_base": -1.67,
         "home_advantage": -0.0,
         "home_advantage_raw": 0.26,
         "form": -0.031,
         "rest": 0.0,
-        "injury": 0.036,
+        "injury": 0.046,
         "home_form": 0.27,
         "away_form": 0.58,
         "home_rest_days": 10,
         "away_rest_days": 10,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.68,
+        "home_injury_score": 0.6,
         "away_injury_score": 0.98,
         "home_injuries": [
           {
@@ -526,16 +526,22 @@
             "importance": 0.81
           },
           {
-            "name": "Pablo",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.34
+            "name": "Summerville",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.81
           },
           {
             "name": "F\u00fcllkrug",
             "status": "u",
             "miss_prob": 0.3,
             "importance": 0.32
+          },
+          {
+            "name": "Adama",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.23
           }
         ],
         "away_injuries": [
@@ -834,32 +840,44 @@
       "away_team": "TOT",
       "home_srs": 0.26,
       "away_srs": -0.2,
-      "predicted_margin": 1.46,
-      "home_win_prob": 0.888,
+      "predicted_margin": 1.42,
+      "home_win_prob": 0.882,
       "favored": "LIV",
       "underdog": "TOT",
-      "spread": -1.46,
+      "spread": -1.42,
       "adjustments": {
         "srs_base": 0.46,
         "home_advantage": 0.62,
         "home_advantage_raw": 0.26,
         "form": 0.096,
         "rest": 0.0,
-        "injury": 0.276,
+        "injury": 0.244,
         "home_form": -0.04,
         "away_form": -1.0,
         "home_rest_days": 12,
         "away_rest_days": 10,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.68,
+        "home_injury_score": 0.95,
         "away_injury_score": 2.98,
         "home_injuries": [
+          {
+            "name": "A.Becker",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.74
+          },
           {
             "name": "Isak",
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.62
+          },
+          {
+            "name": "Chiesa",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.34
           },
           {
             "name": "Luis D\u00edaz",
@@ -1243,6 +1261,81 @@
           },
           {
             "name": "B.Traore",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-03-20",
+      "date_parsed": "2026-03-20",
+      "home_team": "BOU",
+      "away_team": "MNU",
+      "home_srs": -0.09,
+      "away_srs": 0.34,
+      "predicted_margin": 0.31,
+      "home_win_prob": 0.601,
+      "favored": "BOU",
+      "underdog": "MNU",
+      "spread": -0.31,
+      "adjustments": {
+        "srs_base": -0.43,
+        "home_advantage": 0.76,
+        "home_advantage_raw": 0.26,
+        "form": 0.01,
+        "rest": 0.0,
+        "injury": -0.03,
+        "home_form": 0.11,
+        "away_form": 0.01,
+        "home_rest_days": 17,
+        "away_rest_days": 16,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.55,
+        "away_injury_score": 0.3,
+        "home_injuries": [
+          {
+            "name": "Kluivert",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.49
+          },
+          {
+            "name": "Zabarnyi",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Sinisterra",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Mount",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.42
+          },
+          {
+            "name": "Rashford",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Antony",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "H\u00f8jlund",
             "status": "u",
             "miss_prob": 0.3,
             "importance": 0.1
