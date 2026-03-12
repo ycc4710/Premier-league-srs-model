@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-11T11:48:46Z",
+    "last_updated": "2026-03-12T11:43:54Z",
     "total_games": 291,
     "model_stats": {
       "rmse": 1.44,
@@ -399,39 +399,27 @@
       "away_team": "EVE",
       "home_srs": 1.18,
       "away_srs": -0.04,
-      "predicted_margin": 1.89,
-      "home_win_prob": 0.943,
+      "predicted_margin": 1.99,
+      "home_win_prob": 0.951,
       "favored": "ARS",
       "underdog": "EVE",
-      "spread": -1.89,
+      "spread": -1.99,
       "adjustments": {
         "srs_base": 1.22,
         "home_advantage": 0.71,
         "home_advantage_raw": 0.26,
         "form": 0.039,
         "rest": 0.0,
-        "injury": -0.075,
+        "injury": 0.019,
         "home_form": 0.82,
         "away_form": 0.43,
         "home_rest_days": 10,
         "away_rest_days": 11,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.72,
+        "home_injury_score": 0.94,
         "away_injury_score": 1.1,
         "home_injuries": [
-          {
-            "name": "White",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.63
-          },
-          {
-            "name": "Calafiori",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.6
-          },
           {
             "name": "Trossard",
             "status": "d",
@@ -963,18 +951,18 @@
       "away_team": "AVL",
       "home_srs": 0.34,
       "away_srs": 0.19,
-      "predicted_margin": 1.04,
-      "home_win_prob": 0.806,
+      "predicted_margin": 0.94,
+      "home_win_prob": 0.783,
       "favored": "MNU",
       "underdog": "AVL",
-      "spread": -1.04,
+      "spread": -0.94,
       "adjustments": {
         "srs_base": 0.15,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.26,
         "form": 0.056,
         "rest": 0.0,
-        "injury": 0.201,
+        "injury": 0.103,
         "home_form": 0.01,
         "away_form": -0.56,
         "home_rest_days": 11,
@@ -982,7 +970,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.3,
-        "away_injury_score": 1.98,
+        "away_injury_score": 1.16,
         "home_injuries": [
           {
             "name": "Mount",
@@ -1011,12 +999,6 @@
         ],
         "away_injuries": [
           {
-            "name": "McGinn",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.71
-          },
-          {
             "name": "Tielemans",
             "status": "i",
             "miss_prob": 1.0,
@@ -1036,8 +1018,8 @@
           },
           {
             "name": "Elliott",
-            "status": "i",
-            "miss_prob": 1.0,
+            "status": "d",
+            "miss_prob": 0.5,
             "importance": 0.22
           },
           {
@@ -1068,25 +1050,25 @@
       "away_team": "FUL",
       "home_srs": -0.48,
       "away_srs": -0.08,
-      "predicted_margin": -0.24,
-      "home_win_prob": 0.42,
+      "predicted_margin": -0.26,
+      "home_win_prob": 0.415,
       "favored": "FUL",
       "underdog": "NFO",
-      "spread": -0.24,
+      "spread": -0.26,
       "adjustments": {
         "srs_base": -0.4,
         "home_advantage": 0.2,
         "home_advantage_raw": 0.26,
         "form": -0.017,
         "rest": 0.0,
-        "injury": -0.025,
+        "injury": -0.039,
         "home_form": -0.43,
         "away_form": -0.26,
         "home_rest_days": 11,
         "away_rest_days": 11,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.85,
+        "home_injury_score": 0.97,
         "away_injury_score": 0.65,
         "home_injuries": [
           {
@@ -1094,6 +1076,12 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.69
+          },
+          {
+            "name": "Ndoye",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.49
           },
           {
             "name": "Jota",
@@ -1143,10 +1131,10 @@
       "away_team": "LEE",
       "home_srs": -0.11,
       "away_srs": -0.28,
-      "predicted_margin": -0.02,
-      "home_win_prob": 0.492,
-      "favored": "LEE",
-      "underdog": "CRY",
+      "predicted_margin": 0.02,
+      "home_win_prob": 0.506,
+      "favored": "CRY",
+      "underdog": "LEE",
       "spread": -0.02,
       "adjustments": {
         "srs_base": 0.17,
@@ -1154,14 +1142,14 @@
         "home_advantage_raw": 0.26,
         "form": 0.091,
         "rest": 0.0,
-        "injury": -0.069,
+        "injury": -0.026,
         "home_form": 0.32,
         "away_form": -0.59,
         "home_rest_days": 10,
         "away_rest_days": 12,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.03,
+        "home_injury_score": 0.67,
         "away_injury_score": 0.45,
         "home_injuries": [
           {
@@ -1169,12 +1157,6 @@
             "status": "d",
             "miss_prob": 0.25,
             "importance": 1.0
-          },
-          {
-            "name": "Mateta",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.71
           },
           {
             "name": "Nketiah",
@@ -1651,6 +1633,303 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "date_parsed": "2026-03-22",
+      "home_team": "AVL",
+      "away_team": "WHU",
+      "home_srs": 0.19,
+      "away_srs": -0.65,
+      "predicted_margin": 1.1,
+      "home_win_prob": 0.82,
+      "favored": "AVL",
+      "underdog": "WHU",
+      "spread": -1.1,
+      "adjustments": {
+        "srs_base": 0.84,
+        "home_advantage": 0.41,
+        "home_advantage_raw": 0.26,
+        "form": -0.083,
+        "rest": 0.0,
+        "injury": -0.067,
+        "home_form": -0.56,
+        "away_form": 0.27,
+        "home_rest_days": 18,
+        "away_rest_days": 18,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.16,
+        "away_injury_score": 0.6,
+        "home_injuries": [
+          {
+            "name": "Tielemans",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.69
+          },
+          {
+            "name": "Malen",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.58
+          },
+          {
+            "name": "Sancho",
+            "status": "n",
+            "miss_prob": 0.3,
+            "importance": 0.31
+          },
+          {
+            "name": "Elliott",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.22
+          },
+          {
+            "name": "Iling Jr",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Barrenechea",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Dobbin",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "L.Paquet\u00e1",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.81
+          },
+          {
+            "name": "Summerville",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.81
+          },
+          {
+            "name": "F\u00fcllkrug",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.32
+          },
+          {
+            "name": "Adama",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.23
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "date_parsed": "2026-03-22",
+      "home_team": "NEW",
+      "away_team": "SUN",
+      "home_srs": -0.04,
+      "away_srs": -0.12,
+      "predicted_margin": 0.54,
+      "home_win_prob": 0.672,
+      "favored": "NEW",
+      "underdog": "SUN",
+      "spread": -0.54,
+      "adjustments": {
+        "srs_base": 0.08,
+        "home_advantage": 0.52,
+        "home_advantage_raw": 0.26,
+        "form": 0.004,
+        "rest": 0.0,
+        "injury": -0.064,
+        "home_form": 0.09,
+        "away_form": 0.05,
+        "home_rest_days": 18,
+        "away_rest_days": 19,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.55,
+        "away_injury_score": 1.02,
+        "home_injuries": [
+          {
+            "name": "Bruno G.",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 1.0
+          },
+          {
+            "name": "Sch\u00e4r",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.55
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Brobbey",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.74
+          },
+          {
+            "name": "Traor\u00e9",
+            "status": "d",
+            "miss_prob": 0.75,
+            "importance": 0.66
+          },
+          {
+            "name": "Roberts",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.26
+          },
+          {
+            "name": "Jocelin.T",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.26
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "date_parsed": "2026-03-22",
+      "home_team": "TOT",
+      "away_team": "NFO",
+      "home_srs": -0.2,
+      "away_srs": -0.48,
+      "predicted_margin": -0.32,
+      "home_win_prob": 0.394,
+      "favored": "NFO",
+      "underdog": "TOT",
+      "spread": -0.32,
+      "adjustments": {
+        "srs_base": 0.28,
+        "home_advantage": -0.25,
+        "home_advantage_raw": 0.26,
+        "form": -0.057,
+        "rest": 0.0,
+        "injury": -0.296,
+        "home_form": -1.0,
+        "away_form": -0.43,
+        "home_rest_days": 17,
+        "away_rest_days": 18,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 3.44,
+        "away_injury_score": 0.97,
+        "home_injuries": [
+          {
+            "name": "Romero",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 1.0
+          },
+          {
+            "name": "Kudus",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.93
+          },
+          {
+            "name": "J.Palhinha",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.86
+          },
+          {
+            "name": "Bentancur",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.76
+          },
+          {
+            "name": "Bergvall",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.55
+          },
+          {
+            "name": "Odobert",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.45
+          },
+          {
+            "name": "Son",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Maddison",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.1
+          },
+          {
+            "name": "Kulusevski",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.1
+          },
+          {
+            "name": "Solomon",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Moore",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Wood",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.69
+          },
+          {
+            "name": "Ndoye",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.49
+          },
+          {
+            "name": "Jota",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.22
+          },
+          {
+            "name": "Kalimuendo",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.22
+          },
+          {
+            "name": "O'Brien",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
           }
         ]
       }
