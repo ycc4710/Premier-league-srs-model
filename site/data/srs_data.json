@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-12T11:43:54Z",
+    "last_updated": "2026-03-13T11:45:59Z",
     "total_games": 291,
     "model_stats": {
       "rmse": 1.44,
@@ -399,18 +399,18 @@
       "away_team": "EVE",
       "home_srs": 1.18,
       "away_srs": -0.04,
-      "predicted_margin": 1.99,
-      "home_win_prob": 0.951,
+      "predicted_margin": 1.98,
+      "home_win_prob": 0.95,
       "favored": "ARS",
       "underdog": "EVE",
-      "spread": -1.99,
+      "spread": -1.98,
       "adjustments": {
         "srs_base": 1.22,
         "home_advantage": 0.71,
         "home_advantage_raw": 0.26,
         "form": 0.039,
         "rest": 0.0,
-        "injury": 0.019,
+        "injury": 0.009,
         "home_form": 0.82,
         "away_form": 0.43,
         "home_rest_days": 10,
@@ -418,7 +418,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.94,
-        "away_injury_score": 1.1,
+        "away_injury_score": 1.02,
         "home_injuries": [
           {
             "name": "Trossard",
@@ -466,8 +466,8 @@
           },
           {
             "name": "Alcaraz",
-            "status": "i",
-            "miss_prob": 1.0,
+            "status": "d",
+            "miss_prob": 0.75,
             "importance": 0.31
           }
         ]
@@ -480,25 +480,25 @@
       "away_team": "MCI",
       "home_srs": -0.65,
       "away_srs": 1.02,
-      "predicted_margin": -1.66,
-      "home_win_prob": 0.084,
+      "predicted_margin": -1.73,
+      "home_win_prob": 0.075,
       "favored": "MCI",
       "underdog": "WHU",
-      "spread": -1.66,
+      "spread": -1.73,
       "adjustments": {
         "srs_base": -1.67,
         "home_advantage": -0.0,
         "home_advantage_raw": 0.26,
         "form": -0.031,
         "rest": 0.0,
-        "injury": 0.046,
+        "injury": -0.027,
         "home_form": 0.27,
         "away_form": 0.58,
         "home_rest_days": 10,
         "away_rest_days": 10,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.6,
+        "home_injury_score": 1.21,
         "away_injury_score": 0.98,
         "home_injuries": [
           {
@@ -509,8 +509,8 @@
           },
           {
             "name": "Summerville",
-            "status": "d",
-            "miss_prob": 0.25,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.81
           },
           {
@@ -579,25 +579,25 @@
       "away_team": "BHA",
       "home_srs": -0.12,
       "away_srs": 0.1,
-      "predicted_margin": 0.93,
-      "home_win_prob": 0.781,
+      "predicted_margin": 0.91,
+      "home_win_prob": 0.776,
       "favored": "SUN",
       "underdog": "BHA",
-      "spread": -0.93,
+      "spread": -0.91,
       "adjustments": {
         "srs_base": -0.22,
         "home_advantage": 1.14,
         "home_advantage_raw": 0.26,
         "form": 0.041,
         "rest": 0.0,
-        "injury": -0.024,
+        "injury": -0.043,
         "home_form": 0.05,
         "away_form": -0.36,
         "home_rest_days": 11,
         "away_rest_days": 10,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.02,
+        "home_injury_score": 1.18,
         "away_injury_score": 0.82,
         "home_injuries": [
           {
@@ -608,8 +608,8 @@
           },
           {
             "name": "Traor\u00e9",
-            "status": "d",
-            "miss_prob": 0.75,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.66
           },
           {
@@ -747,25 +747,25 @@
       "away_team": "BOU",
       "home_srs": -0.86,
       "away_srs": -0.09,
-      "predicted_margin": -0.33,
-      "home_win_prob": 0.393,
+      "predicted_margin": -0.31,
+      "home_win_prob": 0.398,
       "favored": "BOU",
       "underdog": "BUR",
-      "spread": -0.33,
+      "spread": -0.31,
       "adjustments": {
         "srs_base": -0.77,
         "home_advantage": 0.52,
         "home_advantage_raw": 0.26,
         "form": -0.073,
         "rest": 0.0,
-        "injury": -0.0,
+        "injury": 0.016,
         "home_form": -0.62,
         "away_form": 0.11,
         "home_rest_days": 11,
         "away_rest_days": 11,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.55,
+        "home_injury_score": 0.41,
         "away_injury_score": 0.55,
         "home_injuries": [
           {
@@ -777,7 +777,7 @@
           {
             "name": "Broja",
             "status": "d",
-            "miss_prob": 0.5,
+            "miss_prob": 0.25,
             "importance": 0.56
           },
           {
@@ -951,18 +951,18 @@
       "away_team": "AVL",
       "home_srs": 0.34,
       "away_srs": 0.19,
-      "predicted_margin": 0.94,
-      "home_win_prob": 0.783,
+      "predicted_margin": 0.92,
+      "home_win_prob": 0.779,
       "favored": "MNU",
       "underdog": "AVL",
-      "spread": -0.94,
+      "spread": -0.92,
       "adjustments": {
         "srs_base": 0.15,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.26,
         "form": 0.056,
         "rest": 0.0,
-        "injury": 0.103,
+        "injury": 0.089,
         "home_form": 0.01,
         "away_form": -0.56,
         "home_rest_days": 11,
@@ -970,7 +970,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.3,
-        "away_injury_score": 1.16,
+        "away_injury_score": 1.05,
         "home_injuries": [
           {
             "name": "Mount",
@@ -1015,12 +1015,6 @@
             "status": "n",
             "miss_prob": 0.3,
             "importance": 0.31
-          },
-          {
-            "name": "Elliott",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.22
           },
           {
             "name": "Iling Jr",
@@ -1338,18 +1332,18 @@
       "away_team": "BUR",
       "home_srs": -0.08,
       "away_srs": -0.86,
-      "predicted_margin": 1.61,
-      "home_win_prob": 0.911,
+      "predicted_margin": 1.6,
+      "home_win_prob": 0.908,
       "favored": "FUL",
       "underdog": "BUR",
-      "spread": -1.61,
+      "spread": -1.6,
       "adjustments": {
         "srs_base": 0.78,
         "home_advantage": 0.81,
         "home_advantage_raw": 0.26,
         "form": 0.037,
         "rest": 0.0,
-        "injury": -0.011,
+        "injury": -0.028,
         "home_form": -0.26,
         "away_form": -0.62,
         "home_rest_days": 17,
@@ -1357,7 +1351,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.65,
-        "away_injury_score": 0.55,
+        "away_injury_score": 0.41,
         "home_injuries": [
           {
             "name": "Wilson",
@@ -1388,7 +1382,7 @@
           {
             "name": "Broja",
             "status": "d",
-            "miss_prob": 0.5,
+            "miss_prob": 0.25,
             "importance": 0.56
           },
           {
@@ -1413,25 +1407,25 @@
       "away_team": "CHE",
       "home_srs": -0.04,
       "away_srs": 0.59,
-      "predicted_margin": -0.76,
-      "home_win_prob": 0.264,
+      "predicted_margin": -0.75,
+      "home_win_prob": 0.267,
       "favored": "CHE",
       "underdog": "EVE",
-      "spread": -0.76,
+      "spread": -0.75,
       "adjustments": {
         "srs_base": -0.63,
         "home_advantage": -0.07,
         "home_advantage_raw": 0.26,
         "form": 0.018,
         "rest": 0.0,
-        "injury": -0.075,
+        "injury": -0.066,
         "home_form": 0.43,
         "away_form": 0.25,
         "home_rest_days": 18,
         "away_rest_days": 17,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.1,
+        "home_injury_score": 1.02,
         "away_injury_score": 0.47,
         "home_injuries": [
           {
@@ -1442,8 +1436,8 @@
           },
           {
             "name": "Alcaraz",
-            "status": "i",
-            "miss_prob": 1.0,
+            "status": "d",
+            "miss_prob": 0.75,
             "importance": 0.31
           }
         ],
@@ -1644,26 +1638,26 @@
       "away_team": "WHU",
       "home_srs": 0.19,
       "away_srs": -0.65,
-      "predicted_margin": 1.1,
-      "home_win_prob": 0.82,
+      "predicted_margin": 1.18,
+      "home_win_prob": 0.838,
       "favored": "AVL",
       "underdog": "WHU",
-      "spread": -1.1,
+      "spread": -1.18,
       "adjustments": {
         "srs_base": 0.84,
         "home_advantage": 0.41,
         "home_advantage_raw": 0.26,
         "form": -0.083,
         "rest": 0.0,
-        "injury": -0.067,
+        "injury": 0.019,
         "home_form": -0.56,
         "away_form": 0.27,
         "home_rest_days": 18,
         "away_rest_days": 18,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.16,
-        "away_injury_score": 0.6,
+        "home_injury_score": 1.05,
+        "away_injury_score": 1.21,
         "home_injuries": [
           {
             "name": "Tielemans",
@@ -1682,12 +1676,6 @@
             "status": "n",
             "miss_prob": 0.3,
             "importance": 0.31
-          },
-          {
-            "name": "Elliott",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.22
           },
           {
             "name": "Iling Jr",
@@ -1717,8 +1705,8 @@
           },
           {
             "name": "Summerville",
-            "status": "d",
-            "miss_prob": 0.25,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.81
           },
           {
@@ -1743,18 +1731,18 @@
       "away_team": "SUN",
       "home_srs": -0.04,
       "away_srs": -0.12,
-      "predicted_margin": 0.54,
-      "home_win_prob": 0.672,
+      "predicted_margin": 0.55,
+      "home_win_prob": 0.678,
       "favored": "NEW",
       "underdog": "SUN",
-      "spread": -0.54,
+      "spread": -0.55,
       "adjustments": {
         "srs_base": 0.08,
         "home_advantage": 0.52,
         "home_advantage_raw": 0.26,
         "form": 0.004,
         "rest": 0.0,
-        "injury": -0.064,
+        "injury": -0.044,
         "home_form": 0.09,
         "away_form": 0.05,
         "home_rest_days": 18,
@@ -1762,7 +1750,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 1.55,
-        "away_injury_score": 1.02,
+        "away_injury_score": 1.18,
         "home_injuries": [
           {
             "name": "Bruno G.",
@@ -1786,8 +1774,8 @@
           },
           {
             "name": "Traor\u00e9",
-            "status": "d",
-            "miss_prob": 0.75,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.66
           },
           {
