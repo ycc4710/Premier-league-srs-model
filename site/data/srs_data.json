@@ -1,11 +1,11 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-16T12:03:16Z",
-    "total_games": 300,
+    "last_updated": "2026-03-17T11:59:11Z",
+    "total_games": 301,
     "model_stats": {
       "rmse": 1.43,
-      "avg_gpg": 1.36,
+      "avg_gpg": 1.37,
       "home_advantage": 0.26
     }
   },
@@ -77,7 +77,7 @@
       "draws": 9,
       "losses": 6,
       "win_pct": 0.5,
-      "srs": 0.4,
+      "srs": 0.41,
       "mov": 0.43,
       "sos": -0.03,
       "games_played": 30,
@@ -106,25 +106,6 @@
       "home_games": 15
     },
     {
-      "abbreviation": "BRE",
-      "name": "Brentford FC",
-      "team_id": "brentford",
-      "conference": "EPL",
-      "division": "London",
-      "wins": 13,
-      "draws": 5,
-      "losses": 11,
-      "win_pct": 0.448,
-      "srs": 0.14,
-      "mov": 0.14,
-      "sos": 0.0,
-      "games_played": 29,
-      "srs_rank": 6,
-      "standings_rank": 7,
-      "home_advantage": 0.761,
-      "home_games": 14
-    },
-    {
       "abbreviation": "AVL",
       "name": "Aston Villa FC",
       "team_id": "aston_villa",
@@ -138,7 +119,7 @@
       "mov": 0.1,
       "sos": 0.03,
       "games_played": 30,
-      "srs_rank": 7,
+      "srs_rank": 6,
       "standings_rank": 4,
       "home_advantage": 0.503,
       "home_games": 15
@@ -157,9 +138,28 @@
       "mov": 0.1,
       "sos": 0.02,
       "games_played": 30,
-      "srs_rank": 8,
+      "srs_rank": 7,
       "standings_rank": 12,
       "home_advantage": 0.503,
+      "home_games": 15
+    },
+    {
+      "abbreviation": "BRE",
+      "name": "Brentford FC",
+      "team_id": "brentford",
+      "conference": "EPL",
+      "division": "London",
+      "wins": 13,
+      "draws": 6,
+      "losses": 11,
+      "win_pct": 0.433,
+      "srs": 0.11,
+      "mov": 0.13,
+      "sos": -0.02,
+      "games_played": 30,
+      "srs_rank": 8,
+      "standings_rank": 7,
+      "home_advantage": 0.741,
       "home_games": 15
     },
     {
@@ -362,7 +362,7 @@
       "draws": 8,
       "losses": 18,
       "win_pct": 0.133,
-      "srs": -0.83,
+      "srs": -0.84,
       "mov": -0.87,
       "sos": 0.03,
       "games_played": 30,
@@ -378,97 +378,34 @@
       "conference": "EPL",
       "division": "Midlands",
       "wins": 3,
-      "draws": 7,
+      "draws": 8,
       "losses": 20,
-      "win_pct": 0.1,
-      "srs": -0.88,
-      "mov": -1.0,
+      "win_pct": 0.097,
+      "srs": -0.85,
+      "mov": -0.97,
       "sos": 0.12,
-      "games_played": 30,
+      "games_played": 31,
       "srs_rank": 20,
       "standings_rank": 20,
-      "home_advantage": 0.265,
+      "home_advantage": 0.211,
       "home_games": 16
     }
   ],
   "predictions": [
-    {
-      "date": "2026-03-16",
-      "date_parsed": "2026-03-16",
-      "home_team": "BRE",
-      "away_team": "WOL",
-      "home_srs": 0.14,
-      "away_srs": -0.88,
-      "predicted_margin": 1.77,
-      "home_win_prob": 0.93,
-      "favored": "BRE",
-      "underdog": "WOL",
-      "spread": -1.77,
-      "adjustments": {
-        "srs_base": 1.02,
-        "home_advantage": 0.76,
-        "home_advantage_raw": 0.26,
-        "form": -0.04,
-        "rest": 0.0,
-        "injury": 0.033,
-        "home_form": 0.12,
-        "away_form": 0.52,
-        "home_rest_days": 13,
-        "away_rest_days": 13,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.2,
-        "away_injury_score": 0.48,
-        "home_injuries": [
-          {
-            "name": "Milambo",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.2
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Munetsi",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.97
-          },
-          {
-            "name": "Fer L\u00f3pez",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.43
-          },
-          {
-            "name": "Guedes",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "B.Traore",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
     {
       "date": "2026-03-20",
       "date_parsed": "2026-03-20",
       "home_team": "BOU",
       "away_team": "MNU",
       "home_srs": -0.11,
-      "away_srs": 0.4,
-      "predicted_margin": 0.15,
-      "home_win_prob": 0.548,
+      "away_srs": 0.41,
+      "predicted_margin": 0.14,
+      "home_win_prob": 0.545,
       "favored": "BOU",
       "underdog": "MNU",
-      "spread": -0.15,
+      "spread": -0.14,
       "adjustments": {
-        "srs_base": -0.51,
+        "srs_base": -0.52,
         "home_advantage": 0.74,
         "home_advantage_raw": 0.26,
         "form": -0.039,
@@ -530,14 +467,14 @@
       "home_team": "FUL",
       "away_team": "BUR",
       "home_srs": -0.09,
-      "away_srs": -0.83,
-      "predicted_margin": 1.49,
-      "home_win_prob": 0.893,
+      "away_srs": -0.84,
+      "predicted_margin": 1.5,
+      "home_win_prob": 0.895,
       "favored": "FUL",
       "underdog": "BUR",
-      "spread": -1.49,
+      "spread": -1.5,
       "adjustments": {
-        "srs_base": 0.74,
+        "srs_base": 0.75,
         "home_advantage": 0.79,
         "home_advantage_raw": 0.26,
         "form": 0.023,
@@ -594,18 +531,18 @@
       "away_team": "CHE",
       "home_srs": -0.06,
       "away_srs": 0.53,
-      "predicted_margin": -0.64,
-      "home_win_prob": 0.297,
+      "predicted_margin": -0.6,
+      "home_win_prob": 0.308,
       "favored": "CHE",
       "underdog": "EVE",
-      "spread": -0.64,
+      "spread": -0.6,
       "adjustments": {
         "srs_base": -0.59,
         "home_advantage": 0.03,
         "home_advantage_raw": 0.26,
         "form": -0.0,
         "rest": 0.0,
-        "injury": -0.076,
+        "injury": -0.039,
         "home_form": -0.39,
         "away_form": -0.39,
         "home_rest_days": 7,
@@ -613,7 +550,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 1.04,
-        "away_injury_score": 0.4,
+        "away_injury_score": 0.72,
         "home_injuries": [
           {
             "name": "Grealish",
@@ -630,10 +567,10 @@
         ],
         "away_injuries": [
           {
-            "name": "Est\u00eav\u00e3o",
+            "name": "James",
             "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.54
+            "miss_prob": 0.75,
+            "importance": 0.78
           },
           {
             "name": "Gittens",
@@ -663,16 +600,16 @@
       "away_team": "LIV",
       "home_srs": 0.12,
       "away_srs": 0.25,
-      "predicted_margin": 0.36,
-      "home_win_prob": 0.619,
+      "predicted_margin": 0.37,
+      "home_win_prob": 0.62,
       "favored": "BHA",
       "underdog": "LIV",
-      "spread": -0.36,
+      "spread": -0.37,
       "adjustments": {
         "srs_base": -0.13,
         "home_advantage": 0.5,
         "home_advantage_raw": 0.26,
-        "form": 0.015,
+        "form": 0.016,
         "rest": 0.006,
         "injury": -0.029,
         "home_form": 0.3,
@@ -755,25 +692,25 @@
       "home_team": "LEE",
       "away_team": "BRE",
       "home_srs": -0.28,
-      "away_srs": 0.14,
-      "predicted_margin": 0.26,
-      "home_win_prob": 0.585,
+      "away_srs": 0.11,
+      "predicted_margin": 0.31,
+      "home_win_prob": 0.602,
       "favored": "LEE",
       "underdog": "BRE",
-      "spread": -0.26,
+      "spread": -0.31,
       "adjustments": {
-        "srs_base": -0.42,
+        "srs_base": -0.39,
         "home_advantage": 0.79,
         "home_advantage_raw": 0.26,
-        "form": -0.05,
-        "rest": -0.006,
-        "injury": -0.054,
+        "form": -0.039,
+        "rest": 0.006,
+        "injury": -0.055,
         "home_form": -0.38,
-        "away_form": 0.12,
+        "away_form": 0.01,
         "home_rest_days": 6,
-        "away_rest_days": 18,
+        "away_rest_days": 5,
         "home_rest_score": 0.9,
-        "away_rest_score": 1.0,
+        "away_rest_score": 0.8,
         "home_injury_score": 0.66,
         "away_injury_score": 0.2,
         "home_injuries": [
@@ -1106,10 +1043,6 @@
   ],
   "simulation": {
     "remaining_games": [
-      {
-        "home_team": "BRE",
-        "away_team": "WOL"
-      },
       {
         "home_team": "BOU",
         "away_team": "MNU"
@@ -1458,9 +1391,9 @@
       },
       "BRE": {
         "wins": 13,
-        "draws": 5,
+        "draws": 6,
         "losses": 11,
-        "points": 44,
+        "points": 45,
         "conference": "EPL",
         "division": "London"
       },
@@ -1578,9 +1511,9 @@
       },
       "WOL": {
         "wins": 3,
-        "draws": 7,
+        "draws": 8,
         "losses": 20,
-        "points": 16,
+        "points": 17,
         "conference": "EPL",
         "division": "Midlands"
       }
