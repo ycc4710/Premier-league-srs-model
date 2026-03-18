@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-17T11:59:11Z",
+    "last_updated": "2026-03-18T12:04:29Z",
     "total_games": 301,
     "model_stats": {
       "rmse": 1.43,
@@ -531,27 +531,33 @@
       "away_team": "CHE",
       "home_srs": -0.06,
       "away_srs": 0.53,
-      "predicted_margin": -0.6,
-      "home_win_prob": 0.308,
+      "predicted_margin": -0.61,
+      "home_win_prob": 0.307,
       "favored": "CHE",
       "underdog": "EVE",
-      "spread": -0.6,
+      "spread": -0.61,
       "adjustments": {
         "srs_base": -0.59,
         "home_advantage": 0.03,
         "home_advantage_raw": 0.26,
         "form": -0.0,
         "rest": 0.0,
-        "injury": -0.039,
+        "injury": -0.042,
         "home_form": -0.39,
         "away_form": -0.39,
         "home_rest_days": 7,
         "away_rest_days": 7,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.04,
-        "away_injury_score": 0.72,
+        "home_injury_score": 1.27,
+        "away_injury_score": 0.93,
         "home_injuries": [
+          {
+            "name": "Tarkowski",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.94
+          },
           {
             "name": "Grealish",
             "status": "i",
@@ -566,6 +572,12 @@
           }
         ],
         "away_injuries": [
+          {
+            "name": "Chalobah",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.83
+          },
           {
             "name": "James",
             "status": "d",
@@ -912,33 +924,27 @@
       "away_team": "NFO",
       "home_srs": -0.19,
       "away_srs": -0.46,
-      "predicted_margin": -0.38,
-      "home_win_prob": 0.376,
+      "predicted_margin": -0.3,
+      "home_win_prob": 0.403,
       "favored": "NFO",
       "underdog": "TOT",
-      "spread": -0.38,
+      "spread": -0.3,
       "adjustments": {
         "srs_base": 0.27,
         "home_advantage": -0.26,
         "home_advantage_raw": 0.26,
         "form": -0.03,
         "rest": 0.0,
-        "injury": -0.36,
+        "injury": -0.276,
         "home_form": -0.56,
         "away_form": -0.26,
         "home_rest_days": 7,
         "away_rest_days": 7,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 4.43,
+        "home_injury_score": 3.17,
         "away_injury_score": 0.87,
         "home_injuries": [
-          {
-            "name": "Romero",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 1.0
-          },
           {
             "name": "Kudus",
             "status": "i",
@@ -948,7 +954,7 @@
           {
             "name": "J.Palhinha",
             "status": "d",
-            "miss_prob": 0.5,
+            "miss_prob": 0.25,
             "importance": 0.86
           },
           {
@@ -962,12 +968,6 @@
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.57
-          },
-          {
-            "name": "Bergvall",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.55
           },
           {
             "name": "Odobert",
