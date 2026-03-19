@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-18T12:04:29Z",
+    "last_updated": "2026-03-19T11:52:34Z",
     "total_games": 301,
     "model_stats": {
       "rmse": 1.43,
@@ -612,18 +612,18 @@
       "away_team": "LIV",
       "home_srs": 0.12,
       "away_srs": 0.25,
-      "predicted_margin": 0.37,
-      "home_win_prob": 0.62,
+      "predicted_margin": 0.39,
+      "home_win_prob": 0.629,
       "favored": "BHA",
       "underdog": "LIV",
-      "spread": -0.37,
+      "spread": -0.39,
       "adjustments": {
         "srs_base": -0.13,
         "home_advantage": 0.5,
         "home_advantage_raw": 0.26,
         "form": 0.016,
         "rest": 0.006,
-        "injury": -0.029,
+        "injury": -0.001,
         "home_form": 0.3,
         "away_form": 0.14,
         "home_rest_days": 7,
@@ -631,7 +631,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 0.9,
         "home_injury_score": 0.94,
-        "away_injury_score": 0.69,
+        "away_injury_score": 0.93,
         "home_injuries": [
           {
             "name": "Mitoma",
@@ -677,6 +677,12 @@
           }
         ],
         "away_injuries": [
+          {
+            "name": "M.Salah",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.96
+          },
           {
             "name": "Isak",
             "status": "i",
@@ -849,25 +855,25 @@
       "away_team": "SUN",
       "home_srs": 0.01,
       "away_srs": -0.14,
-      "predicted_margin": 0.72,
-      "home_win_prob": 0.725,
+      "predicted_margin": 0.71,
+      "home_win_prob": 0.722,
       "favored": "NEW",
       "underdog": "SUN",
-      "spread": -0.72,
+      "spread": -0.71,
       "adjustments": {
         "srs_base": 0.15,
         "home_advantage": 0.46,
         "home_advantage_raw": 0.26,
         "form": 0.093,
         "rest": 0.0,
-        "injury": 0.021,
+        "injury": 0.008,
         "home_form": 0.49,
         "away_form": -0.44,
         "home_rest_days": 8,
         "away_rest_days": 8,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.55,
+        "home_injury_score": 1.66,
         "away_injury_score": 1.72,
         "home_injuries": [
           {
@@ -881,6 +887,12 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.55
+          },
+          {
+            "name": "Tonali",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.41
           }
         ],
         "away_injuries": [
@@ -925,7 +937,7 @@
       "home_srs": -0.19,
       "away_srs": -0.46,
       "predicted_margin": -0.3,
-      "home_win_prob": 0.403,
+      "home_win_prob": 0.401,
       "favored": "NFO",
       "underdog": "TOT",
       "spread": -0.3,
@@ -935,14 +947,14 @@
         "home_advantage_raw": 0.26,
         "form": -0.03,
         "rest": 0.0,
-        "injury": -0.276,
+        "injury": -0.28,
         "home_form": -0.56,
         "away_form": -0.26,
         "home_rest_days": 7,
         "away_rest_days": 7,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 3.17,
+        "home_injury_score": 3.21,
         "away_injury_score": 0.87,
         "home_injuries": [
           {
@@ -964,10 +976,10 @@
             "importance": 0.76
           },
           {
-            "name": "Gallagher",
+            "name": "Solanke",
             "status": "d",
             "miss_prob": 0.25,
-            "importance": 0.57
+            "importance": 0.71
           },
           {
             "name": "Odobert",
