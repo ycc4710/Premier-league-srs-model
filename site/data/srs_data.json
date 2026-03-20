@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-19T11:52:34Z",
+    "last_updated": "2026-03-20T11:46:12Z",
     "total_games": 301,
     "model_stats": {
       "rmse": 1.43,
@@ -531,18 +531,18 @@
       "away_team": "CHE",
       "home_srs": -0.06,
       "away_srs": 0.53,
-      "predicted_margin": -0.61,
-      "home_win_prob": 0.307,
+      "predicted_margin": -0.51,
+      "home_win_prob": 0.336,
       "favored": "CHE",
       "underdog": "EVE",
-      "spread": -0.61,
+      "spread": -0.51,
       "adjustments": {
         "srs_base": -0.59,
         "home_advantage": 0.03,
         "home_advantage_raw": 0.26,
         "form": -0.0,
         "rest": 0.0,
-        "injury": -0.042,
+        "injury": 0.056,
         "home_form": -0.39,
         "away_form": -0.39,
         "home_rest_days": 7,
@@ -550,7 +550,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 1.27,
-        "away_injury_score": 0.93,
+        "away_injury_score": 1.75,
         "home_injuries": [
           {
             "name": "Tarkowski",
@@ -574,14 +574,14 @@
         "away_injuries": [
           {
             "name": "Chalobah",
-            "status": "d",
-            "miss_prob": 0.25,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.83
           },
           {
             "name": "James",
-            "status": "d",
-            "miss_prob": 0.75,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.78
           },
           {
@@ -612,33 +612,27 @@
       "away_team": "LIV",
       "home_srs": 0.12,
       "away_srs": 0.25,
-      "predicted_margin": 0.39,
-      "home_win_prob": 0.629,
+      "predicted_margin": 0.5,
+      "home_win_prob": 0.662,
       "favored": "BHA",
       "underdog": "LIV",
-      "spread": -0.39,
+      "spread": -0.5,
       "adjustments": {
         "srs_base": -0.13,
         "home_advantage": 0.5,
         "home_advantage_raw": 0.26,
         "form": 0.016,
         "rest": 0.006,
-        "injury": -0.001,
+        "injury": 0.106,
         "home_form": 0.3,
         "away_form": 0.14,
         "home_rest_days": 7,
         "away_rest_days": 6,
         "home_rest_score": 1.0,
         "away_rest_score": 0.9,
-        "home_injury_score": 0.94,
-        "away_injury_score": 0.93,
+        "home_injury_score": 0.76,
+        "away_injury_score": 1.65,
         "home_injuries": [
-          {
-            "name": "Mitoma",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.7
-          },
           {
             "name": "Gruda",
             "status": "u",
@@ -679,8 +673,8 @@
         "away_injuries": [
           {
             "name": "M.Salah",
-            "status": "d",
-            "miss_prob": 0.25,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.96
           },
           {
@@ -711,33 +705,27 @@
       "away_team": "BRE",
       "home_srs": -0.28,
       "away_srs": 0.11,
-      "predicted_margin": 0.31,
-      "home_win_prob": 0.602,
+      "predicted_margin": 0.38,
+      "home_win_prob": 0.623,
       "favored": "LEE",
       "underdog": "BRE",
-      "spread": -0.31,
+      "spread": -0.38,
       "adjustments": {
         "srs_base": -0.39,
         "home_advantage": 0.79,
         "home_advantage_raw": 0.26,
         "form": -0.039,
         "rest": 0.006,
-        "injury": -0.055,
+        "injury": 0.011,
         "home_form": -0.38,
         "away_form": 0.01,
         "home_rest_days": 6,
         "away_rest_days": 5,
         "home_rest_score": 0.9,
         "away_rest_score": 0.8,
-        "home_injury_score": 0.66,
+        "home_injury_score": 0.11,
         "away_injury_score": 0.2,
         "home_injuries": [
-          {
-            "name": "Okafor",
-            "status": "d",
-            "miss_prob": 0.75,
-            "importance": 0.72
-          },
           {
             "name": "Harrison",
             "status": "u",
@@ -768,25 +756,25 @@
       "away_team": "WHU",
       "home_srs": 0.13,
       "away_srs": -0.6,
-      "predicted_margin": 1.16,
-      "home_win_prob": 0.832,
+      "predicted_margin": 1.18,
+      "home_win_prob": 0.836,
       "favored": "AVL",
       "underdog": "WHU",
-      "spread": -1.16,
+      "spread": -1.18,
       "adjustments": {
         "srs_base": 0.73,
         "home_advantage": 0.5,
         "home_advantage_raw": 0.26,
         "form": -0.078,
         "rest": 0.0,
-        "injury": 0.001,
+        "injury": 0.021,
         "home_form": -0.73,
         "away_form": 0.06,
         "home_rest_days": 7,
         "away_rest_days": 8,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.14,
+        "home_injury_score": 0.97,
         "away_injury_score": 1.15,
         "home_injuries": [
           {
@@ -794,12 +782,6 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.7
-          },
-          {
-            "name": "Buend\u00eda",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.66
           },
           {
             "name": "Malen",
