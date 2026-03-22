@@ -1,12 +1,12 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-21T10:27:18Z",
-    "total_games": 302,
+    "last_updated": "2026-03-22T10:27:53Z",
+    "total_games": 306,
     "model_stats": {
-      "rmse": 1.43,
+      "rmse": 1.44,
       "avg_gpg": 1.37,
-      "home_advantage": 0.25
+      "home_advantage": 0.27
     }
   },
   "teams": [
@@ -20,13 +20,13 @@
       "draws": 7,
       "losses": 3,
       "win_pct": 0.677,
-      "srs": 1.2,
+      "srs": 1.21,
       "mov": 1.26,
       "sos": -0.05,
       "games_played": 31,
       "srs_rank": 1,
       "standings_rank": 1,
-      "home_advantage": 0.729,
+      "home_advantage": 0.735,
       "home_games": 15
     },
     {
@@ -45,7 +45,7 @@
       "games_played": 30,
       "srs_rank": 2,
       "standings_rank": 2,
-      "home_advantage": 0.929,
+      "home_advantage": 0.934,
       "home_games": 15
     },
     {
@@ -56,15 +56,15 @@
       "division": "London",
       "wins": 13,
       "draws": 9,
-      "losses": 8,
-      "win_pct": 0.433,
-      "srs": 0.53,
-      "mov": 0.6,
-      "sos": -0.07,
-      "games_played": 30,
+      "losses": 9,
+      "win_pct": 0.419,
+      "srs": 0.43,
+      "mov": 0.48,
+      "sos": -0.06,
+      "games_played": 31,
       "srs_rank": 3,
       "standings_rank": 6,
-      "home_advantage": -0.214,
+      "home_advantage": -0.039,
       "home_games": 15
     },
     {
@@ -83,7 +83,7 @@
       "games_played": 31,
       "srs_rank": 4,
       "standings_rank": 3,
-      "home_advantage": 0.69,
+      "home_advantage": 0.696,
       "home_games": 15
     },
     {
@@ -94,16 +94,35 @@
       "division": "North West",
       "wins": 14,
       "draws": 7,
-      "losses": 9,
-      "win_pct": 0.467,
-      "srs": 0.25,
-      "mov": 0.3,
-      "sos": -0.05,
-      "games_played": 30,
+      "losses": 10,
+      "win_pct": 0.452,
+      "srs": 0.21,
+      "mov": 0.26,
+      "sos": -0.04,
+      "games_played": 31,
       "srs_rank": 5,
       "standings_rank": 5,
-      "home_advantage": 0.595,
+      "home_advantage": 0.643,
       "home_games": 15
+    },
+    {
+      "abbreviation": "BHA",
+      "name": "Brighton & Hove Albion FC",
+      "team_id": "brighton",
+      "conference": "EPL",
+      "division": "Other",
+      "wins": 11,
+      "draws": 10,
+      "losses": 10,
+      "win_pct": 0.355,
+      "srs": 0.16,
+      "mov": 0.13,
+      "sos": 0.03,
+      "games_played": 31,
+      "srs_rank": 6,
+      "standings_rank": 10,
+      "home_advantage": 0.532,
+      "home_games": 16
     },
     {
       "abbreviation": "AVL",
@@ -119,28 +138,9 @@
       "mov": 0.1,
       "sos": 0.03,
       "games_played": 30,
-      "srs_rank": 6,
-      "standings_rank": 4,
-      "home_advantage": 0.5,
-      "home_games": 15
-    },
-    {
-      "abbreviation": "BHA",
-      "name": "Brighton & Hove Albion FC",
-      "team_id": "brighton",
-      "conference": "EPL",
-      "division": "Other",
-      "wins": 10,
-      "draws": 10,
-      "losses": 10,
-      "win_pct": 0.333,
-      "srs": 0.12,
-      "mov": 0.1,
-      "sos": 0.02,
-      "games_played": 30,
       "srs_rank": 7,
-      "standings_rank": 12,
-      "home_advantage": 0.5,
+      "standings_rank": 4,
+      "home_advantage": 0.506,
       "home_games": 15
     },
     {
@@ -150,17 +150,36 @@
       "conference": "EPL",
       "division": "London",
       "wins": 13,
-      "draws": 6,
+      "draws": 7,
       "losses": 11,
-      "win_pct": 0.433,
-      "srs": 0.11,
+      "win_pct": 0.419,
+      "srs": 0.1,
       "mov": 0.13,
-      "sos": -0.02,
-      "games_played": 30,
+      "sos": -0.03,
+      "games_played": 31,
       "srs_rank": 8,
       "standings_rank": 7,
-      "home_advantage": 0.738,
+      "home_advantage": 0.729,
       "home_games": 15
+    },
+    {
+      "abbreviation": "EVE",
+      "name": "Everton FC",
+      "team_id": "everton",
+      "conference": "EPL",
+      "division": "North West",
+      "wins": 13,
+      "draws": 7,
+      "losses": 11,
+      "win_pct": 0.419,
+      "srs": 0.05,
+      "mov": 0.06,
+      "sos": -0.01,
+      "games_played": 31,
+      "srs_rank": 9,
+      "standings_rank": 8,
+      "home_advantage": 0.166,
+      "home_games": 16
     },
     {
       "abbreviation": "NEW",
@@ -172,32 +191,13 @@
       "draws": 6,
       "losses": 12,
       "win_pct": 0.4,
-      "srs": 0.01,
+      "srs": 0.0,
       "mov": 0.0,
-      "sos": 0.01,
-      "games_played": 30,
-      "srs_rank": 9,
-      "standings_rank": 9,
-      "home_advantage": 0.452,
-      "home_games": 15
-    },
-    {
-      "abbreviation": "EVE",
-      "name": "Everton FC",
-      "team_id": "everton",
-      "conference": "EPL",
-      "division": "North West",
-      "wins": 12,
-      "draws": 7,
-      "losses": 11,
-      "win_pct": 0.4,
-      "srs": -0.06,
-      "mov": -0.03,
-      "sos": -0.02,
+      "sos": 0.0,
       "games_played": 30,
       "srs_rank": 10,
-      "standings_rank": 8,
-      "home_advantage": 0.024,
+      "standings_rank": 11,
+      "home_advantage": 0.458,
       "home_games": 15
     },
     {
@@ -206,18 +206,18 @@
       "team_id": "fulham",
       "conference": "EPL",
       "division": "London",
-      "wins": 12,
+      "wins": 13,
       "draws": 5,
       "losses": 13,
-      "win_pct": 0.4,
-      "srs": -0.09,
-      "mov": -0.1,
-      "sos": 0.01,
-      "games_played": 30,
+      "win_pct": 0.419,
+      "srs": -0.05,
+      "mov": -0.03,
+      "sos": -0.02,
+      "games_played": 31,
       "srs_rank": 11,
-      "standings_rank": 11,
-      "home_advantage": 0.786,
-      "home_games": 15
+      "standings_rank": 9,
+      "home_advantage": 0.863,
+      "home_games": 16
     },
     {
       "abbreviation": "BOU",
@@ -234,8 +234,8 @@
       "sos": -0.03,
       "games_played": 31,
       "srs_rank": 12,
-      "standings_rank": 10,
-      "home_advantage": 0.72,
+      "standings_rank": 12,
+      "home_advantage": 0.726,
       "home_games": 16
     },
     {
@@ -254,7 +254,7 @@
       "games_played": 30,
       "srs_rank": 13,
       "standings_rank": 14,
-      "home_advantage": -0.214,
+      "home_advantage": -0.209,
       "home_games": 15
     },
     {
@@ -273,7 +273,7 @@
       "games_played": 30,
       "srs_rank": 14,
       "standings_rank": 13,
-      "home_advantage": 1.071,
+      "home_advantage": 1.077,
       "home_games": 15
     },
     {
@@ -288,11 +288,11 @@
       "win_pct": 0.233,
       "srs": -0.19,
       "mov": -0.23,
-      "sos": 0.05,
+      "sos": 0.04,
       "games_played": 30,
       "srs_rank": 15,
       "standings_rank": 16,
-      "home_advantage": -0.262,
+      "home_advantage": -0.256,
       "home_games": 15
     },
     {
@@ -302,17 +302,17 @@
       "conference": "EPL",
       "division": "",
       "wins": 7,
-      "draws": 11,
+      "draws": 12,
       "losses": 12,
-      "win_pct": 0.233,
-      "srs": -0.28,
-      "mov": -0.37,
+      "win_pct": 0.226,
+      "srs": -0.27,
+      "mov": -0.35,
       "sos": 0.08,
-      "games_played": 30,
+      "games_played": 31,
       "srs_rank": 16,
       "standings_rank": 15,
-      "home_advantage": 0.786,
-      "home_games": 15
+      "home_advantage": 0.785,
+      "home_games": 16
     },
     {
       "abbreviation": "NFO",
@@ -330,7 +330,7 @@
       "games_played": 30,
       "srs_rank": 17,
       "standings_rank": 17,
-      "home_advantage": 0.214,
+      "home_advantage": 0.22,
       "home_games": 15
     },
     {
@@ -345,30 +345,11 @@
       "win_pct": 0.233,
       "srs": -0.6,
       "mov": -0.63,
-      "sos": 0.04,
+      "sos": 0.03,
       "games_played": 30,
       "srs_rank": 18,
       "standings_rank": 18,
-      "home_advantage": 0.024,
-      "home_games": 15
-    },
-    {
-      "abbreviation": "BUR",
-      "name": "Burnley FC",
-      "team_id": "",
-      "conference": "EPL",
-      "division": "",
-      "wins": 4,
-      "draws": 8,
-      "losses": 18,
-      "win_pct": 0.133,
-      "srs": -0.84,
-      "mov": -0.87,
-      "sos": 0.03,
-      "games_played": 30,
-      "srs_rank": 19,
-      "standings_rank": 19,
-      "home_advantage": 0.548,
+      "home_advantage": 0.03,
       "home_games": 15
     },
     {
@@ -385,319 +366,32 @@
       "mov": -0.97,
       "sos": 0.12,
       "games_played": 31,
-      "srs_rank": 20,
+      "srs_rank": 19,
       "standings_rank": 20,
-      "home_advantage": 0.208,
+      "home_advantage": 0.214,
       "home_games": 16
+    },
+    {
+      "abbreviation": "BUR",
+      "name": "Burnley FC",
+      "team_id": "",
+      "conference": "EPL",
+      "division": "",
+      "wins": 4,
+      "draws": 8,
+      "losses": 19,
+      "win_pct": 0.129,
+      "srs": -0.88,
+      "mov": -0.9,
+      "sos": 0.03,
+      "games_played": 31,
+      "srs_rank": 20,
+      "standings_rank": 19,
+      "home_advantage": 0.589,
+      "home_games": 15
     }
   ],
   "predictions": [
-    {
-      "date": "2026-03-21",
-      "date_parsed": "2026-03-21",
-      "home_team": "FUL",
-      "away_team": "BUR",
-      "home_srs": -0.09,
-      "away_srs": -0.84,
-      "predicted_margin": 1.5,
-      "home_win_prob": 0.894,
-      "favored": "FUL",
-      "underdog": "BUR",
-      "spread": -1.5,
-      "adjustments": {
-        "srs_base": 0.75,
-        "home_advantage": 0.79,
-        "home_advantage_raw": 0.25,
-        "form": 0.023,
-        "rest": -0.006,
-        "injury": -0.054,
-        "home_form": -0.05,
-        "away_form": -0.28,
-        "home_rest_days": 6,
-        "away_rest_days": 7,
-        "home_rest_score": 0.9,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.51,
-        "away_injury_score": 0.06,
-        "home_injuries": [
-          {
-            "name": "Smith Rowe",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.43
-          },
-          {
-            "name": "Kevin",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.37
-          },
-          {
-            "name": "Andreas",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Benson",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Koleosho",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-03-21",
-      "date_parsed": "2026-03-21",
-      "home_team": "BHA",
-      "away_team": "LIV",
-      "home_srs": 0.12,
-      "away_srs": 0.25,
-      "predicted_margin": 0.54,
-      "home_win_prob": 0.675,
-      "favored": "BHA",
-      "underdog": "LIV",
-      "spread": -0.54,
-      "adjustments": {
-        "srs_base": -0.13,
-        "home_advantage": 0.5,
-        "home_advantage_raw": 0.25,
-        "form": 0.016,
-        "rest": 0.006,
-        "injury": 0.153,
-        "home_form": 0.3,
-        "away_form": 0.14,
-        "home_rest_days": 7,
-        "away_rest_days": 6,
-        "home_rest_score": 1.0,
-        "away_rest_score": 0.9,
-        "home_injury_score": 0.76,
-        "away_injury_score": 2.04,
-        "home_injuries": [
-          {
-            "name": "Gruda",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.51
-          },
-          {
-            "name": "Tzimas",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.49
-          },
-          {
-            "name": "Enciso",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Sima",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Yalcouye",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Ferguson",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "M.Salah",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.96
-          },
-          {
-            "name": "A.Becker",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.78
-          },
-          {
-            "name": "Isak",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.63
-          },
-          {
-            "name": "Luis D\u00edaz",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Darwin",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-03-21",
-      "date_parsed": "2026-03-21",
-      "home_team": "EVE",
-      "away_team": "CHE",
-      "home_srs": -0.06,
-      "away_srs": 0.53,
-      "predicted_margin": -0.53,
-      "home_win_prob": 0.329,
-      "favored": "CHE",
-      "underdog": "EVE",
-      "spread": -0.53,
-      "adjustments": {
-        "srs_base": -0.59,
-        "home_advantage": 0.02,
-        "home_advantage_raw": 0.25,
-        "form": -0.0,
-        "rest": 0.0,
-        "injury": 0.036,
-        "home_form": -0.39,
-        "away_form": -0.39,
-        "home_rest_days": 7,
-        "away_rest_days": 7,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 1.45,
-        "away_injury_score": 1.75,
-        "home_injuries": [
-          {
-            "name": "Tarkowski",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.94
-          },
-          {
-            "name": "Grealish",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.8
-          },
-          {
-            "name": "Branthwaite",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.68
-          },
-          {
-            "name": "Alcaraz",
-            "status": "d",
-            "miss_prob": 0.75,
-            "importance": 0.32
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Chalobah",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.83
-          },
-          {
-            "name": "James",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.78
-          },
-          {
-            "name": "Gittens",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.3
-          },
-          {
-            "name": "Nkunku",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "N.Jackson",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-03-21",
-      "date_parsed": "2026-03-21",
-      "home_team": "LEE",
-      "away_team": "BRE",
-      "home_srs": -0.28,
-      "away_srs": 0.11,
-      "predicted_margin": 0.39,
-      "home_win_prob": 0.629,
-      "favored": "LEE",
-      "underdog": "BRE",
-      "spread": -0.39,
-      "adjustments": {
-        "srs_base": -0.39,
-        "home_advantage": 0.79,
-        "home_advantage_raw": 0.25,
-        "form": -0.039,
-        "rest": 0.006,
-        "injury": 0.03,
-        "home_form": -0.38,
-        "away_form": 0.01,
-        "home_rest_days": 6,
-        "away_rest_days": 5,
-        "home_rest_score": 0.9,
-        "away_rest_score": 0.8,
-        "home_injury_score": 0.11,
-        "away_injury_score": 0.36,
-        "home_injuries": [
-          {
-            "name": "Harrison",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.28
-          },
-          {
-            "name": "Mateo Joseph",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Damsgaard",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.66
-          },
-          {
-            "name": "Milambo",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.2
-          }
-        ]
-      }
-    },
     {
       "date": "2026-03-22",
       "date_parsed": "2026-03-22",
@@ -706,18 +400,18 @@
       "home_srs": 0.13,
       "away_srs": -0.6,
       "predicted_margin": 1.22,
-      "home_win_prob": 0.844,
+      "home_win_prob": 0.846,
       "favored": "AVL",
       "underdog": "WHU",
       "spread": -1.22,
       "adjustments": {
         "srs_base": 0.73,
-        "home_advantage": 0.5,
-        "home_advantage_raw": 0.25,
+        "home_advantage": 0.51,
+        "home_advantage_raw": 0.27,
         "form": -0.078,
         "rest": 0.0,
         "injury": 0.063,
-        "home_form": -0.73,
+        "home_form": -0.72,
         "away_form": 0.06,
         "home_rest_days": 7,
         "away_rest_days": 8,
@@ -784,39 +478,39 @@
       "date_parsed": "2026-03-22",
       "home_team": "NEW",
       "away_team": "SUN",
-      "home_srs": 0.01,
+      "home_srs": 0.0,
       "away_srs": -0.14,
-      "predicted_margin": 0.7,
-      "home_win_prob": 0.721,
+      "predicted_margin": 0.79,
+      "home_win_prob": 0.745,
       "favored": "NEW",
       "underdog": "SUN",
-      "spread": -0.7,
+      "spread": -0.79,
       "adjustments": {
-        "srs_base": 0.15,
-        "home_advantage": 0.45,
-        "home_advantage_raw": 0.25,
+        "srs_base": 0.14,
+        "home_advantage": 0.46,
+        "home_advantage_raw": 0.27,
         "form": 0.093,
         "rest": 0.0,
-        "injury": 0.008,
-        "home_form": 0.49,
+        "injury": 0.101,
+        "home_form": 0.48,
         "away_form": -0.44,
         "home_rest_days": 8,
         "away_rest_days": 8,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.66,
+        "home_injury_score": 0.88,
         "away_injury_score": 1.72,
         "home_injuries": [
           {
             "name": "Bruno G.",
-            "status": "i",
-            "miss_prob": 1.0,
+            "status": "d",
+            "miss_prob": 0.5,
             "importance": 1.0
           },
           {
             "name": "Sch\u00e4r",
-            "status": "i",
-            "miss_prob": 1.0,
+            "status": "d",
+            "miss_prob": 0.5,
             "importance": 0.55
           },
           {
@@ -867,18 +561,18 @@
       "away_team": "NFO",
       "home_srs": -0.19,
       "away_srs": -0.46,
-      "predicted_margin": -0.28,
-      "home_win_prob": 0.409,
+      "predicted_margin": -0.36,
+      "home_win_prob": 0.384,
       "favored": "NFO",
       "underdog": "TOT",
-      "spread": -0.28,
+      "spread": -0.36,
       "adjustments": {
         "srs_base": 0.27,
         "home_advantage": -0.26,
-        "home_advantage_raw": 0.25,
+        "home_advantage_raw": 0.27,
         "form": -0.03,
         "rest": 0.0,
-        "injury": -0.255,
+        "injury": -0.339,
         "home_form": -0.56,
         "away_form": -0.26,
         "home_rest_days": 7,
@@ -886,7 +580,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 2.99,
-        "away_injury_score": 0.87,
+        "away_injury_score": 0.17,
         "home_injuries": [
           {
             "name": "Kudus",
@@ -951,12 +645,6 @@
         ],
         "away_injuries": [
           {
-            "name": "Wood",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.7
-          },
-          {
             "name": "Jota",
             "status": "u",
             "miss_prob": 0.3,
@@ -981,22 +669,6 @@
   "simulation": {
     "remaining_games": [
       {
-        "home_team": "BHA",
-        "away_team": "LIV"
-      },
-      {
-        "home_team": "FUL",
-        "away_team": "BUR"
-      },
-      {
-        "home_team": "EVE",
-        "away_team": "CHE"
-      },
-      {
-        "home_team": "LEE",
-        "away_team": "BRE"
-      },
-      {
         "home_team": "NEW",
         "away_team": "SUN"
       },
@@ -1017,10 +689,6 @@
         "away_team": "BOU"
       },
       {
-        "home_team": "CRY",
-        "away_team": "NEW"
-      },
-      {
         "home_team": "BRE",
         "away_team": "EVE"
       },
@@ -1029,16 +697,20 @@
         "away_team": "BHA"
       },
       {
-        "home_team": "NFO",
-        "away_team": "AVL"
-      },
-      {
         "home_team": "LIV",
         "away_team": "FUL"
       },
       {
         "home_team": "SUN",
         "away_team": "TOT"
+      },
+      {
+        "home_team": "CRY",
+        "away_team": "NEW"
+      },
+      {
+        "home_team": "NFO",
+        "away_team": "AVL"
       },
       {
         "home_team": "CHE",
@@ -1057,14 +729,6 @@
         "away_team": "BOU"
       },
       {
-        "home_team": "NFO",
-        "away_team": "BUR"
-      },
-      {
-        "home_team": "AVL",
-        "away_team": "SUN"
-      },
-      {
         "home_team": "LEE",
         "away_team": "WOL"
       },
@@ -1075,6 +739,14 @@
       {
         "home_team": "CHE",
         "away_team": "MNU"
+      },
+      {
+        "home_team": "NFO",
+        "away_team": "BUR"
+      },
+      {
+        "home_team": "AVL",
+        "away_team": "SUN"
       },
       {
         "home_team": "EVE",
@@ -1307,10 +979,10 @@
         "division": "Midlands"
       },
       "BHA": {
-        "wins": 10,
+        "wins": 11,
         "draws": 10,
         "losses": 10,
-        "points": 40,
+        "points": 43,
         "conference": "EPL",
         "division": "Other"
       },
@@ -1324,16 +996,16 @@
       },
       "BRE": {
         "wins": 13,
-        "draws": 6,
+        "draws": 7,
         "losses": 11,
-        "points": 45,
+        "points": 46,
         "conference": "EPL",
         "division": "London"
       },
       "BUR": {
         "wins": 4,
         "draws": 8,
-        "losses": 18,
+        "losses": 19,
         "points": 20,
         "conference": "EPL",
         "division": ""
@@ -1341,7 +1013,7 @@
       "CHE": {
         "wins": 13,
         "draws": 9,
-        "losses": 8,
+        "losses": 9,
         "points": 48,
         "conference": "EPL",
         "division": "London"
@@ -1355,33 +1027,33 @@
         "division": "London"
       },
       "EVE": {
-        "wins": 12,
+        "wins": 13,
         "draws": 7,
         "losses": 11,
-        "points": 43,
+        "points": 46,
         "conference": "EPL",
         "division": "North West"
       },
       "FUL": {
-        "wins": 12,
+        "wins": 13,
         "draws": 5,
         "losses": 13,
-        "points": 41,
+        "points": 44,
         "conference": "EPL",
         "division": "London"
       },
       "LEE": {
         "wins": 7,
-        "draws": 11,
+        "draws": 12,
         "losses": 12,
-        "points": 32,
+        "points": 33,
         "conference": "EPL",
         "division": ""
       },
       "LIV": {
         "wins": 14,
         "draws": 7,
-        "losses": 9,
+        "losses": 10,
         "points": 49,
         "conference": "EPL",
         "division": "North West"
