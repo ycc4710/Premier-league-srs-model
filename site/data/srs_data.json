@@ -1,12 +1,12 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-22T10:27:53Z",
-    "total_games": 306,
+    "last_updated": "2026-03-23T10:52:22Z",
+    "total_games": 309,
     "model_stats": {
       "rmse": 1.44,
       "avg_gpg": 1.37,
-      "home_advantage": 0.27
+      "home_advantage": 0.26
     }
   },
   "teams": [
@@ -26,7 +26,7 @@
       "games_played": 31,
       "srs_rank": 1,
       "standings_rank": 1,
-      "home_advantage": 0.735,
+      "home_advantage": 0.732,
       "home_games": 15
     },
     {
@@ -45,7 +45,7 @@
       "games_played": 30,
       "srs_rank": 2,
       "standings_rank": 2,
-      "home_advantage": 0.934,
+      "home_advantage": 0.931,
       "home_games": 15
     },
     {
@@ -58,13 +58,13 @@
       "draws": 9,
       "losses": 9,
       "win_pct": 0.419,
-      "srs": 0.43,
+      "srs": 0.42,
       "mov": 0.48,
       "sos": -0.06,
       "games_played": 31,
       "srs_rank": 3,
       "standings_rank": 6,
-      "home_advantage": -0.039,
+      "home_advantage": -0.042,
       "home_games": 15
     },
     {
@@ -83,7 +83,7 @@
       "games_played": 31,
       "srs_rank": 4,
       "standings_rank": 3,
-      "home_advantage": 0.696,
+      "home_advantage": 0.693,
       "home_games": 15
     },
     {
@@ -102,8 +102,27 @@
       "games_played": 31,
       "srs_rank": 5,
       "standings_rank": 5,
-      "home_advantage": 0.643,
+      "home_advantage": 0.64,
       "home_games": 15
+    },
+    {
+      "abbreviation": "AVL",
+      "name": "Aston Villa FC",
+      "team_id": "aston_villa",
+      "conference": "EPL",
+      "division": "Midlands",
+      "wins": 16,
+      "draws": 6,
+      "losses": 9,
+      "win_pct": 0.516,
+      "srs": 0.17,
+      "mov": 0.16,
+      "sos": 0.01,
+      "games_played": 31,
+      "srs_rank": 6,
+      "standings_rank": 4,
+      "home_advantage": 0.574,
+      "home_games": 16
     },
     {
       "abbreviation": "BHA",
@@ -115,33 +134,14 @@
       "draws": 10,
       "losses": 10,
       "win_pct": 0.355,
-      "srs": 0.16,
+      "srs": 0.17,
       "mov": 0.13,
-      "sos": 0.03,
+      "sos": 0.04,
       "games_played": 31,
-      "srs_rank": 6,
-      "standings_rank": 10,
-      "home_advantage": 0.532,
-      "home_games": 16
-    },
-    {
-      "abbreviation": "AVL",
-      "name": "Aston Villa FC",
-      "team_id": "aston_villa",
-      "conference": "EPL",
-      "division": "Midlands",
-      "wins": 15,
-      "draws": 6,
-      "losses": 9,
-      "win_pct": 0.5,
-      "srs": 0.13,
-      "mov": 0.1,
-      "sos": 0.03,
-      "games_played": 30,
       "srs_rank": 7,
-      "standings_rank": 4,
-      "home_advantage": 0.506,
-      "home_games": 15
+      "standings_rank": 10,
+      "home_advantage": 0.53,
+      "home_games": 16
     },
     {
       "abbreviation": "BRE",
@@ -159,7 +159,7 @@
       "games_played": 31,
       "srs_rank": 8,
       "standings_rank": 7,
-      "home_advantage": 0.729,
+      "home_advantage": 0.726,
       "home_games": 15
     },
     {
@@ -172,13 +172,13 @@
       "draws": 7,
       "losses": 11,
       "win_pct": 0.419,
-      "srs": 0.05,
+      "srs": 0.06,
       "mov": 0.06,
       "sos": -0.01,
       "games_played": 31,
       "srs_rank": 9,
       "standings_rank": 8,
-      "home_advantage": 0.166,
+      "home_advantage": 0.164,
       "home_games": 16
     },
     {
@@ -189,16 +189,16 @@
       "division": "Other",
       "wins": 12,
       "draws": 6,
-      "losses": 12,
-      "win_pct": 0.4,
-      "srs": 0.0,
-      "mov": 0.0,
-      "sos": 0.0,
-      "games_played": 30,
+      "losses": 13,
+      "win_pct": 0.387,
+      "srs": -0.03,
+      "mov": -0.03,
+      "sos": -0.0,
+      "games_played": 31,
       "srs_rank": 10,
-      "standings_rank": 11,
-      "home_advantage": 0.458,
-      "home_games": 15
+      "standings_rank": 12,
+      "home_advantage": 0.399,
+      "home_games": 16
     },
     {
       "abbreviation": "FUL",
@@ -216,7 +216,7 @@
       "games_played": 31,
       "srs_rank": 11,
       "standings_rank": 9,
-      "home_advantage": 0.863,
+      "home_advantage": 0.86,
       "home_games": 16
     },
     {
@@ -231,12 +231,31 @@
       "win_pct": 0.29,
       "srs": -0.1,
       "mov": -0.06,
-      "sos": -0.03,
+      "sos": -0.04,
       "games_played": 31,
       "srs_rank": 12,
-      "standings_rank": 12,
-      "home_advantage": 0.726,
+      "standings_rank": 13,
+      "home_advantage": 0.723,
       "home_games": 16
+    },
+    {
+      "abbreviation": "SUN",
+      "name": "Sunderland AFC",
+      "team_id": "",
+      "conference": "EPL",
+      "division": "",
+      "wins": 11,
+      "draws": 10,
+      "losses": 10,
+      "win_pct": 0.355,
+      "srs": -0.11,
+      "mov": -0.13,
+      "sos": 0.02,
+      "games_played": 31,
+      "srs_rank": 13,
+      "standings_rank": 11,
+      "home_advantage": 0.991,
+      "home_games": 15
     },
     {
       "abbreviation": "CRY",
@@ -252,47 +271,9 @@
       "mov": -0.07,
       "sos": -0.05,
       "games_played": 30,
-      "srs_rank": 13,
-      "standings_rank": 14,
-      "home_advantage": -0.209,
-      "home_games": 15
-    },
-    {
-      "abbreviation": "SUN",
-      "name": "Sunderland AFC",
-      "team_id": "",
-      "conference": "EPL",
-      "division": "",
-      "wins": 10,
-      "draws": 10,
-      "losses": 10,
-      "win_pct": 0.333,
-      "srs": -0.14,
-      "mov": -0.17,
-      "sos": 0.03,
-      "games_played": 30,
       "srs_rank": 14,
-      "standings_rank": 13,
-      "home_advantage": 1.077,
-      "home_games": 15
-    },
-    {
-      "abbreviation": "TOT",
-      "name": "Tottenham Hotspur FC",
-      "team_id": "tottenham",
-      "conference": "EPL",
-      "division": "London",
-      "wins": 7,
-      "draws": 9,
-      "losses": 14,
-      "win_pct": 0.233,
-      "srs": -0.19,
-      "mov": -0.23,
-      "sos": 0.04,
-      "games_played": 30,
-      "srs_rank": 15,
-      "standings_rank": 16,
-      "home_advantage": -0.256,
+      "standings_rank": 14,
+      "home_advantage": -0.211,
       "home_games": 15
     },
     {
@@ -307,11 +288,30 @@
       "win_pct": 0.226,
       "srs": -0.27,
       "mov": -0.35,
-      "sos": 0.08,
+      "sos": 0.09,
+      "games_played": 31,
+      "srs_rank": 15,
+      "standings_rank": 15,
+      "home_advantage": 0.783,
+      "home_games": 16
+    },
+    {
+      "abbreviation": "TOT",
+      "name": "Tottenham Hotspur FC",
+      "team_id": "tottenham",
+      "conference": "EPL",
+      "division": "London",
+      "wins": 7,
+      "draws": 9,
+      "losses": 15,
+      "win_pct": 0.226,
+      "srs": -0.29,
+      "mov": -0.32,
+      "sos": 0.03,
       "games_played": 31,
       "srs_rank": 16,
-      "standings_rank": 15,
-      "home_advantage": 0.785,
+      "standings_rank": 17,
+      "home_advantage": -0.372,
       "home_games": 16
     },
     {
@@ -320,17 +320,17 @@
       "team_id": "nott_forest",
       "conference": "EPL",
       "division": "Midlands",
-      "wins": 7,
+      "wins": 8,
       "draws": 8,
       "losses": 15,
-      "win_pct": 0.233,
-      "srs": -0.46,
-      "mov": -0.5,
-      "sos": 0.04,
-      "games_played": 30,
+      "win_pct": 0.258,
+      "srs": -0.36,
+      "mov": -0.39,
+      "sos": 0.03,
+      "games_played": 31,
       "srs_rank": 17,
-      "standings_rank": 17,
-      "home_advantage": 0.22,
+      "standings_rank": 16,
+      "home_advantage": 0.056,
       "home_games": 15
     },
     {
@@ -341,15 +341,15 @@
       "division": "London",
       "wins": 7,
       "draws": 8,
-      "losses": 15,
-      "win_pct": 0.233,
-      "srs": -0.6,
-      "mov": -0.63,
-      "sos": 0.03,
-      "games_played": 30,
+      "losses": 16,
+      "win_pct": 0.226,
+      "srs": -0.64,
+      "mov": -0.68,
+      "sos": 0.04,
+      "games_played": 31,
       "srs_rank": 18,
       "standings_rank": 18,
-      "home_advantage": 0.03,
+      "home_advantage": 0.089,
       "home_games": 15
     },
     {
@@ -368,7 +368,7 @@
       "games_played": 31,
       "srs_rank": 19,
       "standings_rank": 20,
-      "home_advantage": 0.214,
+      "home_advantage": 0.211,
       "home_games": 16
     },
     {
@@ -383,303 +383,17 @@
       "win_pct": 0.129,
       "srs": -0.88,
       "mov": -0.9,
-      "sos": 0.03,
+      "sos": 0.02,
       "games_played": 31,
       "srs_rank": 20,
       "standings_rank": 19,
-      "home_advantage": 0.589,
+      "home_advantage": 0.586,
       "home_games": 15
     }
   ],
-  "predictions": [
-    {
-      "date": "2026-03-22",
-      "date_parsed": "2026-03-22",
-      "home_team": "AVL",
-      "away_team": "WHU",
-      "home_srs": 0.13,
-      "away_srs": -0.6,
-      "predicted_margin": 1.22,
-      "home_win_prob": 0.846,
-      "favored": "AVL",
-      "underdog": "WHU",
-      "spread": -1.22,
-      "adjustments": {
-        "srs_base": 0.73,
-        "home_advantage": 0.51,
-        "home_advantage_raw": 0.27,
-        "form": -0.078,
-        "rest": 0.0,
-        "injury": 0.063,
-        "home_form": -0.72,
-        "away_form": 0.06,
-        "home_rest_days": 7,
-        "away_rest_days": 8,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.62,
-        "away_injury_score": 1.15,
-        "home_injuries": [
-          {
-            "name": "Tielemans",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.7
-          },
-          {
-            "name": "Malen",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.59
-          },
-          {
-            "name": "Iling Jr",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Barrenechea",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Dobbin",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "L.Paquet\u00e1",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.81
-          },
-          {
-            "name": "Summerville",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.81
-          },
-          {
-            "name": "F\u00fcllkrug",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.32
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-03-22",
-      "date_parsed": "2026-03-22",
-      "home_team": "NEW",
-      "away_team": "SUN",
-      "home_srs": 0.0,
-      "away_srs": -0.14,
-      "predicted_margin": 0.79,
-      "home_win_prob": 0.745,
-      "favored": "NEW",
-      "underdog": "SUN",
-      "spread": -0.79,
-      "adjustments": {
-        "srs_base": 0.14,
-        "home_advantage": 0.46,
-        "home_advantage_raw": 0.27,
-        "form": 0.093,
-        "rest": 0.0,
-        "injury": 0.101,
-        "home_form": 0.48,
-        "away_form": -0.44,
-        "home_rest_days": 8,
-        "away_rest_days": 8,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.88,
-        "away_injury_score": 1.72,
-        "home_injuries": [
-          {
-            "name": "Bruno G.",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 1.0
-          },
-          {
-            "name": "Sch\u00e4r",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.55
-          },
-          {
-            "name": "Tonali",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.41
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "E.Le F\u00e9e",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 1.0
-          },
-          {
-            "name": "Traor\u00e9",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.66
-          },
-          {
-            "name": "Angulo",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.47
-          },
-          {
-            "name": "Roberts",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.26
-          },
-          {
-            "name": "Jocelin.T",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.26
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-03-22",
-      "date_parsed": "2026-03-22",
-      "home_team": "TOT",
-      "away_team": "NFO",
-      "home_srs": -0.19,
-      "away_srs": -0.46,
-      "predicted_margin": -0.36,
-      "home_win_prob": 0.384,
-      "favored": "NFO",
-      "underdog": "TOT",
-      "spread": -0.36,
-      "adjustments": {
-        "srs_base": 0.27,
-        "home_advantage": -0.26,
-        "home_advantage_raw": 0.27,
-        "form": -0.03,
-        "rest": 0.0,
-        "injury": -0.339,
-        "home_form": -0.56,
-        "away_form": -0.26,
-        "home_rest_days": 7,
-        "away_rest_days": 7,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 2.99,
-        "away_injury_score": 0.17,
-        "home_injuries": [
-          {
-            "name": "Kudus",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.93
-          },
-          {
-            "name": "Bentancur",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.76
-          },
-          {
-            "name": "Solanke",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.71
-          },
-          {
-            "name": "Odobert",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.45
-          },
-          {
-            "name": "Bissouma",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.38
-          },
-          {
-            "name": "Son",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Maddison",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Kulusevski",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Solomon",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Moore",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Jota",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.23
-          },
-          {
-            "name": "Kalimuendo",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.23
-          },
-          {
-            "name": "O'Brien",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    }
-  ],
+  "predictions": [],
   "simulation": {
     "remaining_games": [
-      {
-        "home_team": "NEW",
-        "away_team": "SUN"
-      },
-      {
-        "home_team": "AVL",
-        "away_team": "WHU"
-      },
-      {
-        "home_team": "TOT",
-        "away_team": "NFO"
-      },
       {
         "home_team": "WHU",
         "away_team": "WOL"
@@ -971,10 +685,10 @@
         "division": "London"
       },
       "AVL": {
-        "wins": 15,
+        "wins": 16,
         "draws": 6,
         "losses": 9,
-        "points": 51,
+        "points": 54,
         "conference": "EPL",
         "division": "Midlands"
       },
@@ -1077,31 +791,31 @@
       "NEW": {
         "wins": 12,
         "draws": 6,
-        "losses": 12,
+        "losses": 13,
         "points": 42,
         "conference": "EPL",
         "division": "Other"
       },
       "NFO": {
-        "wins": 7,
+        "wins": 8,
         "draws": 8,
         "losses": 15,
-        "points": 29,
+        "points": 32,
         "conference": "EPL",
         "division": "Midlands"
       },
       "SUN": {
-        "wins": 10,
+        "wins": 11,
         "draws": 10,
         "losses": 10,
-        "points": 40,
+        "points": 43,
         "conference": "EPL",
         "division": ""
       },
       "TOT": {
         "wins": 7,
         "draws": 9,
-        "losses": 14,
+        "losses": 15,
         "points": 30,
         "conference": "EPL",
         "division": "London"
@@ -1109,7 +823,7 @@
       "WHU": {
         "wins": 7,
         "draws": 8,
-        "losses": 15,
+        "losses": 16,
         "points": 29,
         "conference": "EPL",
         "division": "London"
