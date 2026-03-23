@@ -1,12 +1,14 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-03-23T10:52:22Z",
+    "last_updated": "2026-03-23T20:00:34Z",
     "total_games": 309,
     "model_stats": {
       "rmse": 1.44,
       "avg_gpg": 1.37,
-      "home_advantage": 0.26
+      "home_advantage": 0.26,
+      "xg_coverage": 0.0,
+      "xg_alpha": 0.4
     }
   },
   "teams": [
