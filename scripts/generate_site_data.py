@@ -20,6 +20,7 @@ from scripts.fetch_data import (
     fetch_games, fetch_standings, fetch_upcoming_games,
     fetch_remaining_games, games_to_pairs,
 )
+from scripts.fetch_xg import fetch_xg_data
 from scripts.calculate_srs import calculate_srs
 from scripts.predictions import predict_games, fetch_injury_data
 
@@ -28,6 +29,11 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
 )
 logger = logging.getLogger(__name__)
+
+# ── xG blend weight ──────────────────────────────────────────────────────────
+# margin = ALPHA * actual_goal_diff + (1 - ALPHA) * xg_diff
+# 0.0 = pure xG, 1.0 = pure actual goals, 0.4 = recommended blend
+ALPHA = 0.4
 
 
 def _build_standings_map(games, standings_list, teams_for_srs):
@@ -71,6 +77,38 @@ def _build_standings_map(games, standings_list, teams_for_srs):
     return standings_map
 
 
+def _build_hybrid_pairs(games, xg_map, alpha):
+    """Build game pairs using hybrid margin = alpha*actual + (1-alpha)*xG.
+
+    Falls back to actual margin for any game missing xG data.
+
+    Returns:
+        (pairs, xg_coverage) where pairs is list of (team_a, team_b, margin)
+        and xg_coverage is fraction of games that had xG data.
+    """
+    pairs = []
+    xg_hits = 0
+
+    for g in games:
+        home = g["home_team"]
+        away = g["away_team"]
+        date = g["date_parsed"]
+        actual_margin = g["home_pts"] - g["away_pts"]
+
+        xg_entry = xg_map.get((home, away, date))
+        if xg_entry:
+            xg_margin = xg_entry["home_xg"] - xg_entry["away_xg"]
+            margin = alpha * actual_margin + (1 - alpha) * xg_margin
+            xg_hits += 1
+        else:
+            margin = float(actual_margin)
+
+        pairs.append((home, away, margin))
+
+    coverage = xg_hits / len(games) if games else 0.0
+    return pairs, coverage
+
+
 def generate():
     """Main pipeline: fetch data, calculate SRS, predict, simulate, write JSON."""
     logger.info("Starting SRS data generation for %s season", SEASON_DISPLAY)
@@ -93,21 +131,33 @@ def generate():
         logger.warning("Failed to fetch standings: %s. Will compute from game data.", e)
         standings_list = []
 
-    # ── 3. Calculate SRS ──
-    game_pairs = games_to_pairs(games)
+    # ── 3. Fetch xG data and build hybrid game pairs ──
+    xg_map = {}
+    try:
+        xg_map = fetch_xg_data()
+    except Exception as e:
+        logger.warning("xG fetch failed, falling back to actual goals only: %s", e)
+
+    game_pairs, xg_coverage = _build_hybrid_pairs(games, xg_map, ALPHA)
+
     active_teams = set()
     for team_a, team_b, _ in game_pairs:
         active_teams.add(team_a)
         active_teams.add(team_b)
     teams_for_srs = sorted(active_teams)
 
-    logger.info("Calculating SRS for %d teams from %d games", len(teams_for_srs), len(game_pairs))
+    logger.info(
+        "Calculating SRS for %d teams from %d games (xG coverage: %.1f%%, alpha=%.1f)",
+        len(teams_for_srs), len(game_pairs), xg_coverage * 100, ALPHA,
+    )
+
+    # ── 4. Calculate SRS ──
     srs_data = calculate_srs(game_pairs, teams_for_srs)
 
-    # ── 4. Build standings ──
+    # ── 5. Build standings ──
     standings_map = _build_standings_map(games, standings_list, teams_for_srs)
 
-    # ── 5. Build team output ──
+    # ── 6. Build team output ──
     teams_output = []
     for team in teams_for_srs:
         srs_info = srs_data.get(team, {"srs": 0, "mov": 0, "sos": 0, "games_played": 0})
@@ -145,7 +195,7 @@ def generate():
 
     teams_output.sort(key=lambda t: t["srs_rank"])
 
-    # ── 5b. Compute model diagnostics ──
+    # ── 6b. Compute model diagnostics (against actual goals for interpretability) ──
     total_goals = 0
     home_margin_sum = 0
     squared_errors = []
@@ -164,12 +214,15 @@ def generate():
         "rmse": round(math.sqrt(sum(squared_errors) / n_games), 2) if n_games else 0,
         "avg_gpg": round(total_goals / (n_games * 2), 2) if n_games else 0,
         "home_advantage": round(home_margin_sum / n_games, 2) if n_games else 0,
+        "xg_coverage": round(xg_coverage, 3),
+        "xg_alpha": ALPHA,
     }
-    logger.info("Model stats: RMSE=%.2f, Avg GPG=%.2f, Home Adv=%.2f",
-                model_stats["rmse"], model_stats["avg_gpg"], model_stats["home_advantage"])
+    logger.info("Model stats: RMSE=%.2f, Avg GPG=%.2f, Home Adv=%.2f, xG coverage=%.1f%%",
+                model_stats["rmse"], model_stats["avg_gpg"],
+                model_stats["home_advantage"], xg_coverage * 100)
 
-    # ── 5c. Per-team home advantage with Bayesian shrinkage ──
-    SHRINKAGE_K = 6  # need ~6 home games before trusting own data 50%
+    # ── 6c. Per-team home advantage with Bayesian shrinkage ──
+    SHRINKAGE_K = 6
     league_hca = model_stats["home_advantage"]
 
     team_home_margins = {}
@@ -180,6 +233,8 @@ def generate():
         team_away_margins.setdefault(g["away_team"], []).append(-hm)
 
     team_hca = {}
+    teams_output_map = {t["abbreviation"]: t for t in teams_output}
+
     for team in teams_for_srs:
         home_margins = team_home_margins.get(team, [])
         away_margins = team_away_margins.get(team, [])
@@ -195,26 +250,24 @@ def generate():
         shrunk_hca = weight * raw_hca + (1 - weight) * league_hca
         team_hca[team] = round(shrunk_hca, 3)
 
-        for t in teams_output:
-            if t["abbreviation"] == team:
-                t["home_advantage"] = team_hca[team]
-                t["home_games"] = n_home
-                break
+        if team in teams_output_map:
+            teams_output_map[team]["home_advantage"] = team_hca[team]
+            teams_output_map[team]["home_games"] = n_home
 
     logger.info("Per-team HCA computed (league avg: %.2f, range: %.2f to %.2f)",
                 league_hca,
                 min(team_hca.values()) if team_hca else 0,
                 max(team_hca.values()) if team_hca else 0)
 
-    # ── 6. Fetch injury data from FPL API ──
+    # ── 7. Fetch injury data ──
     injury_data = ({}, {})
     try:
-        injury_data = fetch_injury_data()  # returns (scores_dict, details_dict)
+        injury_data = fetch_injury_data()
         logger.info("Fetched injury data for %d teams", len(injury_data[0]))
     except Exception as e:
         logger.warning("Could not fetch injury data: %s", e)
 
-    # ── 7. Fetch upcoming games and generate predictions ──
+    # ── 8. Fetch upcoming games and generate predictions ──
     predictions = []
     try:
         upcoming = fetch_upcoming_games(days_ahead=10)
@@ -231,7 +284,7 @@ def generate():
     except Exception as e:
         logger.warning("Failed to fetch upcoming games: %s", e)
 
-    # ── 8. Fetch remaining games for client-side Monte Carlo ──
+    # ── 9. Fetch remaining games for client-side Monte Carlo ──
     simulation = {}
     try:
         remaining = fetch_remaining_games()
@@ -260,7 +313,7 @@ def generate():
     except Exception as e:
         logger.warning("Failed to fetch remaining games: %s", e)
 
-    # ── 9. Write output JSON ──
+    # ── 10. Write output JSON ──
     output = {
         "metadata": {
             "season": SEASON_DISPLAY,
