@@ -18,9 +18,8 @@ from scripts.config import (
 )
 from scripts.fetch_data import (
     fetch_games, fetch_standings, fetch_upcoming_games,
-    fetch_remaining_games, games_to_pairs,
+    fetch_remaining_games, games_to_pairs, fetch_xg_data,
 )
-from scripts.fetch_xg import fetch_xg_data
 from scripts.calculate_srs import calculate_srs
 from scripts.predictions import predict_games, fetch_injury_data
 
