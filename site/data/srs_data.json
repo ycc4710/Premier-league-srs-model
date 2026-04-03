@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-04-02T10:51:26Z",
+    "last_updated": "2026-04-03T10:42:43Z",
     "total_games": 309,
     "model_stats": {
       "rmse": 1.44,
@@ -1206,6 +1206,69 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-04-13",
+      "date_parsed": "2026-04-13",
+      "home_team": "MNU",
+      "away_team": "LEE",
+      "home_srs": 0.39,
+      "away_srs": -0.27,
+      "predicted_margin": 1.41,
+      "home_win_prob": 0.88,
+      "favored": "MNU",
+      "underdog": "LEE",
+      "spread": -1.41,
+      "adjustments": {
+        "srs_base": 0.66,
+        "home_advantage": 0.69,
+        "home_advantage_raw": 0.26,
+        "form": 0.054,
+        "rest": 0.0,
+        "injury": 0.003,
+        "home_form": 0.28,
+        "away_form": -0.27,
+        "home_rest_days": 24,
+        "away_rest_days": 23,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.09,
+        "away_injury_score": 0.11,
+        "home_injuries": [
+          {
+            "name": "Rashford",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Antony",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "H\u00f8jlund",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Harrison",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.28
+          },
+          {
+            "name": "Mateo Joseph",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
     }
   ],
   "simulation": {
@@ -1371,6 +1434,10 @@
         "away_team": "MCI"
       },
       {
+        "home_team": "LIV",
+        "away_team": "CHE"
+      },
+      {
         "home_team": "SUN",
         "away_team": "MNU"
       },
@@ -1391,10 +1458,6 @@
         "away_team": "BOU"
       },
       {
-        "home_team": "LIV",
-        "away_team": "CHE"
-      },
-      {
         "home_team": "MCI",
         "away_team": "BRE"
       },
@@ -1403,12 +1466,12 @@
         "away_team": "NEW"
       },
       {
-        "home_team": "TOT",
-        "away_team": "LEE"
-      },
-      {
         "home_team": "WHU",
         "away_team": "ARS"
+      },
+      {
+        "home_team": "TOT",
+        "away_team": "LEE"
       },
       {
         "home_team": "BOU",
