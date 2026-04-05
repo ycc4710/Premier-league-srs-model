@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-04-04T10:33:46Z",
+    "last_updated": "2026-04-05T10:33:53Z",
     "total_games": 309,
     "model_stats": {
       "rmse": 1.44,
@@ -476,25 +476,25 @@
       "away_team": "BOU",
       "home_srs": 1.21,
       "away_srs": -0.1,
-      "predicted_margin": 1.9,
-      "home_win_prob": 0.943,
+      "predicted_margin": 1.96,
+      "home_win_prob": 0.949,
       "favored": "ARS",
       "underdog": "BOU",
-      "spread": -1.9,
+      "spread": -1.96,
       "adjustments": {
         "srs_base": 1.31,
         "home_advantage": 0.73,
         "home_advantage_raw": 0.26,
         "form": 0.093,
         "rest": 0.0,
-        "injury": -0.239,
+        "injury": -0.178,
         "home_form": 0.93,
         "away_form": 0.0,
         "home_rest_days": 28,
         "away_rest_days": 22,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 2.53,
+        "home_injury_score": 2.02,
         "away_injury_score": 0.54,
         "home_injuries": [
           {
@@ -522,19 +522,7 @@
             "importance": 0.71
           },
           {
-            "name": "Saliba",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.62
-          },
-          {
             "name": "Trossard",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.55
-          },
-          {
-            "name": "Zubimendi",
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.55
@@ -552,22 +540,10 @@
             "importance": 0.51
           },
           {
-            "name": "\u00d8degaard",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.45
-          },
-          {
             "name": "Merino",
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.45
-          },
-          {
-            "name": "Madueke",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.39
           },
           {
             "name": "Nwaneri",
@@ -941,25 +917,25 @@
       "away_team": "MCI",
       "home_srs": 0.42,
       "away_srs": 0.97,
-      "predicted_margin": -0.75,
-      "home_win_prob": 0.267,
+      "predicted_margin": -0.77,
+      "home_win_prob": 0.262,
       "favored": "MCI",
       "underdog": "CHE",
-      "spread": -0.75,
+      "spread": -0.77,
       "adjustments": {
         "srs_base": -0.55,
         "home_advantage": -0.04,
         "home_advantage_raw": 0.26,
         "form": -0.1,
         "rest": 0.0,
-        "injury": -0.056,
+        "injury": -0.074,
         "home_form": -0.63,
         "away_form": 0.36,
         "home_rest_days": 22,
         "away_rest_days": 29,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.55,
+        "home_injury_score": 1.7,
         "away_injury_score": 1.08,
         "home_injuries": [
           {
@@ -979,6 +955,12 @@
             "status": "d",
             "miss_prob": 0.5,
             "importance": 0.79
+          },
+          {
+            "name": "Gittens",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.3
           },
           {
             "name": "Nkunku",
