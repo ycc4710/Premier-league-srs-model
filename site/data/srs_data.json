@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-04-09T10:58:45Z",
+    "last_updated": "2026-04-10T10:54:55Z",
     "total_games": 309,
     "model_stats": {
       "rmse": 1.44,
@@ -1154,18 +1154,18 @@
       "away_team": "LEE",
       "home_srs": 0.39,
       "away_srs": -0.27,
-      "predicted_margin": 1.44,
-      "home_win_prob": 0.885,
+      "predicted_margin": 1.47,
+      "home_win_prob": 0.89,
       "favored": "MNU",
       "underdog": "LEE",
-      "spread": -1.44,
+      "spread": -1.47,
       "adjustments": {
         "srs_base": 0.66,
         "home_advantage": 0.69,
         "home_advantage_raw": 0.26,
         "form": 0.054,
         "rest": 0.0,
-        "injury": 0.031,
+        "injury": 0.061,
         "home_form": 0.28,
         "away_form": -0.27,
         "home_rest_days": 24,
@@ -1173,7 +1173,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.09,
-        "away_injury_score": 0.35,
+        "away_injury_score": 0.6,
         "home_injuries": [
           {
             "name": "Rashford",
@@ -1196,9 +1196,15 @@
         ],
         "away_injuries": [
           {
-            "name": "James",
+            "name": "Okafor",
             "status": "d",
-            "miss_prob": 0.75,
+            "miss_prob": 0.25,
+            "importance": 0.72
+          },
+          {
+            "name": "James",
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.31
           },
           {
@@ -1223,31 +1229,37 @@
       "away_team": "WOL",
       "home_srs": -0.27,
       "away_srs": -0.85,
-      "predicted_margin": 1.32,
-      "home_win_prob": 0.865,
+      "predicted_margin": 1.29,
+      "home_win_prob": 0.859,
       "favored": "LEE",
       "underdog": "WOL",
-      "spread": -1.32,
+      "spread": -1.29,
       "adjustments": {
         "srs_base": 0.58,
         "home_advantage": 0.78,
         "home_advantage_raw": 0.26,
         "form": -0.053,
         "rest": 0.0,
-        "injury": 0.013,
+        "injury": -0.018,
         "home_form": -0.27,
         "away_form": 0.26,
         "home_rest_days": 28,
         "away_rest_days": 33,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.35,
+        "home_injury_score": 0.6,
         "away_injury_score": 0.45,
         "home_injuries": [
           {
-            "name": "James",
+            "name": "Okafor",
             "status": "d",
-            "miss_prob": 0.75,
+            "miss_prob": 0.25,
+            "importance": 0.72
+          },
+          {
+            "name": "James",
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.31
           },
           {
@@ -1965,6 +1977,75 @@
             "status": "u",
             "miss_prob": 0.3,
             "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-04-20",
+      "date_parsed": "2026-04-20",
+      "home_team": "CRY",
+      "away_team": "WHU",
+      "home_srs": -0.12,
+      "away_srs": -0.64,
+      "predicted_margin": 0.39,
+      "home_win_prob": 0.627,
+      "favored": "CRY",
+      "underdog": "WHU",
+      "spread": -0.39,
+      "adjustments": {
+        "srs_base": 0.52,
+        "home_advantage": -0.21,
+        "home_advantage_raw": 0.26,
+        "form": 0.047,
+        "rest": 0.0,
+        "injury": 0.032,
+        "home_form": 0.07,
+        "away_form": -0.4,
+        "home_rest_days": 36,
+        "away_rest_days": 29,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.42,
+        "away_injury_score": 0.69,
+        "home_injuries": [
+          {
+            "name": "Nketiah",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.37
+          },
+          {
+            "name": "\u00c9douard",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.19
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "L.Paquet\u00e1",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.83
+          },
+          {
+            "name": "Summerville",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.83
+          },
+          {
+            "name": "Wilson",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.57
+          },
+          {
+            "name": "F\u00fcllkrug",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.33
           }
         ]
       }
