@@ -1,12 +1,12 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-04-10T10:54:55Z",
-    "total_games": 309,
+    "last_updated": "2026-04-11T10:34:35Z",
+    "total_games": 310,
     "model_stats": {
-      "rmse": 1.44,
+      "rmse": 1.46,
       "avg_gpg": 1.37,
-      "home_advantage": 0.26,
+      "home_advantage": 0.27,
       "xg_coverage": 0.0,
       "xg_alpha": 0.4
     }
@@ -22,13 +22,13 @@
       "draws": 7,
       "losses": 3,
       "win_pct": 0.677,
-      "srs": 1.21,
+      "srs": 1.2,
       "mov": 1.26,
       "sos": -0.05,
       "games_played": 31,
       "srs_rank": 1,
       "standings_rank": 1,
-      "home_advantage": 0.732,
+      "home_advantage": 0.735,
       "home_games": 15
     },
     {
@@ -47,7 +47,7 @@
       "games_played": 30,
       "srs_rank": 2,
       "standings_rank": 2,
-      "home_advantage": 0.931,
+      "home_advantage": 0.934,
       "home_games": 15
     },
     {
@@ -66,7 +66,7 @@
       "games_played": 31,
       "srs_rank": 3,
       "standings_rank": 6,
-      "home_advantage": -0.042,
+      "home_advantage": -0.039,
       "home_games": 15
     },
     {
@@ -85,7 +85,7 @@
       "games_played": 31,
       "srs_rank": 4,
       "standings_rank": 3,
-      "home_advantage": 0.693,
+      "home_advantage": 0.696,
       "home_games": 15
     },
     {
@@ -104,7 +104,7 @@
       "games_played": 31,
       "srs_rank": 5,
       "standings_rank": 5,
-      "home_advantage": 0.64,
+      "home_advantage": 0.643,
       "home_games": 15
     },
     {
@@ -123,7 +123,7 @@
       "games_played": 31,
       "srs_rank": 6,
       "standings_rank": 4,
-      "home_advantage": 0.574,
+      "home_advantage": 0.577,
       "home_games": 16
     },
     {
@@ -142,7 +142,7 @@
       "games_played": 31,
       "srs_rank": 7,
       "standings_rank": 10,
-      "home_advantage": 0.53,
+      "home_advantage": 0.532,
       "home_games": 16
     },
     {
@@ -155,13 +155,13 @@
       "draws": 7,
       "losses": 11,
       "win_pct": 0.419,
-      "srs": 0.1,
+      "srs": 0.09,
       "mov": 0.13,
-      "sos": -0.03,
+      "sos": -0.04,
       "games_played": 31,
       "srs_rank": 8,
       "standings_rank": 7,
-      "home_advantage": 0.726,
+      "home_advantage": 0.729,
       "home_games": 15
     },
     {
@@ -174,13 +174,13 @@
       "draws": 7,
       "losses": 11,
       "win_pct": 0.419,
-      "srs": 0.06,
+      "srs": 0.05,
       "mov": 0.06,
       "sos": -0.01,
       "games_played": 31,
       "srs_rank": 9,
       "standings_rank": 8,
-      "home_advantage": 0.164,
+      "home_advantage": 0.166,
       "home_games": 16
     },
     {
@@ -193,13 +193,13 @@
       "draws": 6,
       "losses": 13,
       "win_pct": 0.387,
-      "srs": -0.03,
+      "srs": -0.04,
       "mov": -0.03,
       "sos": -0.0,
       "games_played": 31,
       "srs_rank": 10,
       "standings_rank": 12,
-      "home_advantage": 0.399,
+      "home_advantage": 0.402,
       "home_games": 16
     },
     {
@@ -218,7 +218,7 @@
       "games_played": 31,
       "srs_rank": 11,
       "standings_rank": 9,
-      "home_advantage": 0.86,
+      "home_advantage": 0.863,
       "home_games": 16
     },
     {
@@ -237,7 +237,7 @@
       "games_played": 31,
       "srs_rank": 12,
       "standings_rank": 13,
-      "home_advantage": 0.723,
+      "home_advantage": 0.726,
       "home_games": 16
     },
     {
@@ -250,13 +250,13 @@
       "draws": 10,
       "losses": 10,
       "win_pct": 0.355,
-      "srs": -0.11,
+      "srs": -0.1,
       "mov": -0.13,
-      "sos": 0.02,
+      "sos": 0.03,
       "games_played": 31,
       "srs_rank": 13,
       "standings_rank": 11,
-      "home_advantage": 0.991,
+      "home_advantage": 0.994,
       "home_games": 15
     },
     {
@@ -275,7 +275,7 @@
       "games_played": 30,
       "srs_rank": 14,
       "standings_rank": 14,
-      "home_advantage": -0.211,
+      "home_advantage": -0.209,
       "home_games": 15
     },
     {
@@ -294,7 +294,7 @@
       "games_played": 31,
       "srs_rank": 15,
       "standings_rank": 15,
-      "home_advantage": 0.783,
+      "home_advantage": 0.785,
       "home_games": 16
     },
     {
@@ -309,11 +309,11 @@
       "win_pct": 0.226,
       "srs": -0.29,
       "mov": -0.32,
-      "sos": 0.03,
+      "sos": 0.04,
       "games_played": 31,
       "srs_rank": 16,
-      "standings_rank": 17,
-      "home_advantage": -0.372,
+      "standings_rank": 18,
+      "home_advantage": -0.369,
       "home_games": 16
     },
     {
@@ -332,7 +332,7 @@
       "games_played": 31,
       "srs_rank": 17,
       "standings_rank": 16,
-      "home_advantage": 0.056,
+      "home_advantage": 0.059,
       "home_games": 15
     },
     {
@@ -341,36 +341,17 @@
       "team_id": "west_ham",
       "conference": "EPL",
       "division": "London",
-      "wins": 7,
+      "wins": 8,
       "draws": 8,
       "losses": 16,
-      "win_pct": 0.226,
-      "srs": -0.64,
-      "mov": -0.68,
-      "sos": 0.04,
-      "games_played": 31,
+      "win_pct": 0.25,
+      "srs": -0.53,
+      "mov": -0.53,
+      "sos": 0.0,
+      "games_played": 32,
       "srs_rank": 18,
-      "standings_rank": 18,
-      "home_advantage": 0.089,
-      "home_games": 15
-    },
-    {
-      "abbreviation": "WOL",
-      "name": "Wolverhampton Wanderers FC",
-      "team_id": "wolves",
-      "conference": "EPL",
-      "division": "Midlands",
-      "wins": 3,
-      "draws": 8,
-      "losses": 20,
-      "win_pct": 0.097,
-      "srs": -0.85,
-      "mov": -0.97,
-      "sos": 0.12,
-      "games_played": 31,
-      "srs_rank": 19,
-      "standings_rank": 20,
-      "home_advantage": 0.211,
+      "standings_rank": 17,
+      "home_advantage": 0.301,
       "home_games": 16
     },
     {
@@ -385,122 +366,60 @@
       "win_pct": 0.129,
       "srs": -0.88,
       "mov": -0.9,
-      "sos": 0.02,
+      "sos": 0.03,
       "games_played": 31,
-      "srs_rank": 20,
+      "srs_rank": 19,
       "standings_rank": 19,
-      "home_advantage": 0.586,
+      "home_advantage": 0.589,
       "home_games": 15
+    },
+    {
+      "abbreviation": "WOL",
+      "name": "Wolverhampton Wanderers FC",
+      "team_id": "wolves",
+      "conference": "EPL",
+      "division": "Midlands",
+      "wins": 3,
+      "draws": 8,
+      "losses": 21,
+      "win_pct": 0.094,
+      "srs": -0.96,
+      "mov": -1.06,
+      "sos": 0.1,
+      "games_played": 32,
+      "srs_rank": 20,
+      "standings_rank": 20,
+      "home_advantage": 0.346,
+      "home_games": 16
     }
   ],
   "predictions": [
-    {
-      "date": "2026-04-10",
-      "date_parsed": "2026-04-10",
-      "home_team": "WHU",
-      "away_team": "WOL",
-      "home_srs": -0.64,
-      "away_srs": -0.85,
-      "predicted_margin": 0.2,
-      "home_win_prob": 0.568,
-      "favored": "WHU",
-      "underdog": "WOL",
-      "spread": -0.2,
-      "adjustments": {
-        "srs_base": 0.21,
-        "home_advantage": 0.09,
-        "home_advantage_raw": 0.26,
-        "form": -0.066,
-        "rest": 0.0,
-        "injury": -0.029,
-        "home_form": -0.4,
-        "away_form": 0.26,
-        "home_rest_days": 19,
-        "away_rest_days": 25,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.69,
-        "away_injury_score": 0.45,
-        "home_injuries": [
-          {
-            "name": "L.Paquet\u00e1",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.83
-          },
-          {
-            "name": "Summerville",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.83
-          },
-          {
-            "name": "Wilson",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.57
-          },
-          {
-            "name": "F\u00fcllkrug",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.33
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Munetsi",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.91
-          },
-          {
-            "name": "Fer L\u00f3pez",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.41
-          },
-          {
-            "name": "Guedes",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "B.Traore",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
     {
       "date": "2026-04-11",
       "date_parsed": "2026-04-11",
       "home_team": "ARS",
       "away_team": "BOU",
-      "home_srs": 1.21,
+      "home_srs": 1.2,
       "away_srs": -0.1,
-      "predicted_margin": 2.03,
-      "home_win_prob": 0.954,
+      "predicted_margin": 2.04,
+      "home_win_prob": 0.955,
       "favored": "ARS",
       "underdog": "BOU",
-      "spread": -2.03,
+      "spread": -2.04,
       "adjustments": {
-        "srs_base": 1.31,
+        "srs_base": 1.3,
         "home_advantage": 0.73,
-        "home_advantage_raw": 0.26,
+        "home_advantage_raw": 0.27,
         "form": 0.093,
         "rest": 0.0,
-        "injury": -0.108,
+        "injury": -0.09,
         "home_form": 0.93,
         "away_form": 0.0,
         "home_rest_days": 28,
         "away_rest_days": 22,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.44,
+        "home_injury_score": 1.29,
         "away_injury_score": 0.54,
         "home_injuries": [
           {
@@ -516,16 +435,16 @@
             "importance": 0.71
           },
           {
-            "name": "Eze",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.52
-          },
-          {
             "name": "Hincapie",
             "status": "d",
             "miss_prob": 0.5,
             "importance": 0.51
+          },
+          {
+            "name": "\u00d8degaard",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.45
           },
           {
             "name": "Merino",
@@ -579,20 +498,20 @@
       "date_parsed": "2026-04-11",
       "home_team": "BRE",
       "away_team": "EVE",
-      "home_srs": 0.1,
-      "away_srs": 0.06,
-      "predicted_margin": 0.86,
-      "home_win_prob": 0.764,
+      "home_srs": 0.09,
+      "away_srs": 0.05,
+      "predicted_margin": 0.85,
+      "home_win_prob": 0.761,
       "favored": "BRE",
       "underdog": "EVE",
-      "spread": -0.86,
+      "spread": -0.85,
       "adjustments": {
         "srs_base": 0.04,
         "home_advantage": 0.73,
-        "home_advantage_raw": 0.26,
+        "home_advantage_raw": 0.27,
         "form": -0.032,
         "rest": 0.0,
-        "injury": 0.13,
+        "injury": 0.113,
         "home_form": -0.0,
         "away_form": 0.32,
         "home_rest_days": 21,
@@ -600,7 +519,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.2,
-        "away_injury_score": 1.29,
+        "away_injury_score": 1.14,
         "home_injuries": [
           {
             "name": "Milambo",
@@ -611,12 +530,6 @@
         ],
         "away_injuries": [
           {
-            "name": "Ndiaye",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.92
-          },
-          {
             "name": "Grealish",
             "status": "i",
             "miss_prob": 1.0,
@@ -624,8 +537,8 @@
           },
           {
             "name": "Alcaraz",
-            "status": "d",
-            "miss_prob": 0.75,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.33
           }
         ]
@@ -638,20 +551,20 @@
       "away_team": "FUL",
       "home_srs": 0.21,
       "away_srs": -0.05,
-      "predicted_margin": 0.75,
-      "home_win_prob": 0.735,
+      "predicted_margin": 0.76,
+      "home_win_prob": 0.736,
       "favored": "LIV",
       "underdog": "FUL",
-      "spread": -0.75,
+      "spread": -0.76,
       "adjustments": {
         "srs_base": 0.26,
         "home_advantage": 0.64,
-        "home_advantage_raw": 0.26,
-        "form": -0.089,
+        "home_advantage_raw": 0.27,
+        "form": -0.088,
         "rest": 0.0,
         "injury": -0.056,
-        "home_form": -0.42,
-        "away_form": 0.48,
+        "home_form": -0.41,
+        "away_form": 0.47,
         "home_rest_days": 21,
         "away_rest_days": 21,
         "home_rest_score": 1.0,
@@ -702,14 +615,14 @@
       "home_srs": -0.88,
       "away_srs": 0.17,
       "predicted_margin": -0.51,
-      "home_win_prob": 0.335,
+      "home_win_prob": 0.336,
       "favored": "BHA",
       "underdog": "BUR",
       "spread": -0.51,
       "adjustments": {
         "srs_base": -1.05,
         "home_advantage": 0.59,
-        "home_advantage_raw": 0.26,
+        "home_advantage_raw": 0.27,
         "form": -0.134,
         "rest": 0.0,
         "injury": 0.086,
@@ -780,20 +693,20 @@
       "date_parsed": "2026-04-12",
       "home_team": "SUN",
       "away_team": "TOT",
-      "home_srs": -0.11,
+      "home_srs": -0.1,
       "away_srs": -0.29,
-      "predicted_margin": 1.35,
-      "home_win_prob": 0.87,
+      "predicted_margin": 1.46,
+      "home_win_prob": 0.887,
       "favored": "SUN",
       "underdog": "TOT",
-      "spread": -1.35,
+      "spread": -1.46,
       "adjustments": {
-        "srs_base": 0.18,
+        "srs_base": 0.19,
         "home_advantage": 0.99,
-        "home_advantage_raw": 0.26,
+        "home_advantage_raw": 0.27,
         "form": 0.103,
         "rest": 0.0,
-        "injury": 0.076,
+        "injury": 0.169,
         "home_form": 0.26,
         "away_form": -0.77,
         "home_rest_days": 21,
@@ -801,7 +714,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 1.51,
-        "away_injury_score": 2.15,
+        "away_injury_score": 2.92,
         "home_injuries": [
           {
             "name": "Traor\u00e9",
@@ -831,14 +744,14 @@
         "away_injuries": [
           {
             "name": "Kudus",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.95
           },
           {
             "name": "Bentancur",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.78
           },
           {
@@ -855,8 +768,8 @@
           },
           {
             "name": "Bissouma",
-            "status": "i",
-            "miss_prob": 1.0,
+            "status": "d",
+            "miss_prob": 0.75,
             "importance": 0.39
           },
           {
@@ -899,26 +812,26 @@
       "away_team": "MCI",
       "home_srs": 0.42,
       "away_srs": 0.97,
-      "predicted_margin": -0.77,
-      "home_win_prob": 0.262,
+      "predicted_margin": -0.76,
+      "home_win_prob": 0.263,
       "favored": "MCI",
       "underdog": "CHE",
-      "spread": -0.77,
+      "spread": -0.76,
       "adjustments": {
         "srs_base": -0.55,
         "home_advantage": -0.04,
-        "home_advantage_raw": 0.26,
-        "form": -0.1,
+        "home_advantage_raw": 0.27,
+        "form": -0.099,
         "rest": 0.0,
-        "injury": -0.074,
+        "injury": -0.071,
         "home_form": -0.63,
         "away_form": 0.36,
         "home_rest_days": 22,
         "away_rest_days": 29,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.7,
-        "away_injury_score": 1.08,
+        "home_injury_score": 2.17,
+        "away_injury_score": 1.58,
         "home_injuries": [
           {
             "name": "Chalobah",
@@ -934,14 +847,14 @@
           },
           {
             "name": "James",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.79
           },
           {
             "name": "Gittens",
             "status": "d",
-            "miss_prob": 0.5,
+            "miss_prob": 0.75,
             "importance": 0.3
           },
           {
@@ -966,8 +879,8 @@
           },
           {
             "name": "R\u00faben",
-            "status": "d",
-            "miss_prob": 0.25,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.66
           },
           {
@@ -1016,26 +929,26 @@
       "away_team": "AVL",
       "home_srs": -0.36,
       "away_srs": 0.17,
-      "predicted_margin": -0.4,
-      "home_win_prob": 0.371,
+      "predicted_margin": -0.41,
+      "home_win_prob": 0.368,
       "favored": "AVL",
       "underdog": "NFO",
-      "spread": -0.4,
+      "spread": -0.41,
       "adjustments": {
         "srs_base": -0.53,
         "home_advantage": 0.06,
-        "home_advantage_raw": 0.26,
-        "form": 0.032,
+        "home_advantage_raw": 0.27,
+        "form": 0.03,
         "rest": 0.0,
-        "injury": 0.046,
+        "injury": 0.035,
         "home_form": 0.21,
-        "away_form": -0.11,
+        "away_form": -0.1,
         "home_rest_days": 21,
         "away_rest_days": 21,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.16,
-        "away_injury_score": 0.55,
+        "away_injury_score": 0.45,
         "home_injuries": [
           {
             "name": "Jota",
@@ -1066,7 +979,7 @@
           {
             "name": "Sancho",
             "status": "d",
-            "miss_prob": 0.75,
+            "miss_prob": 0.5,
             "importance": 0.38
           },
           {
@@ -1096,28 +1009,34 @@
       "home_team": "CRY",
       "away_team": "NEW",
       "home_srs": -0.12,
-      "away_srs": -0.03,
-      "predicted_margin": -0.23,
-      "home_win_prob": 0.425,
+      "away_srs": -0.04,
+      "predicted_margin": -0.14,
+      "home_win_prob": 0.455,
       "favored": "NEW",
       "underdog": "CRY",
-      "spread": -0.23,
+      "spread": -0.14,
       "adjustments": {
-        "srs_base": -0.09,
+        "srs_base": -0.08,
         "home_advantage": -0.21,
-        "home_advantage_raw": 0.26,
+        "home_advantage_raw": 0.27,
         "form": 0.031,
         "rest": 0.0,
-        "injury": 0.042,
+        "injury": 0.123,
         "home_form": 0.07,
         "away_form": -0.24,
         "home_rest_days": 28,
         "away_rest_days": 21,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.42,
-        "away_injury_score": 0.78,
+        "home_injury_score": 0.53,
+        "away_injury_score": 1.55,
         "home_injuries": [
+          {
+            "name": "Guessand",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.42
+          },
           {
             "name": "Nketiah",
             "status": "i",
@@ -1134,14 +1053,14 @@
         "away_injuries": [
           {
             "name": "Bruno G.",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 1.0
           },
           {
             "name": "Sch\u00e4r",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.55
           }
         ]
@@ -1161,9 +1080,9 @@
       "spread": -1.47,
       "adjustments": {
         "srs_base": 0.66,
-        "home_advantage": 0.69,
-        "home_advantage_raw": 0.26,
-        "form": 0.054,
+        "home_advantage": 0.7,
+        "home_advantage_raw": 0.27,
+        "form": 0.055,
         "rest": 0.0,
         "injury": 0.061,
         "home_form": 0.28,
@@ -1228,27 +1147,27 @@
       "home_team": "LEE",
       "away_team": "WOL",
       "home_srs": -0.27,
-      "away_srs": -0.85,
-      "predicted_margin": 1.29,
-      "home_win_prob": 0.859,
+      "away_srs": -0.96,
+      "predicted_margin": 1.45,
+      "home_win_prob": 0.887,
       "favored": "LEE",
       "underdog": "WOL",
-      "spread": -1.29,
+      "spread": -1.45,
       "adjustments": {
-        "srs_base": 0.58,
-        "home_advantage": 0.78,
-        "home_advantage_raw": 0.26,
-        "form": -0.053,
+        "srs_base": 0.69,
+        "home_advantage": 0.79,
+        "home_advantage_raw": 0.27,
+        "form": -0.005,
         "rest": 0.0,
-        "injury": -0.018,
+        "injury": -0.016,
         "home_form": -0.27,
-        "away_form": 0.26,
+        "away_form": -0.22,
         "home_rest_days": 28,
-        "away_rest_days": 33,
+        "away_rest_days": 8,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.6,
-        "away_injury_score": 0.45,
+        "away_injury_score": 0.47,
         "home_injuries": [
           {
             "name": "Okafor",
@@ -1280,13 +1199,13 @@
             "name": "Munetsi",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.91
+            "importance": 0.94
           },
           {
             "name": "Fer L\u00f3pez",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.41
+            "importance": 0.42
           },
           {
             "name": "Guedes",
@@ -1310,37 +1229,37 @@
       "away_team": "BHA",
       "home_srs": -0.29,
       "away_srs": 0.17,
-      "predicted_margin": -1.14,
-      "home_win_prob": 0.171,
+      "predicted_margin": -1.23,
+      "home_win_prob": 0.153,
       "favored": "BHA",
       "underdog": "TOT",
-      "spread": -1.14,
+      "spread": -1.23,
       "adjustments": {
         "srs_base": -0.46,
         "home_advantage": -0.37,
-        "home_advantage_raw": 0.26,
+        "home_advantage_raw": 0.27,
         "form": -0.142,
         "rest": 0.0,
-        "injury": -0.165,
+        "injury": -0.257,
         "home_form": -0.77,
         "away_form": 0.65,
         "home_rest_days": 27,
         "away_rest_days": 28,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 2.15,
+        "home_injury_score": 2.92,
         "away_injury_score": 0.78,
         "home_injuries": [
           {
             "name": "Kudus",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.95
           },
           {
             "name": "Bentancur",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.78
           },
           {
@@ -1357,8 +1276,8 @@
           },
           {
             "name": "Bissouma",
-            "status": "i",
-            "miss_prob": 1.0,
+            "status": "d",
+            "miss_prob": 0.75,
             "importance": 0.39
           },
           {
@@ -1437,22 +1356,22 @@
       "date_parsed": "2026-04-18",
       "home_team": "BRE",
       "away_team": "FUL",
-      "home_srs": 0.1,
+      "home_srs": 0.09,
       "away_srs": -0.05,
-      "predicted_margin": 0.85,
-      "home_win_prob": 0.761,
+      "predicted_margin": 0.84,
+      "home_win_prob": 0.759,
       "favored": "BRE",
       "underdog": "FUL",
-      "spread": -0.85,
+      "spread": -0.84,
       "adjustments": {
-        "srs_base": 0.15,
+        "srs_base": 0.14,
         "home_advantage": 0.73,
-        "home_advantage_raw": 0.26,
-        "form": -0.048,
+        "home_advantage_raw": 0.27,
+        "form": -0.047,
         "rest": 0.0,
         "injury": 0.023,
         "home_form": -0.0,
-        "away_form": 0.48,
+        "away_form": 0.47,
         "home_rest_days": 28,
         "away_rest_days": 28,
         "home_rest_score": 1.0,
@@ -1486,92 +1405,29 @@
     {
       "date": "2026-04-18",
       "date_parsed": "2026-04-18",
-      "home_team": "NEW",
-      "away_team": "BOU",
-      "home_srs": -0.03,
-      "away_srs": -0.1,
-      "predicted_margin": 0.42,
-      "home_win_prob": 0.636,
-      "favored": "NEW",
-      "underdog": "BOU",
-      "spread": -0.42,
-      "adjustments": {
-        "srs_base": 0.07,
-        "home_advantage": 0.4,
-        "home_advantage_raw": 0.26,
-        "form": -0.024,
-        "rest": 0.0,
-        "injury": -0.029,
-        "home_form": -0.24,
-        "away_form": 0.0,
-        "home_rest_days": 27,
-        "away_rest_days": 29,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.78,
-        "away_injury_score": 0.54,
-        "home_injuries": [
-          {
-            "name": "Bruno G.",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 1.0
-          },
-          {
-            "name": "Sch\u00e4r",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.55
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Kluivert",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.48
-          },
-          {
-            "name": "Zabarnyi",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Sinisterra",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-04-18",
-      "date_parsed": "2026-04-18",
       "home_team": "CHE",
       "away_team": "MNU",
       "home_srs": 0.42,
       "away_srs": 0.39,
-      "predicted_margin": -0.3,
-      "home_win_prob": 0.402,
+      "predicted_margin": -0.35,
+      "home_win_prob": 0.385,
       "favored": "MNU",
       "underdog": "CHE",
-      "spread": -0.3,
+      "spread": -0.35,
       "adjustments": {
         "srs_base": 0.03,
         "home_advantage": -0.04,
-        "home_advantage_raw": 0.26,
+        "home_advantage_raw": 0.27,
         "form": -0.091,
         "rest": 0.0,
-        "injury": -0.193,
+        "injury": -0.25,
         "home_form": -0.63,
         "away_form": 0.28,
         "home_rest_days": 28,
         "away_rest_days": 29,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.7,
+        "home_injury_score": 2.17,
         "away_injury_score": 0.09,
         "home_injuries": [
           {
@@ -1588,14 +1444,14 @@
           },
           {
             "name": "James",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.79
           },
           {
             "name": "Gittens",
             "status": "d",
-            "miss_prob": 0.5,
+            "miss_prob": 0.75,
             "importance": 0.3
           },
           {
@@ -1634,31 +1490,94 @@
       }
     },
     {
+      "date": "2026-04-18",
+      "date_parsed": "2026-04-18",
+      "home_team": "NEW",
+      "away_team": "BOU",
+      "home_srs": -0.04,
+      "away_srs": -0.1,
+      "predicted_margin": 0.32,
+      "home_win_prob": 0.604,
+      "favored": "NEW",
+      "underdog": "BOU",
+      "spread": -0.32,
+      "adjustments": {
+        "srs_base": 0.06,
+        "home_advantage": 0.4,
+        "home_advantage_raw": 0.27,
+        "form": -0.024,
+        "rest": 0.0,
+        "injury": -0.122,
+        "home_form": -0.24,
+        "away_form": 0.0,
+        "home_rest_days": 27,
+        "away_rest_days": 29,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.55,
+        "away_injury_score": 0.54,
+        "home_injuries": [
+          {
+            "name": "Bruno G.",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 1.0
+          },
+          {
+            "name": "Sch\u00e4r",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.55
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Kluivert",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.48
+          },
+          {
+            "name": "Zabarnyi",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Sinisterra",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-04-19",
       "date_parsed": "2026-04-19",
       "home_team": "AVL",
       "away_team": "SUN",
       "home_srs": 0.17,
-      "away_srs": -0.11,
-      "predicted_margin": 0.93,
-      "home_win_prob": 0.782,
+      "away_srs": -0.1,
+      "predicted_margin": 0.94,
+      "home_win_prob": 0.783,
       "favored": "AVL",
       "underdog": "SUN",
-      "spread": -0.93,
+      "spread": -0.94,
       "adjustments": {
-        "srs_base": 0.28,
-        "home_advantage": 0.57,
-        "home_advantage_raw": 0.26,
-        "form": -0.037,
+        "srs_base": 0.27,
+        "home_advantage": 0.58,
+        "home_advantage_raw": 0.27,
+        "form": -0.036,
         "rest": 0.0,
-        "injury": 0.116,
-        "home_form": -0.11,
+        "injury": 0.127,
+        "home_form": -0.1,
         "away_form": 0.26,
         "home_rest_days": 28,
         "away_rest_days": 28,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.55,
+        "home_injury_score": 0.45,
         "away_injury_score": 1.51,
         "home_injuries": [
           {
@@ -1670,7 +1589,7 @@
           {
             "name": "Sancho",
             "status": "d",
-            "miss_prob": 0.75,
+            "miss_prob": 0.5,
             "importance": 0.38
           },
           {
@@ -1723,30 +1642,93 @@
     {
       "date": "2026-04-19",
       "date_parsed": "2026-04-19",
+      "home_team": "NFO",
+      "away_team": "BUR",
+      "home_srs": -0.36,
+      "away_srs": -0.88,
+      "predicted_margin": 0.66,
+      "home_win_prob": 0.708,
+      "favored": "NFO",
+      "underdog": "BUR",
+      "spread": -0.66,
+      "adjustments": {
+        "srs_base": 0.52,
+        "home_advantage": 0.06,
+        "home_advantage_raw": 0.27,
+        "form": 0.09,
+        "rest": 0.0,
+        "injury": -0.012,
+        "home_form": 0.21,
+        "away_form": -0.69,
+        "home_rest_days": 28,
+        "away_rest_days": 29,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.16,
+        "away_injury_score": 0.06,
+        "home_injuries": [
+          {
+            "name": "Jota",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.22
+          },
+          {
+            "name": "Kalimuendo",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.22
+          },
+          {
+            "name": "O'Brien",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Benson",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Koleosho",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-04-19",
+      "date_parsed": "2026-04-19",
       "home_team": "MCI",
       "away_team": "ARS",
       "home_srs": 0.97,
-      "away_srs": 1.21,
-      "predicted_margin": 0.68,
-      "home_win_prob": 0.714,
+      "away_srs": 1.2,
+      "predicted_margin": 0.61,
+      "home_win_prob": 0.695,
       "favored": "MCI",
       "underdog": "ARS",
-      "spread": -0.68,
+      "spread": -0.61,
       "adjustments": {
-        "srs_base": -0.24,
+        "srs_base": -0.23,
         "home_advantage": 0.93,
-        "home_advantage_raw": 0.26,
-        "form": -0.056,
+        "home_advantage_raw": 0.27,
+        "form": -0.057,
         "rest": 0.0,
-        "injury": 0.043,
+        "injury": -0.035,
         "home_form": 0.36,
         "away_form": 0.93,
         "home_rest_days": 36,
         "away_rest_days": 36,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.08,
-        "away_injury_score": 1.44,
+        "home_injury_score": 1.58,
+        "away_injury_score": 1.29,
         "home_injuries": [
           {
             "name": "Gvardiol",
@@ -1756,8 +1738,8 @@
           },
           {
             "name": "R\u00faben",
-            "status": "d",
-            "miss_prob": 0.25,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.66
           },
           {
@@ -1811,16 +1793,16 @@
             "importance": 0.71
           },
           {
-            "name": "Eze",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.52
-          },
-          {
             "name": "Hincapie",
             "status": "d",
             "miss_prob": 0.5,
             "importance": 0.51
+          },
+          {
+            "name": "\u00d8degaard",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.45
           },
           {
             "name": "Merino",
@@ -1852,100 +1834,31 @@
     {
       "date": "2026-04-19",
       "date_parsed": "2026-04-19",
-      "home_team": "NFO",
-      "away_team": "BUR",
-      "home_srs": -0.36,
-      "away_srs": -0.88,
-      "predicted_margin": 0.65,
-      "home_win_prob": 0.707,
-      "favored": "NFO",
-      "underdog": "BUR",
-      "spread": -0.65,
-      "adjustments": {
-        "srs_base": 0.52,
-        "home_advantage": 0.06,
-        "home_advantage_raw": 0.26,
-        "form": 0.09,
-        "rest": 0.0,
-        "injury": -0.012,
-        "home_form": 0.21,
-        "away_form": -0.69,
-        "home_rest_days": 28,
-        "away_rest_days": 29,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.16,
-        "away_injury_score": 0.06,
-        "home_injuries": [
-          {
-            "name": "Jota",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.22
-          },
-          {
-            "name": "Kalimuendo",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.22
-          },
-          {
-            "name": "O'Brien",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Benson",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Koleosho",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-04-19",
-      "date_parsed": "2026-04-19",
       "home_team": "EVE",
       "away_team": "LIV",
-      "home_srs": 0.06,
+      "home_srs": 0.05,
       "away_srs": 0.21,
       "predicted_margin": 0.04,
-      "home_win_prob": 0.512,
+      "home_win_prob": 0.515,
       "favored": "EVE",
       "underdog": "LIV",
       "spread": -0.04,
       "adjustments": {
-        "srs_base": -0.15,
-        "home_advantage": 0.16,
-        "home_advantage_raw": 0.26,
+        "srs_base": -0.16,
+        "home_advantage": 0.17,
+        "home_advantage_raw": 0.27,
         "form": 0.073,
         "rest": 0.0,
-        "injury": -0.052,
+        "injury": -0.034,
         "home_form": 0.32,
-        "away_form": -0.42,
+        "away_form": -0.41,
         "home_rest_days": 29,
         "away_rest_days": 29,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.29,
+        "home_injury_score": 1.14,
         "away_injury_score": 0.86,
         "home_injuries": [
-          {
-            "name": "Ndiaye",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.92
-          },
           {
             "name": "Grealish",
             "status": "i",
@@ -1954,8 +1867,8 @@
           },
           {
             "name": "Alcaraz",
-            "status": "d",
-            "miss_prob": 0.75,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.33
           }
         ],
@@ -1987,28 +1900,34 @@
       "home_team": "CRY",
       "away_team": "WHU",
       "home_srs": -0.12,
-      "away_srs": -0.64,
-      "predicted_margin": 0.39,
-      "home_win_prob": 0.627,
+      "away_srs": -0.53,
+      "predicted_margin": 0.17,
+      "home_win_prob": 0.556,
       "favored": "CRY",
       "underdog": "WHU",
-      "spread": -0.39,
+      "spread": -0.17,
       "adjustments": {
-        "srs_base": 0.52,
+        "srs_base": 0.41,
         "home_advantage": -0.21,
-        "home_advantage_raw": 0.26,
-        "form": 0.047,
+        "home_advantage_raw": 0.27,
+        "form": -0.008,
         "rest": 0.0,
-        "injury": 0.032,
+        "injury": -0.025,
         "home_form": 0.07,
-        "away_form": -0.4,
+        "away_form": 0.15,
         "home_rest_days": 36,
-        "away_rest_days": 29,
+        "away_rest_days": 10,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.42,
-        "away_injury_score": 0.69,
+        "home_injury_score": 0.53,
+        "away_injury_score": 0.32,
         "home_injuries": [
+          {
+            "name": "Guessand",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.42
+          },
           {
             "name": "Nketiah",
             "status": "i",
@@ -2027,25 +1946,118 @@
             "name": "L.Paquet\u00e1",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.83
-          },
-          {
-            "name": "Summerville",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.83
-          },
-          {
-            "name": "Wilson",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.57
+            "importance": 0.78
           },
           {
             "name": "F\u00fcllkrug",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.33
+            "importance": 0.31
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-04-21",
+      "date_parsed": "2026-04-21",
+      "home_team": "BHA",
+      "away_team": "CHE",
+      "home_srs": 0.17,
+      "away_srs": 0.42,
+      "predicted_margin": 0.58,
+      "home_win_prob": 0.685,
+      "favored": "BHA",
+      "underdog": "CHE",
+      "spread": -0.58,
+      "adjustments": {
+        "srs_base": -0.25,
+        "home_advantage": 0.53,
+        "home_advantage_raw": 0.27,
+        "form": 0.129,
+        "rest": 0.0,
+        "injury": 0.167,
+        "home_form": 0.65,
+        "away_form": -0.63,
+        "home_rest_days": 31,
+        "away_rest_days": 31,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.78,
+        "away_injury_score": 2.17,
+        "home_injuries": [
+          {
+            "name": "Gruda",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.53
+          },
+          {
+            "name": "Tzimas",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.5
+          },
+          {
+            "name": "Enciso",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Sima",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Yalcouye",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Ferguson",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Chalobah",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.85
+          },
+          {
+            "name": "Enzo",
+            "status": "n",
+            "miss_prob": 0.3,
+            "importance": 0.81
+          },
+          {
+            "name": "James",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.79
+          },
+          {
+            "name": "Gittens",
+            "status": "d",
+            "miss_prob": 0.75,
+            "importance": 0.3
+          },
+          {
+            "name": "Nkunku",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "N.Jackson",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
           }
         ]
       }
@@ -2053,10 +2065,6 @@
   ],
   "simulation": {
     "remaining_games": [
-      {
-        "home_team": "WHU",
-        "away_team": "WOL"
-      },
       {
         "home_team": "ARS",
         "away_team": "BOU"
@@ -2480,17 +2488,17 @@
         "division": "London"
       },
       "WHU": {
-        "wins": 7,
+        "wins": 8,
         "draws": 8,
         "losses": 16,
-        "points": 29,
+        "points": 32,
         "conference": "EPL",
         "division": "London"
       },
       "WOL": {
         "wins": 3,
         "draws": 8,
-        "losses": 20,
+        "losses": 21,
         "points": 17,
         "conference": "EPL",
         "division": "Midlands"
