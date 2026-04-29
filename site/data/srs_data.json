@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-04-28T11:44:46Z",
+    "last_updated": "2026-04-29T11:28:14Z",
     "total_games": 339,
     "model_stats": {
       "rmse": 1.47,
@@ -458,25 +458,25 @@
       "away_team": "FUL",
       "home_srs": 1.1,
       "away_srs": -0.05,
-      "predicted_margin": 1.76,
-      "home_win_prob": 0.929,
+      "predicted_margin": 1.79,
+      "home_win_prob": 0.932,
       "favored": "ARS",
       "underdog": "FUL",
-      "spread": -1.76,
+      "spread": -1.79,
       "adjustments": {
         "srs_base": 1.15,
         "home_advantage": 0.68,
         "home_advantage_raw": 0.26,
         "form": -0.017,
         "rest": 0.0,
-        "injury": -0.052,
+        "injury": -0.017,
         "home_form": 0.21,
         "away_form": 0.38,
         "home_rest_days": 7,
         "away_rest_days": 7,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.74,
+        "home_injury_score": 1.44,
         "away_injury_score": 1.31,
         "home_injuries": [
           {
@@ -484,18 +484,6 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.76
-          },
-          {
-            "name": "Calafiori",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.64
-          },
-          {
-            "name": "Eze",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.55
           },
           {
             "name": "Merino",
@@ -1233,6 +1221,441 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-05-09",
+      "date_parsed": "2026-05-09",
+      "home_team": "BHA",
+      "away_team": "WOL",
+      "home_srs": 0.28,
+      "away_srs": -1.03,
+      "predicted_margin": 1.97,
+      "home_win_prob": 0.95,
+      "favored": "BHA",
+      "underdog": "WOL",
+      "spread": -1.97,
+      "adjustments": {
+        "srs_base": 1.31,
+        "home_advantage": 0.55,
+        "home_advantage_raw": 0.26,
+        "form": 0.148,
+        "rest": 0.0,
+        "injury": -0.032,
+        "home_form": 0.79,
+        "away_form": -0.69,
+        "home_rest_days": 18,
+        "away_rest_days": 14,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.73,
+        "away_injury_score": 0.47,
+        "home_injuries": [
+          {
+            "name": "Gruda",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.44
+          },
+          {
+            "name": "Tzimas",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.42
+          },
+          {
+            "name": "March",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.23
+          },
+          {
+            "name": "Enciso",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Sima",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Yalcouye",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Ferguson",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Munetsi",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.94
+          },
+          {
+            "name": "Fer L\u00f3pez",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.42
+          },
+          {
+            "name": "Guedes",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "B.Traore",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-05-09",
+      "date_parsed": "2026-05-09",
+      "home_team": "MCI",
+      "away_team": "BRE",
+      "home_srs": 1.06,
+      "away_srs": 0.06,
+      "predicted_margin": 1.76,
+      "home_win_prob": 0.929,
+      "favored": "MCI",
+      "underdog": "BRE",
+      "spread": -1.76,
+      "adjustments": {
+        "srs_base": 1.0,
+        "home_advantage": 0.78,
+        "home_advantage_raw": 0.26,
+        "form": 0.127,
+        "rest": 0.0,
+        "injury": -0.146,
+        "home_form": 0.81,
+        "away_form": -0.47,
+        "home_rest_days": 17,
+        "away_rest_days": 12,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.68,
+        "away_injury_score": 0.46,
+        "home_injuries": [
+          {
+            "name": "Gvardiol",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.73
+          },
+          {
+            "name": "R\u00faben",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.68
+          },
+          {
+            "name": "Rodrigo",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.47
+          },
+          {
+            "name": "Ederson M.",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Akanji",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Vitor Reis",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "G\u00fcndo\u011fan",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Echeverri",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Henderson",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.52
+          },
+          {
+            "name": "Milambo",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-05-09",
+      "date_parsed": "2026-05-09",
+      "home_team": "LIV",
+      "away_team": "CHE",
+      "home_srs": 0.34,
+      "away_srs": 0.23,
+      "predicted_margin": 0.96,
+      "home_win_prob": 0.789,
+      "favored": "LIV",
+      "underdog": "CHE",
+      "spread": -0.96,
+      "adjustments": {
+        "srs_base": 0.11,
+        "home_advantage": 0.72,
+        "home_advantage_raw": 0.26,
+        "form": 0.168,
+        "rest": 0.0,
+        "injury": -0.034,
+        "home_form": 0.68,
+        "away_form": -1.0,
+        "home_rest_days": 14,
+        "away_rest_days": 18,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.68,
+        "away_injury_score": 1.4,
+        "home_injuries": [
+          {
+            "name": "M.Salah",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 1.0
+          },
+          {
+            "name": "Ekitik\u00e9",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.98
+          },
+          {
+            "name": "A.Becker",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.78
+          },
+          {
+            "name": "Luis D\u00edaz",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Darwin",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "James",
+            "status": "d",
+            "miss_prob": 0.75,
+            "importance": 0.81
+          },
+          {
+            "name": "Est\u00eav\u00e3o",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.5
+          },
+          {
+            "name": "Gittens",
+            "status": "d",
+            "miss_prob": 0.75,
+            "importance": 0.31
+          },
+          {
+            "name": "Nkunku",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "N.Jackson",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-05-09",
+      "date_parsed": "2026-05-09",
+      "home_team": "FUL",
+      "away_team": "BOU",
+      "home_srs": -0.05,
+      "away_srs": -0.02,
+      "predicted_margin": 0.82,
+      "home_win_prob": 0.752,
+      "favored": "FUL",
+      "underdog": "BOU",
+      "spread": -0.82,
+      "adjustments": {
+        "srs_base": -0.03,
+        "home_advantage": 0.94,
+        "home_advantage_raw": 0.26,
+        "form": -0.001,
+        "rest": 0.0,
+        "injury": -0.091,
+        "home_form": 0.38,
+        "away_form": 0.39,
+        "home_rest_days": 14,
+        "away_rest_days": 17,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.31,
+        "away_injury_score": 0.55,
+        "home_injuries": [
+          {
+            "name": "Iwobi",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.72
+          },
+          {
+            "name": "Sessegnon",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.7
+          },
+          {
+            "name": "Kevin",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.38
+          },
+          {
+            "name": "Andreas",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Kluivert",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.49
+          },
+          {
+            "name": "Zabarnyi",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Sinisterra",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-05-09",
+      "date_parsed": "2026-05-09",
+      "home_team": "SUN",
+      "away_team": "MNU",
+      "home_srs": -0.24,
+      "away_srs": 0.38,
+      "predicted_margin": 0.02,
+      "home_win_prob": 0.508,
+      "favored": "SUN",
+      "underdog": "MNU",
+      "spread": -0.02,
+      "adjustments": {
+        "srs_base": -0.62,
+        "home_advantage": 0.81,
+        "home_advantage_raw": 0.26,
+        "form": -0.112,
+        "rest": 0.0,
+        "injury": -0.052,
+        "home_form": -0.5,
+        "away_form": 0.61,
+        "home_rest_days": 15,
+        "away_rest_days": 12,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.68,
+        "away_injury_score": 0.25,
+        "home_injuries": [
+          {
+            "name": "Traor\u00e9",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.69
+          },
+          {
+            "name": "Angulo",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.5
+          },
+          {
+            "name": "Roberts",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.28
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Cunha",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.64
+          },
+          {
+            "name": "Rashford",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Antony",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "H\u00f8jlund",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ]
+      }
     }
   ],
   "simulation": {
@@ -1316,6 +1739,10 @@
       {
         "home_team": "TOT",
         "away_team": "LEE"
+      },
+      {
+        "home_team": "MCI",
+        "away_team": "CRY"
       },
       {
         "home_team": "AVL",
