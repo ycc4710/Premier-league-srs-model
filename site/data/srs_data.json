@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-05-05T11:15:36Z",
+    "last_updated": "2026-05-06T11:47:25Z",
     "total_games": 349,
     "model_stats": {
       "rmse": 1.48,
@@ -1079,18 +1079,18 @@
       "away_team": "EVE",
       "home_srs": -0.23,
       "away_srs": 0.02,
-      "predicted_margin": -0.11,
-      "home_win_prob": 0.463,
+      "predicted_margin": -0.09,
+      "home_win_prob": 0.47,
       "favored": "EVE",
       "underdog": "CRY",
-      "spread": -0.11,
+      "spread": -0.09,
       "adjustments": {
         "srs_base": -0.25,
         "home_advantage": 0.08,
         "home_advantage_raw": 0.29,
         "form": -0.033,
         "rest": 0.006,
-        "injury": 0.09,
+        "injury": 0.11,
         "home_form": -0.57,
         "away_form": -0.24,
         "home_rest_days": 7,
@@ -1098,7 +1098,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 0.9,
         "home_injury_score": 0.66,
-        "away_injury_score": 1.41,
+        "away_injury_score": 1.57,
         "home_injuries": [
           {
             "name": "Guessand",
@@ -1125,6 +1125,12 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.78
+          },
+          {
+            "name": "Gana",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.65
           },
           {
             "name": "Branthwaite",
@@ -1230,6 +1236,105 @@
             "status": "u",
             "miss_prob": 0.3,
             "importance": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-05-13",
+      "date_parsed": "2026-05-13",
+      "home_team": "MCI",
+      "away_team": "CRY",
+      "home_srs": 1.03,
+      "away_srs": -0.23,
+      "predicted_margin": 2.06,
+      "home_win_prob": 0.957,
+      "favored": "MCI",
+      "underdog": "CRY",
+      "spread": -2.06,
+      "adjustments": {
+        "srs_base": 1.26,
+        "home_advantage": 0.82,
+        "home_advantage_raw": 0.29,
+        "form": 0.104,
+        "rest": 0.0,
+        "injury": -0.122,
+        "home_form": 0.48,
+        "away_form": -0.57,
+        "home_rest_days": 9,
+        "away_rest_days": 10,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.68,
+        "away_injury_score": 0.66,
+        "home_injuries": [
+          {
+            "name": "Gvardiol",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.73
+          },
+          {
+            "name": "R\u00faben",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.68
+          },
+          {
+            "name": "Rodrigo",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.47
+          },
+          {
+            "name": "Ederson M.",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Akanji",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Vitor Reis",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "G\u00fcndo\u011fan",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Echeverri",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Guessand",
+            "status": "d",
+            "miss_prob": 0.5,
+            "importance": 0.44
+          },
+          {
+            "name": "Nketiah",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.38
+          },
+          {
+            "name": "\u00c9douard",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.2
           }
         ]
       }
