@@ -1,8 +1,8 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-05-18T13:45:03Z",
-    "total_games": 367,
+    "last_updated": "2026-05-19T12:38:02Z",
+    "total_games": 368,
     "model_stats": {
       "rmse": 1.47,
       "avg_gpg": 1.38,
@@ -12,25 +12,6 @@
     }
   },
   "teams": [
-    {
-      "abbreviation": "ARS",
-      "name": "Arsenal FC",
-      "team_id": "arsenal",
-      "conference": "EPL",
-      "division": "London",
-      "wins": 24,
-      "draws": 7,
-      "losses": 5,
-      "win_pct": 0.667,
-      "srs": 1.14,
-      "mov": 1.17,
-      "sos": -0.03,
-      "games_played": 36,
-      "srs_rank": 1,
-      "standings_rank": 1,
-      "home_advantage": 0.742,
-      "home_games": 18
-    },
     {
       "abbreviation": "MCI",
       "name": "Manchester City FC",
@@ -45,10 +26,29 @@
       "mov": 1.19,
       "sos": -0.07,
       "games_played": 36,
-      "srs_rank": 2,
+      "srs_rank": 1,
       "standings_rank": 2,
       "home_advantage": 0.95,
       "home_games": 18
+    },
+    {
+      "abbreviation": "ARS",
+      "name": "Arsenal FC",
+      "team_id": "arsenal",
+      "conference": "EPL",
+      "division": "London",
+      "wins": 25,
+      "draws": 7,
+      "losses": 5,
+      "win_pct": 0.676,
+      "srs": 1.11,
+      "mov": 1.16,
+      "sos": -0.05,
+      "games_played": 37,
+      "srs_rank": 2,
+      "standings_rank": 1,
+      "home_advantage": 0.718,
+      "home_games": 19
     },
     {
       "abbreviation": "MNU",
@@ -362,15 +362,15 @@
       "division": "",
       "wins": 4,
       "draws": 9,
-      "losses": 23,
-      "win_pct": 0.111,
-      "srs": -0.95,
+      "losses": 24,
+      "win_pct": 0.108,
+      "srs": -0.92,
       "mov": -1.0,
-      "sos": 0.05,
-      "games_played": 36,
+      "sos": 0.08,
+      "games_played": 37,
       "srs_rank": 19,
       "standings_rank": 19,
-      "home_advantage": 0.658,
+      "home_advantage": 0.643,
       "home_games": 18
     },
     {
@@ -394,93 +394,6 @@
     }
   ],
   "predictions": [
-    {
-      "date": "2026-05-18",
-      "date_parsed": "2026-05-18",
-      "home_team": "ARS",
-      "away_team": "BUR",
-      "home_srs": 1.14,
-      "away_srs": -0.95,
-      "predicted_margin": 2.7,
-      "home_win_prob": 0.988,
-      "favored": "ARS",
-      "underdog": "BUR",
-      "spread": -2.7,
-      "adjustments": {
-        "srs_base": 2.09,
-        "home_advantage": 0.74,
-        "home_advantage_raw": 0.3,
-        "form": 0.111,
-        "rest": 0.0,
-        "injury": -0.239,
-        "home_form": 0.54,
-        "away_form": -0.57,
-        "home_rest_days": 8,
-        "away_rest_days": 8,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 2.05,
-        "away_injury_score": 0.06,
-        "home_injuries": [
-          {
-            "name": "J.Timber",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.75
-          },
-          {
-            "name": "Calafiori",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.63
-          },
-          {
-            "name": "White",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.57
-          },
-          {
-            "name": "Merino",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.46
-          },
-          {
-            "name": "Nwaneri",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.19
-          },
-          {
-            "name": "Kiwior",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "F\u00e1bio Vieira",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Benson",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Koleosho",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
     {
       "date": "2026-05-19",
       "date_parsed": "2026-05-19",
@@ -766,27 +679,27 @@
       "home_team": "CRY",
       "away_team": "ARS",
       "home_srs": -0.26,
-      "away_srs": 1.14,
-      "predicted_margin": -1.12,
-      "home_win_prob": 0.175,
+      "away_srs": 1.11,
+      "predicted_margin": -1.13,
+      "home_win_prob": 0.174,
       "favored": "ARS",
       "underdog": "CRY",
-      "spread": -1.12,
+      "spread": -1.13,
       "adjustments": {
-        "srs_base": -1.4,
+        "srs_base": -1.37,
         "home_advantage": 0.19,
         "home_advantage_raw": 0.3,
-        "form": -0.098,
-        "rest": 0.0,
-        "injury": 0.191,
+        "form": -0.121,
+        "rest": 0.006,
+        "injury": 0.172,
         "home_form": -0.44,
-        "away_form": 0.54,
+        "away_form": 0.76,
         "home_rest_days": 7,
-        "away_rest_days": 14,
+        "away_rest_days": 6,
         "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
+        "away_rest_score": 0.9,
         "home_injury_score": 0.46,
-        "away_injury_score": 2.05,
+        "away_injury_score": 1.89,
         "home_injuries": [
           {
             "name": "Nketiah",
@@ -807,12 +720,6 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.75
-          },
-          {
-            "name": "Calafiori",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.63
           },
           {
             "name": "White",
@@ -867,7 +774,7 @@
         "rest": 0.0,
         "injury": 0.073,
         "home_form": -0.3,
-        "away_form": 0.32,
+        "away_form": 0.33,
         "home_rest_days": 7,
         "away_rest_days": 7,
         "home_rest_score": 1.0,
@@ -990,25 +897,25 @@
       "date_parsed": "2026-05-24",
       "home_team": "BUR",
       "away_team": "WOL",
-      "home_srs": -0.95,
+      "home_srs": -0.92,
       "away_srs": -1.03,
-      "predicted_margin": 0.77,
-      "home_win_prob": 0.74,
+      "predicted_margin": 0.76,
+      "home_win_prob": 0.736,
       "favored": "BUR",
       "underdog": "WOL",
-      "spread": -0.77,
+      "spread": -0.76,
       "adjustments": {
-        "srs_base": 0.08,
-        "home_advantage": 0.66,
+        "srs_base": 0.11,
+        "home_advantage": 0.64,
         "home_advantage_raw": 0.3,
-        "form": -0.014,
-        "rest": 0.0,
+        "form": -0.037,
+        "rest": -0.006,
         "injury": 0.049,
-        "home_form": -0.57,
+        "home_form": -0.8,
         "away_form": -0.43,
-        "home_rest_days": 14,
+        "home_rest_days": 6,
         "away_rest_days": 7,
-        "home_rest_score": 1.0,
+        "home_rest_score": 0.9,
         "away_rest_score": 1.0,
         "home_injury_score": 0.06,
         "away_injury_score": 0.47,
@@ -1481,10 +1388,6 @@
   "simulation": {
     "remaining_games": [
       {
-        "home_team": "ARS",
-        "away_team": "BUR"
-      },
-      {
         "home_team": "BOU",
         "away_team": "MCI"
       },
@@ -1535,10 +1438,10 @@
     ],
     "current_standings": {
       "ARS": {
-        "wins": 24,
+        "wins": 25,
         "draws": 7,
         "losses": 5,
-        "points": 79,
+        "points": 82,
         "conference": "EPL",
         "division": "London"
       },
@@ -1577,7 +1480,7 @@
       "BUR": {
         "wins": 4,
         "draws": 9,
-        "losses": 23,
+        "losses": 24,
         "points": 21,
         "conference": "EPL",
         "division": ""
