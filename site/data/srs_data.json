@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-05-22T12:18:13Z",
+    "last_updated": "2026-05-23T11:10:56Z",
     "total_games": 370,
     "model_stats": {
       "rmse": 1.47,
@@ -571,6 +571,69 @@
     {
       "date": "2026-05-24",
       "date_parsed": "2026-05-24",
+      "home_team": "FUL",
+      "away_team": "NEW",
+      "home_srs": -0.15,
+      "away_srs": 0.0,
+      "predicted_margin": 0.87,
+      "home_win_prob": 0.765,
+      "favored": "FUL",
+      "underdog": "NEW",
+      "spread": -0.87,
+      "adjustments": {
+        "srs_base": -0.15,
+        "home_advantage": 0.96,
+        "home_advantage_raw": 0.31,
+        "form": -0.063,
+        "rest": 0.0,
+        "injury": 0.115,
+        "home_form": -0.3,
+        "away_form": 0.32,
+        "home_rest_days": 7,
+        "away_rest_days": 7,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.22,
+        "away_injury_score": 1.18,
+        "home_injuries": [
+          {
+            "name": "Sessegnon",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.74
+          },
+          {
+            "name": "Andreas",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Sch\u00e4r",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.58
+          },
+          {
+            "name": "Joelinton",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.49
+          },
+          {
+            "name": "Tonali",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.42
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-05-24",
+      "date_parsed": "2026-05-24",
       "home_team": "LIV",
       "away_team": "BRE",
       "home_srs": 0.25,
@@ -639,69 +702,6 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.21
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-05-24",
-      "date_parsed": "2026-05-24",
-      "home_team": "FUL",
-      "away_team": "NEW",
-      "home_srs": -0.15,
-      "away_srs": 0.0,
-      "predicted_margin": 0.8,
-      "home_win_prob": 0.747,
-      "favored": "FUL",
-      "underdog": "NEW",
-      "spread": -0.8,
-      "adjustments": {
-        "srs_base": -0.15,
-        "home_advantage": 0.96,
-        "home_advantage_raw": 0.31,
-        "form": -0.063,
-        "rest": 0.0,
-        "injury": 0.048,
-        "home_form": -0.3,
-        "away_form": 0.32,
-        "home_rest_days": 7,
-        "away_rest_days": 7,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.77,
-        "away_injury_score": 1.18,
-        "home_injuries": [
-          {
-            "name": "Sessegnon",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.74
-          },
-          {
-            "name": "Andreas",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Sch\u00e4r",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.58
-          },
-          {
-            "name": "Joelinton",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.49
-          },
-          {
-            "name": "Tonali",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.42
           }
         ]
       }
@@ -782,25 +782,25 @@
       "away_team": "EVE",
       "home_srs": -0.26,
       "away_srs": -0.04,
-      "predicted_margin": -0.76,
-      "home_win_prob": 0.262,
+      "predicted_margin": -0.72,
+      "home_win_prob": 0.273,
       "favored": "EVE",
       "underdog": "TOT",
-      "spread": -0.76,
+      "spread": -0.72,
       "adjustments": {
         "srs_base": -0.22,
         "home_advantage": -0.34,
         "home_advantage_raw": 0.31,
         "form": 0.04,
         "rest": -0.012,
-        "injury": -0.232,
+        "injury": -0.191,
         "home_form": -0.22,
         "away_form": -0.61,
         "home_rest_days": 5,
         "away_rest_days": 7,
         "home_rest_score": 0.8,
         "away_rest_score": 1.0,
-        "home_injury_score": 3.7,
+        "home_injury_score": 3.36,
         "away_injury_score": 1.77,
         "home_injuries": [
           {
@@ -820,12 +820,6 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.72
-          },
-          {
-            "name": "Solanke",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.68
           },
           {
             "name": "Odobert",
@@ -1142,26 +1136,26 @@
       "away_team": "LEE",
       "home_srs": -0.56,
       "away_srs": -0.09,
-      "predicted_margin": -0.11,
-      "home_win_prob": 0.465,
+      "predicted_margin": -0.06,
+      "home_win_prob": 0.481,
       "favored": "LEE",
       "underdog": "WHU",
-      "spread": -0.11,
+      "spread": -0.06,
       "adjustments": {
         "srs_base": -0.47,
         "home_advantage": 0.46,
         "home_advantage_raw": 0.31,
         "form": -0.138,
         "rest": 0.0,
-        "injury": 0.043,
+        "injury": 0.093,
         "home_form": -0.71,
         "away_form": 0.67,
         "home_rest_days": 7,
         "away_rest_days": 7,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.44,
-        "away_injury_score": 0.8,
+        "home_injury_score": 0.5,
+        "away_injury_score": 1.28,
         "home_injuries": [
           {
             "name": "L.Paquet\u00e1",
@@ -1178,15 +1172,15 @@
           {
             "name": "Adama",
             "status": "d",
-            "miss_prob": 0.5,
+            "miss_prob": 0.75,
             "importance": 0.21
           }
         ],
         "away_injuries": [
           {
             "name": "Okafor",
-            "status": "d",
-            "miss_prob": 0.5,
+            "status": "i",
+            "miss_prob": 1.0,
             "importance": 0.95
           },
           {
