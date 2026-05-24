@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-05-23T11:10:56Z",
+    "last_updated": "2026-05-24T11:16:54Z",
     "total_games": 370,
     "model_stats": {
       "rmse": 1.47,
@@ -494,18 +494,18 @@
       "away_team": "ARS",
       "home_srs": -0.26,
       "away_srs": 1.11,
-      "predicted_margin": -1.17,
-      "home_win_prob": 0.164,
+      "predicted_margin": -1.19,
+      "home_win_prob": 0.161,
       "favored": "ARS",
       "underdog": "CRY",
-      "spread": -1.17,
+      "spread": -1.19,
       "adjustments": {
         "srs_base": -1.37,
         "home_advantage": 0.19,
         "home_advantage_raw": 0.31,
         "form": -0.121,
         "rest": 0.006,
-        "injury": 0.122,
+        "injury": 0.108,
         "home_form": -0.44,
         "away_form": 0.77,
         "home_rest_days": 7,
@@ -513,7 +513,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 0.9,
         "home_injury_score": 0.46,
-        "away_injury_score": 1.48,
+        "away_injury_score": 1.36,
         "home_injuries": [
           {
             "name": "Nketiah",
@@ -544,7 +544,7 @@
           {
             "name": "Merino",
             "status": "d",
-            "miss_prob": 0.5,
+            "miss_prob": 0.25,
             "importance": 0.46
           },
           {
