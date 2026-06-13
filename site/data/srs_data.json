@@ -1,12 +1,12 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-06-12T12:53:34Z",
-    "total_games": 380,
+    "last_updated": "2026-06-13T11:53:43Z",
+    "total_games": 379,
     "model_stats": {
       "rmse": 1.48,
       "avg_gpg": 1.38,
-      "home_advantage": 0.3,
+      "home_advantage": 0.31,
       "xg_coverage": 0.0,
       "xg_alpha": 0.4
     }
@@ -28,7 +28,7 @@
       "games_played": 38,
       "srs_rank": 1,
       "standings_rank": 1,
-      "home_advantage": 0.712,
+      "home_advantage": 0.714,
       "home_games": 19
     },
     {
@@ -41,13 +41,13 @@
       "draws": 9,
       "losses": 6,
       "win_pct": 0.605,
-      "srs": 1.05,
-      "mov": 1.11,
+      "srs": 1.1,
+      "mov": 1.16,
       "sos": -0.06,
-      "games_played": 38,
+      "games_played": 37,
       "srs_rank": 2,
       "standings_rank": 2,
-      "home_advantage": 0.872,
+      "home_advantage": 0.882,
       "home_games": 19
     },
     {
@@ -66,7 +66,7 @@
       "games_played": 38,
       "srs_rank": 3,
       "standings_rank": 3,
-      "home_advantage": 0.512,
+      "home_advantage": 0.514,
       "home_games": 19
     },
     {
@@ -85,7 +85,7 @@
       "games_played": 38,
       "srs_rank": 4,
       "standings_rank": 5,
-      "home_advantage": 0.792,
+      "home_advantage": 0.794,
       "home_games": 19
     },
     {
@@ -98,13 +98,13 @@
       "draws": 8,
       "losses": 11,
       "win_pct": 0.5,
-      "srs": 0.17,
-      "mov": 0.18,
+      "srs": 0.15,
+      "mov": 0.16,
       "sos": -0.01,
       "games_played": 38,
       "srs_rank": 5,
       "standings_rank": 4,
-      "home_advantage": 0.592,
+      "home_advantage": 0.634,
       "home_games": 19
     },
     {
@@ -123,7 +123,7 @@
       "games_played": 38,
       "srs_rank": 6,
       "standings_rank": 8,
-      "home_advantage": 0.632,
+      "home_advantage": 0.634,
       "home_games": 19
     },
     {
@@ -142,26 +142,7 @@
       "games_played": 38,
       "srs_rank": 7,
       "standings_rank": 11,
-      "home_advantage": -0.088,
-      "home_games": 19
-    },
-    {
-      "abbreviation": "BOU",
-      "name": "AFC Bournemouth",
-      "team_id": "bournemouth",
-      "conference": "EPL",
-      "division": "Other",
-      "wins": 13,
-      "draws": 18,
-      "losses": 7,
-      "win_pct": 0.342,
-      "srs": 0.1,
-      "mov": 0.11,
-      "sos": -0.01,
-      "games_played": 38,
-      "srs_rank": 8,
-      "standings_rank": 6,
-      "home_advantage": 0.632,
+      "home_advantage": -0.086,
       "home_games": 19
     },
     {
@@ -174,14 +155,33 @@
       "draws": 11,
       "losses": 13,
       "win_pct": 0.368,
-      "srs": 0.07,
+      "srs": 0.08,
       "mov": 0.08,
       "sos": -0.0,
       "games_played": 38,
-      "srs_rank": 9,
+      "srs_rank": 8,
       "standings_rank": 9,
-      "home_advantage": 0.912,
+      "home_advantage": 0.914,
       "home_games": 19
+    },
+    {
+      "abbreviation": "BOU",
+      "name": "AFC Bournemouth",
+      "team_id": "bournemouth",
+      "conference": "EPL",
+      "division": "Other",
+      "wins": 13,
+      "draws": 18,
+      "losses": 7,
+      "win_pct": 0.342,
+      "srs": 0.07,
+      "mov": 0.11,
+      "sos": -0.03,
+      "games_played": 37,
+      "srs_rank": 9,
+      "standings_rank": 6,
+      "home_advantage": 0.65,
+      "home_games": 18
     },
     {
       "abbreviation": "NEW",
@@ -199,7 +199,7 @@
       "games_played": 38,
       "srs_rank": 10,
       "standings_rank": 12,
-      "home_advantage": 0.632,
+      "home_advantage": 0.634,
       "home_games": 19
     },
     {
@@ -212,13 +212,13 @@
       "draws": 10,
       "losses": 15,
       "win_pct": 0.342,
-      "srs": -0.08,
+      "srs": -0.07,
       "mov": -0.08,
       "sos": 0.0,
       "games_played": 38,
       "srs_rank": 11,
       "standings_rank": 13,
-      "home_advantage": 0.112,
+      "home_advantage": 0.114,
       "home_games": 19
     },
     {
@@ -237,7 +237,7 @@
       "games_played": 38,
       "srs_rank": 12,
       "standings_rank": 16,
-      "home_advantage": -0.048,
+      "home_advantage": -0.046,
       "home_games": 19
     },
     {
@@ -256,7 +256,7 @@
       "games_played": 38,
       "srs_rank": 13,
       "standings_rank": 10,
-      "home_advantage": 1.032,
+      "home_advantage": 1.034,
       "home_games": 19
     },
     {
@@ -275,7 +275,7 @@
       "games_played": 38,
       "srs_rank": 14,
       "standings_rank": 7,
-      "home_advantage": 0.712,
+      "home_advantage": 0.714,
       "home_games": 19
     },
     {
@@ -294,7 +294,7 @@
       "games_played": 38,
       "srs_rank": 15,
       "standings_rank": 14,
-      "home_advantage": 0.992,
+      "home_advantage": 0.994,
       "home_games": 19
     },
     {
@@ -307,13 +307,13 @@
       "draws": 11,
       "losses": 17,
       "win_pct": 0.263,
-      "srs": -0.23,
+      "srs": -0.22,
       "mov": -0.24,
       "sos": 0.01,
       "games_played": 38,
       "srs_rank": 16,
       "standings_rank": 17,
-      "home_advantage": -0.288,
+      "home_advantage": -0.286,
       "home_games": 19
     },
     {
@@ -332,7 +332,7 @@
       "games_played": 38,
       "srs_rank": 17,
       "standings_rank": 15,
-      "home_advantage": 0.152,
+      "home_advantage": 0.154,
       "home_games": 19
     },
     {
@@ -351,7 +351,7 @@
       "games_played": 38,
       "srs_rank": 18,
       "standings_rank": 18,
-      "home_advantage": 0.592,
+      "home_advantage": 0.594,
       "home_games": 19
     },
     {
@@ -370,7 +370,7 @@
       "games_played": 38,
       "srs_rank": 19,
       "standings_rank": 19,
-      "home_advantage": 0.672,
+      "home_advantage": 0.674,
       "home_games": 19
     },
     {
@@ -383,13 +383,13 @@
       "draws": 11,
       "losses": 24,
       "win_pct": 0.079,
-      "srs": -1.03,
+      "srs": -1.02,
       "mov": -1.08,
       "sos": 0.05,
       "games_played": 38,
       "srs_rank": 20,
       "standings_rank": 20,
-      "home_advantage": 0.512,
+      "home_advantage": 0.514,
       "home_games": 19
     }
   ],
