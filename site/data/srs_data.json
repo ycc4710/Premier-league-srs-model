@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-08-13T10:59:56Z",
+    "last_updated": "2026-08-14T10:56:29Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -743,6 +743,75 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.67
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "date_parsed": "2026-08-24",
+      "home_team": "FUL",
+      "away_team": "CHE",
+      "home_srs": -0.1,
+      "away_srs": 0.15,
+      "predicted_margin": 0.85,
+      "home_win_prob": 0.76,
+      "favored": "FUL",
+      "underdog": "CHE",
+      "spread": -0.85,
+      "adjustments": {
+        "srs_base": -0.25,
+        "home_advantage": 1.03,
+        "home_advantage_raw": 0.3,
+        "form": 0.067,
+        "rest": 0.0,
+        "injury": -0.001,
+        "home_form": 0.25,
+        "away_form": -0.42,
+        "home_rest_days": 92,
+        "away_rest_days": 92,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 1.0,
+        "away_injury_score": 0.99,
+        "home_injuries": [
+          {
+            "name": "Andersen",
+            "status": "s",
+            "miss_prob": 1.0,
+            "importance": 1.0
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Chalobah",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.78
+          },
+          {
+            "name": "Fofana",
+            "status": "s",
+            "miss_prob": 1.0,
+            "importance": 0.51
+          },
+          {
+            "name": "Henderson",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.47
+          },
+          {
+            "name": "J\u00f6rgensen",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.35
+          },
+          {
+            "name": "Emegha",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.1
           }
         ]
       }
