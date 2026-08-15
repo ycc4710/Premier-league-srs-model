@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-08-14T10:56:29Z",
+    "last_updated": "2026-08-15T10:21:15Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -509,18 +509,18 @@
       "away_team": "LEE",
       "home_srs": -0.08,
       "away_srs": -0.18,
-      "predicted_margin": 0.06,
-      "home_win_prob": 0.522,
+      "predicted_margin": 0.13,
+      "home_win_prob": 0.542,
       "favored": "NFO",
       "underdog": "LEE",
-      "spread": -0.06,
+      "spread": -0.13,
       "adjustments": {
         "srs_base": 0.1,
         "home_advantage": -0.05,
         "home_advantage_raw": 0.3,
         "form": 0.005,
         "rest": 0.0,
-        "injury": 0.008,
+        "injury": 0.07,
         "home_form": -0.04,
         "away_form": -0.09,
         "home_rest_days": 90,
@@ -528,9 +528,15 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.0,
-        "away_injury_score": 0.07,
+        "away_injury_score": 0.58,
         "home_injuries": [],
         "away_injuries": [
+          {
+            "name": "Gruev",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.51
+          },
           {
             "name": "Harrison",
             "status": "u",
@@ -547,18 +553,18 @@
       "away_team": "BOU",
       "home_srs": 1.05,
       "away_srs": 0.1,
-      "predicted_margin": 1.91,
+      "predicted_margin": 1.92,
       "home_win_prob": 0.945,
       "favored": "MCI",
       "underdog": "BOU",
-      "spread": -1.91,
+      "spread": -1.92,
       "adjustments": {
         "srs_base": 0.95,
         "home_advantage": 0.87,
         "home_advantage_raw": 0.3,
         "form": -0.044,
         "rest": 0.0,
-        "injury": 0.135,
+        "injury": 0.144,
         "home_form": -0.2,
         "away_form": 0.24,
         "home_rest_days": 91,
@@ -566,7 +572,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.63,
-        "away_injury_score": 1.76,
+        "away_injury_score": 1.84,
         "home_injuries": [
           {
             "name": "Grealish",
@@ -599,6 +605,12 @@
             "status": "s",
             "miss_prob": 1.0,
             "importance": 0.4
+          },
+          {
+            "name": "Enes \u00dcnal",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.27
           }
         ]
       }
@@ -679,27 +691,33 @@
       "away_team": "AVL",
       "home_srs": 0.15,
       "away_srs": 0.17,
-      "predicted_margin": 0.41,
-      "home_win_prob": 0.635,
+      "predicted_margin": 0.32,
+      "home_win_prob": 0.604,
       "favored": "BHA",
       "underdog": "AVL",
-      "spread": -0.41,
+      "spread": -0.32,
       "adjustments": {
         "srs_base": -0.02,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": -0.112,
         "rest": 0.0,
-        "injury": -0.085,
+        "injury": -0.185,
         "home_form": -0.59,
         "away_form": 0.53,
         "home_rest_days": 91,
         "away_rest_days": 91,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.38,
+        "home_injury_score": 2.2,
         "away_injury_score": 0.67,
         "home_injuries": [
+          {
+            "name": "Minteh",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.83
+          },
           {
             "name": "Mitoma",
             "status": "i",
@@ -754,25 +772,25 @@
       "away_team": "CHE",
       "home_srs": -0.1,
       "away_srs": 0.15,
-      "predicted_margin": 0.85,
-      "home_win_prob": 0.76,
+      "predicted_margin": 0.79,
+      "home_win_prob": 0.746,
       "favored": "FUL",
       "underdog": "CHE",
-      "spread": -0.85,
+      "spread": -0.79,
       "adjustments": {
         "srs_base": -0.25,
         "home_advantage": 1.03,
         "home_advantage_raw": 0.3,
         "form": 0.067,
         "rest": 0.0,
-        "injury": -0.001,
+        "injury": -0.056,
         "home_form": 0.25,
         "away_form": -0.42,
         "home_rest_days": 92,
         "away_rest_days": 92,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.0,
+        "home_injury_score": 1.46,
         "away_injury_score": 0.99,
         "home_injuries": [
           {
@@ -780,6 +798,12 @@
             "status": "s",
             "miss_prob": 1.0,
             "importance": 1.0
+          },
+          {
+            "name": "Cairney",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.46
           }
         ],
         "away_injuries": [
