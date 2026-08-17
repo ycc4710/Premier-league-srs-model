@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-08-16T10:21:23Z",
+    "last_updated": "2026-08-17T10:30:51Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -572,7 +572,7 @@
       "home_srs": 1.05,
       "away_srs": 0.1,
       "predicted_margin": 2.02,
-      "home_win_prob": 0.954,
+      "home_win_prob": 0.953,
       "favored": "MCI",
       "underdog": "BOU",
       "spread": -2.02,
@@ -582,21 +582,21 @@
         "home_advantage_raw": 0.3,
         "form": -0.044,
         "rest": 0.0,
-        "injury": 0.239,
+        "injury": 0.237,
         "home_form": -0.2,
         "away_form": 0.24,
         "home_rest_days": 91,
         "away_rest_days": 91,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.63,
+        "home_injury_score": 0.65,
         "away_injury_score": 2.63,
         "home_injuries": [
           {
-            "name": "Grealish",
+            "name": "Matheus N.",
             "status": "d",
             "miss_prob": 0.25,
-            "importance": 0.59
+            "importance": 0.66
           },
           {
             "name": "Rodrigo",
@@ -664,38 +664,32 @@
       "away_team": "LIV",
       "home_srs": -0.05,
       "away_srs": 0.25,
-      "predicted_margin": 0.43,
-      "home_win_prob": 0.641,
+      "predicted_margin": 0.48,
+      "home_win_prob": 0.654,
       "favored": "NEW",
       "underdog": "LIV",
-      "spread": -0.43,
+      "spread": -0.48,
       "adjustments": {
         "srs_base": -0.3,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": 0.003,
         "rest": 0.0,
-        "injury": 0.098,
+        "injury": 0.141,
         "home_form": -0.23,
         "away_form": -0.26,
         "home_rest_days": 91,
         "away_rest_days": 91,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.22,
-        "away_injury_score": 2.03,
+        "home_injury_score": 0.99,
+        "away_injury_score": 2.17,
         "home_injuries": [
           {
             "name": "Livramento",
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.97
-          },
-          {
-            "name": "Sch\u00e4r",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.89
           },
           {
             "name": "Joelinton",
@@ -716,6 +710,12 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.61
+          },
+          {
+            "name": "C.Jones",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.52
           },
           {
             "name": "Gomez",
