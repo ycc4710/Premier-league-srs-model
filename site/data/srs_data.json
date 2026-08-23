@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-08-22T10:21:24Z",
+    "last_updated": "2026-08-23T10:21:56Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -174,7 +174,7 @@
       "draws": 11,
       "losses": 13,
       "win_pct": 0.368,
-      "srs": 0.08,
+      "srs": 0.07,
       "mov": 0.08,
       "sos": -0.0,
       "games_played": 38,
@@ -203,25 +203,6 @@
       "home_games": 19
     },
     {
-      "abbreviation": "NFO",
-      "name": "Nottingham Forest FC",
-      "team_id": "nott_forest",
-      "conference": "EPL",
-      "division": "Midlands",
-      "wins": 11,
-      "draws": 11,
-      "losses": 16,
-      "win_pct": 0.289,
-      "srs": -0.07,
-      "mov": -0.08,
-      "sos": 0.0,
-      "games_played": 38,
-      "srs_rank": 11,
-      "standings_rank": 16,
-      "home_advantage": -0.048,
-      "home_games": 19
-    },
-    {
       "abbreviation": "EVE",
       "name": "Everton FC",
       "team_id": "everton",
@@ -235,9 +216,28 @@
       "mov": -0.08,
       "sos": 0.0,
       "games_played": 38,
-      "srs_rank": 12,
+      "srs_rank": 11,
       "standings_rank": 13,
       "home_advantage": 0.112,
+      "home_games": 19
+    },
+    {
+      "abbreviation": "NFO",
+      "name": "Nottingham Forest FC",
+      "team_id": "nott_forest",
+      "conference": "EPL",
+      "division": "Midlands",
+      "wins": 11,
+      "draws": 11,
+      "losses": 16,
+      "win_pct": 0.289,
+      "srs": -0.08,
+      "mov": -0.08,
+      "sos": 0.0,
+      "games_played": 38,
+      "srs_rank": 12,
+      "standings_rank": 16,
+      "home_advantage": -0.048,
       "home_games": 19
     },
     {
@@ -288,7 +288,7 @@
       "draws": 14,
       "losses": 13,
       "win_pct": 0.289,
-      "srs": -0.17,
+      "srs": -0.18,
       "mov": -0.18,
       "sos": 0.01,
       "games_played": 38,
@@ -307,7 +307,7 @@
       "draws": 11,
       "losses": 17,
       "win_pct": 0.263,
-      "srs": -0.22,
+      "srs": -0.23,
       "mov": -0.24,
       "sos": 0.01,
       "games_played": 38,
@@ -345,9 +345,9 @@
       "draws": 9,
       "losses": 19,
       "win_pct": 0.263,
-      "srs": -0.47,
+      "srs": -0.48,
       "mov": -0.5,
-      "sos": 0.03,
+      "sos": 0.02,
       "games_played": 38,
       "srs_rank": 18,
       "standings_rank": 18,
@@ -364,7 +364,7 @@
       "draws": 10,
       "losses": 24,
       "win_pct": 0.105,
-      "srs": -0.92,
+      "srs": -0.93,
       "mov": -0.97,
       "sos": 0.05,
       "games_played": 38,
@@ -383,7 +383,7 @@
       "draws": 11,
       "losses": 24,
       "win_pct": 0.079,
-      "srs": -1.02,
+      "srs": -1.03,
       "mov": -1.08,
       "sos": 0.05,
       "games_played": 38,
@@ -394,224 +394,6 @@
     }
   ],
   "predictions": [
-    {
-      "date": "2026-08-22",
-      "date_parsed": "2026-08-22",
-      "home_team": "BRE",
-      "away_team": "TOT",
-      "home_srs": 0.08,
-      "away_srs": -0.22,
-      "predicted_margin": 1.21,
-      "home_win_prob": 0.844,
-      "favored": "BRE",
-      "underdog": "TOT",
-      "spread": -1.21,
-      "adjustments": {
-        "srs_base": 0.3,
-        "home_advantage": 0.91,
-        "home_advantage_raw": 0.3,
-        "form": -0.056,
-        "rest": 0.0,
-        "injury": 0.058,
-        "home_form": -0.17,
-        "away_form": 0.4,
-        "home_rest_days": 90,
-        "away_rest_days": 90,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.23,
-        "away_injury_score": 0.7,
-        "home_injuries": [
-          {
-            "name": "Van den Berg",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Milambo",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Carvalho",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Pedro Porro",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Romero",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Van de Ven",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Kudus",
-            "status": "d",
-            "miss_prob": 0.75,
-            "importance": 0.1
-          },
-          {
-            "name": "Xavi",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Odobert",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "P.M.Sarr",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Kulusevski",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-08-22",
-      "date_parsed": "2026-08-22",
-      "home_team": "EVE",
-      "away_team": "CRY",
-      "home_srs": -0.08,
-      "away_srs": -0.25,
-      "predicted_margin": 0.25,
-      "home_win_prob": 0.584,
-      "favored": "EVE",
-      "underdog": "CRY",
-      "spread": -0.25,
-      "adjustments": {
-        "srs_base": 0.17,
-        "home_advantage": 0.11,
-        "home_advantage_raw": 0.3,
-        "form": -0.002,
-        "rest": 0.0,
-        "injury": -0.026,
-        "home_form": -0.72,
-        "away_form": -0.71,
-        "home_rest_days": 90,
-        "away_rest_days": 90,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.28,
-        "away_injury_score": 0.06,
-        "home_injuries": [
-          {
-            "name": "N\u00f8rgaard",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Garner",
-            "status": "d",
-            "miss_prob": 0.75,
-            "importance": 0.1
-          },
-          {
-            "name": "Iroegbunam",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Henderson",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          },
-          {
-            "name": "Uche",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-08-22",
-      "date_parsed": "2026-08-22",
-      "home_team": "NFO",
-      "away_team": "LEE",
-      "home_srs": -0.07,
-      "away_srs": -0.17,
-      "predicted_margin": 0.09,
-      "home_win_prob": 0.529,
-      "favored": "NFO",
-      "underdog": "LEE",
-      "spread": -0.09,
-      "adjustments": {
-        "srs_base": 0.1,
-        "home_advantage": -0.05,
-        "home_advantage_raw": 0.3,
-        "form": 0.005,
-        "rest": 0.0,
-        "injury": 0.031,
-        "home_form": -0.04,
-        "away_form": -0.09,
-        "home_rest_days": 90,
-        "away_rest_days": 90,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.0,
-        "away_injury_score": 0.26,
-        "home_injuries": [],
-        "away_injuries": [
-          {
-            "name": "Gnonto",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Harrison",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Gruev",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Piroe",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
     {
       "date": "2026-08-23",
       "date_parsed": "2026-08-23",
@@ -1013,7 +795,7 @@
         "away_injury_score": 0.22,
         "home_injuries": [
           {
-            "name": "Henderson",
+            "name": "Sarr",
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.1
@@ -1065,14 +847,14 @@
       "home_team": "LIV",
       "away_team": "NFO",
       "home_srs": 0.25,
-      "away_srs": -0.07,
-      "predicted_margin": 1.04,
-      "home_win_prob": 0.807,
+      "away_srs": -0.08,
+      "predicted_margin": 1.05,
+      "home_win_prob": 0.809,
       "favored": "LIV",
       "underdog": "NFO",
-      "spread": -1.04,
+      "spread": -1.05,
       "adjustments": {
-        "srs_base": 0.32,
+        "srs_base": 0.33,
         "home_advantage": 0.79,
         "home_advantage_raw": 0.3,
         "form": -0.022,
@@ -1128,18 +910,18 @@
       "away_team": "EVE",
       "home_srs": 0.1,
       "away_srs": -0.08,
-      "predicted_margin": 0.88,
-      "home_win_prob": 0.769,
+      "predicted_margin": 0.87,
+      "home_win_prob": 0.766,
       "favored": "BOU",
       "underdog": "EVE",
-      "spread": -0.88,
+      "spread": -0.87,
       "adjustments": {
         "srs_base": 0.18,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": 0.096,
         "rest": 0.0,
-        "injury": -0.028,
+        "injury": -0.037,
         "home_form": 0.24,
         "away_form": -0.72,
         "home_rest_days": 97,
@@ -1147,7 +929,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.51,
-        "away_injury_score": 0.28,
+        "away_injury_score": 0.2,
         "home_injuries": [
           {
             "name": "Milosavljevi\u0107",
@@ -1206,12 +988,6 @@
             "importance": 0.1
           },
           {
-            "name": "Garner",
-            "status": "d",
-            "miss_prob": 0.75,
-            "importance": 0.1
-          },
-          {
             "name": "Iroegbunam",
             "status": "i",
             "miss_prob": 1.0,
@@ -1225,15 +1001,15 @@
       "date_parsed": "2026-08-29",
       "home_team": "TOT",
       "away_team": "NEW",
-      "home_srs": -0.22,
+      "home_srs": -0.23,
       "away_srs": -0.05,
-      "predicted_margin": -0.46,
-      "home_win_prob": 0.352,
+      "predicted_margin": -0.47,
+      "home_win_prob": 0.349,
       "favored": "NEW",
       "underdog": "TOT",
-      "spread": -0.46,
+      "spread": -0.47,
       "adjustments": {
-        "srs_base": -0.17,
+        "srs_base": -0.18,
         "home_advantage": -0.29,
         "home_advantage_raw": 0.3,
         "form": 0.062,
@@ -1318,8 +1094,8 @@
       "date_parsed": "2026-08-30",
       "home_team": "LEE",
       "away_team": "BRE",
-      "home_srs": -0.17,
-      "away_srs": 0.08,
+      "home_srs": -0.18,
+      "away_srs": 0.07,
       "predicted_margin": 0.75,
       "home_win_prob": 0.733,
       "favored": "LEE",
