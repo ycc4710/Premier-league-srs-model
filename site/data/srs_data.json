@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-08-24T10:36:02Z",
+    "last_updated": "2026-08-25T10:31:38Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -395,81 +395,6 @@
   ],
   "predictions": [
     {
-      "date": "2026-08-24",
-      "date_parsed": "2026-08-24",
-      "home_team": "FUL",
-      "away_team": "CHE",
-      "home_srs": -0.1,
-      "away_srs": 0.15,
-      "predicted_margin": 0.85,
-      "home_win_prob": 0.761,
-      "favored": "FUL",
-      "underdog": "CHE",
-      "spread": -0.85,
-      "adjustments": {
-        "srs_base": -0.25,
-        "home_advantage": 1.03,
-        "home_advantage_raw": 0.3,
-        "form": 0.067,
-        "rest": 0.0,
-        "injury": 0.001,
-        "home_form": 0.25,
-        "away_form": -0.42,
-        "home_rest_days": 92,
-        "away_rest_days": 92,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.2,
-        "away_injury_score": 0.21,
-        "home_injuries": [
-          {
-            "name": "Andersen",
-            "status": "s",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Cairney",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Henderson",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          },
-          {
-            "name": "Welbeck",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          },
-          {
-            "name": "J\u00f6rgensen",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Chalobah",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Fofana",
-            "status": "s",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
       "date": "2026-08-28",
       "date_parsed": "2026-08-28",
       "home_team": "CRY",
@@ -557,18 +482,18 @@
       "away_team": "NFO",
       "home_srs": 0.25,
       "away_srs": -0.08,
-      "predicted_margin": 1.05,
-      "home_win_prob": 0.809,
+      "predicted_margin": 1.06,
+      "home_win_prob": 0.812,
       "favored": "LIV",
       "underdog": "NFO",
-      "spread": -1.05,
+      "spread": -1.06,
       "adjustments": {
         "srs_base": 0.33,
         "home_advantage": 0.79,
         "home_advantage_raw": 0.3,
         "form": -0.022,
         "rest": 0.0,
-        "injury": -0.051,
+        "injury": -0.036,
         "home_form": -0.26,
         "away_form": -0.04,
         "home_rest_days": 97,
@@ -576,7 +501,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.43,
-        "away_injury_score": 0.0,
+        "away_injury_score": 0.12,
         "home_injuries": [
           {
             "name": "Gomez",
@@ -609,7 +534,14 @@
             "importance": 0.1
           }
         ],
-        "away_injuries": []
+        "away_injuries": [
+          {
+            "name": "Gibbs-White",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.5
+          }
+        ]
       }
     },
     {
@@ -862,18 +794,18 @@
       "away_team": "FUL",
       "home_srs": -0.15,
       "away_srs": -0.1,
-      "predicted_margin": 0.71,
-      "home_win_prob": 0.722,
+      "predicted_margin": 0.7,
+      "home_win_prob": 0.719,
       "favored": "SUN",
       "underdog": "FUL",
-      "spread": -0.71,
+      "spread": -0.7,
       "adjustments": {
         "srs_base": -0.05,
         "home_advantage": 0.71,
         "home_advantage_raw": 0.3,
         "form": 0.033,
         "rest": 0.0,
-        "injury": 0.012,
+        "injury": 0.0,
         "home_form": 0.58,
         "away_form": 0.25,
         "home_rest_days": 98,
@@ -881,7 +813,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.1,
-        "away_injury_score": 0.2,
+        "away_injury_score": 0.1,
         "home_injuries": [
           {
             "name": "Adingra",
@@ -891,12 +823,6 @@
           }
         ],
         "away_injuries": [
-          {
-            "name": "Andersen",
-            "status": "s",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
           {
             "name": "Cairney",
             "status": "i",
@@ -913,35 +839,29 @@
       "away_team": "BHA",
       "home_srs": 0.15,
       "away_srs": 0.15,
-      "predicted_margin": -0.03,
-      "home_win_prob": 0.49,
+      "predicted_margin": -0.02,
+      "home_win_prob": 0.493,
       "favored": "BHA",
       "underdog": "CHE",
-      "spread": -0.03,
+      "spread": -0.02,
       "adjustments": {
         "srs_base": 0.0,
         "home_advantage": -0.09,
         "home_advantage_raw": 0.3,
         "form": 0.017,
         "rest": 0.0,
-        "injury": 0.042,
+        "injury": 0.051,
         "home_form": -0.42,
         "away_form": -0.59,
         "home_rest_days": 98,
         "away_rest_days": 98,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.21,
+        "home_injury_score": 0.13,
         "away_injury_score": 0.56,
         "home_injuries": [
           {
             "name": "Henderson",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          },
-          {
-            "name": "Welbeck",
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.1
@@ -959,9 +879,15 @@
             "importance": 0.1
           },
           {
-            "name": "Fofana",
-            "status": "s",
-            "miss_prob": 1.0,
+            "name": "Palestra",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.1
+          },
+          {
+            "name": "Caicedo",
+            "status": "d",
+            "miss_prob": 0.25,
             "importance": 0.1
           }
         ],
