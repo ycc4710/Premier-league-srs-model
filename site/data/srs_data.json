@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-08-30T14:41:31Z",
+    "last_updated": "2026-08-31T17:24:11Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -551,32 +551,32 @@
       "away_team": "SUN",
       "home_srs": 0.07,
       "away_srs": -0.15,
-      "predicted_margin": 1.01,
-      "home_win_prob": 0.801,
+      "predicted_margin": 1.02,
+      "home_win_prob": 0.803,
       "favored": "BRE",
       "underdog": "SUN",
-      "spread": -1.01,
+      "spread": -1.02,
       "adjustments": {
         "srs_base": 0.22,
         "home_advantage": 0.91,
         "home_advantage_raw": 0.3,
         "form": -0.075,
         "rest": 0.0,
-        "injury": -0.043,
+        "injury": -0.036,
         "home_form": -0.17,
         "away_form": 0.58,
         "home_rest_days": 104,
         "away_rest_days": 104,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.36,
-        "away_injury_score": 0.0,
+        "home_injury_score": 0.37,
+        "away_injury_score": 0.07,
         "home_injuries": [
           {
             "name": "Jensen",
             "status": "d",
             "miss_prob": 0.25,
-            "importance": 0.63
+            "importance": 0.67
           },
           {
             "name": "Van den Berg",
@@ -591,7 +591,14 @@
             "importance": 0.1
           }
         ],
-        "away_injuries": []
+        "away_injuries": [
+          {
+            "name": "Diarra",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.28
+          }
+        ]
       }
     },
     {
@@ -602,7 +609,7 @@
       "home_srs": 0.15,
       "away_srs": -0.18,
       "predicted_margin": 0.8,
-      "home_win_prob": 0.748,
+      "home_win_prob": 0.747,
       "favored": "BHA",
       "underdog": "LEE",
       "spread": -0.8,
@@ -612,14 +619,14 @@
         "home_advantage_raw": 0.3,
         "form": -0.05,
         "rest": 0.0,
-        "injury": -0.108,
+        "injury": -0.112,
         "home_form": -0.59,
         "away_form": -0.09,
         "home_rest_days": 104,
         "away_rest_days": 104,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.04,
+        "home_injury_score": 1.07,
         "away_injury_score": 0.14,
         "home_injuries": [
           {
@@ -633,6 +640,12 @@
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.31
+          },
+          {
+            "name": "Ayari",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.12
           },
           {
             "name": "Mitoma",
@@ -700,18 +713,18 @@
       "away_team": "BOU",
       "home_srs": -0.05,
       "away_srs": 0.1,
-      "predicted_margin": 0.39,
-      "home_win_prob": 0.629,
+      "predicted_margin": 0.38,
+      "home_win_prob": 0.625,
       "favored": "NEW",
       "underdog": "BOU",
-      "spread": -0.39,
+      "spread": -0.38,
       "adjustments": {
         "srs_base": -0.15,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": -0.047,
         "rest": 0.0,
-        "injury": -0.041,
+        "injury": -0.053,
         "home_form": -0.23,
         "away_form": 0.24,
         "home_rest_days": 104,
@@ -719,7 +732,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.67,
-        "away_injury_score": 0.33,
+        "away_injury_score": 0.23,
         "home_injuries": [
           {
             "name": "Osula",
@@ -743,12 +756,6 @@
         "away_injuries": [
           {
             "name": "Milosavljevi\u0107",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Adli",
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.1
@@ -867,7 +874,7 @@
         "home_advantage_raw": 0.3,
         "form": 0.142,
         "rest": 0.0,
-        "injury": -0.017,
+        "injury": -0.014,
         "home_form": 1.0,
         "away_form": -0.42,
         "home_rest_days": 105,
@@ -875,7 +882,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.26,
-        "away_injury_score": 0.11,
+        "away_injury_score": 0.13,
         "home_injuries": [
           {
             "name": "J.Timber",
@@ -923,6 +930,12 @@
           },
           {
             "name": "Palestra",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.1
+          },
+          {
+            "name": "Caicedo",
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.1
