@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-09-06T13:24:51Z",
+    "last_updated": "2026-09-07T15:31:21Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -395,129 +395,6 @@
   ],
   "predictions": [
     {
-      "date": "2026-09-06",
-      "date_parsed": "2026-09-06",
-      "home_team": "ARS",
-      "away_team": "CHE",
-      "home_srs": 1.1,
-      "away_srs": 0.15,
-      "predicted_margin": 1.76,
-      "home_win_prob": 0.929,
-      "favored": "ARS",
-      "underdog": "CHE",
-      "spread": -1.76,
-      "adjustments": {
-        "srs_base": 0.95,
-        "home_advantage": 0.71,
-        "home_advantage_raw": 0.3,
-        "form": 0.142,
-        "rest": 0.0,
-        "injury": -0.04,
-        "home_form": 1.0,
-        "away_form": -0.42,
-        "home_rest_days": 105,
-        "away_rest_days": 105,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.5,
-        "away_injury_score": 0.16,
-        "home_injuries": [
-          {
-            "name": "Mosquera",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.6
-          },
-          {
-            "name": "J.Timber",
-            "status": "d",
-            "miss_prob": 0.75,
-            "importance": 0.1
-          },
-          {
-            "name": "Saliba",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Martinelli",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Nwaneri",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "F\u00e1bio Vieira",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Nelson",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "G.Jesus",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Bruno G.",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Henderson",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          },
-          {
-            "name": "J\u00f6rgensen",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Chalobah",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Palestra",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          },
-          {
-            "name": "Caicedo",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
-          },
-          {
-            "name": "Marc Guiu",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
       "date": "2026-09-12",
       "date_parsed": "2026-09-12",
       "home_team": "LIV",
@@ -773,18 +650,18 @@
       "away_team": "ARS",
       "home_srs": -0.15,
       "away_srs": 1.1,
-      "predicted_margin": -0.57,
+      "predicted_margin": -0.56,
       "home_win_prob": 0.319,
       "favored": "ARS",
       "underdog": "SUN",
-      "spread": -0.57,
+      "spread": -0.56,
       "adjustments": {
         "srs_base": -1.25,
         "home_advantage": 0.71,
         "home_advantage_raw": 0.3,
         "form": -0.042,
         "rest": 0.0,
-        "injury": 0.014,
+        "injury": 0.015,
         "home_form": 0.58,
         "away_form": 1.0,
         "home_rest_days": 111,
@@ -792,7 +669,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.38,
-        "away_injury_score": 0.5,
+        "away_injury_score": 0.51,
         "home_injuries": [
           {
             "name": "Diarra",
@@ -806,7 +683,7 @@
             "name": "Mosquera",
             "status": "d",
             "miss_prob": 0.25,
-            "importance": 0.6
+            "importance": 0.75
           },
           {
             "name": "J.Timber",
@@ -849,12 +726,6 @@
             "status": "u",
             "miss_prob": 0.3,
             "importance": 0.1
-          },
-          {
-            "name": "Bruno G.",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
           }
         ]
       }
@@ -867,7 +738,7 @@
       "home_srs": -0.23,
       "away_srs": -0.08,
       "predicted_margin": -0.39,
-      "home_win_prob": 0.371,
+      "home_win_prob": 0.373,
       "favored": "EVE",
       "underdog": "TOT",
       "spread": -0.39,
@@ -877,7 +748,7 @@
         "home_advantage_raw": 0.3,
         "form": 0.112,
         "rest": 0.0,
-        "injury": -0.069,
+        "injury": -0.064,
         "home_form": 0.4,
         "away_form": -0.72,
         "home_rest_days": 111,
@@ -885,7 +756,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.62,
-        "away_injury_score": 0.05,
+        "away_injury_score": 0.09,
         "home_injuries": [
           {
             "name": "Richarlison",
@@ -932,10 +803,16 @@
         ],
         "away_injuries": [
           {
+            "name": "Garner",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.19
+          },
+          {
             "name": "Beto",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.16
+            "importance": 0.14
           }
         ]
       }
@@ -948,7 +825,7 @@
       "home_srs": 0.48,
       "away_srs": 1.05,
       "predicted_margin": 0.03,
-      "home_win_prob": 0.509,
+      "home_win_prob": 0.51,
       "favored": "MNU",
       "underdog": "MCI",
       "spread": -0.03,
@@ -958,14 +835,14 @@
         "home_advantage_raw": 0.3,
         "form": 0.106,
         "rest": 0.0,
-        "injury": -0.021,
+        "injury": -0.018,
         "home_form": 0.86,
         "away_form": -0.2,
         "home_rest_days": 112,
         "away_rest_days": 112,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.46,
+        "home_injury_score": 0.43,
         "away_injury_score": 0.28,
         "home_injuries": [
           {
@@ -978,12 +855,6 @@
             "name": "De Ligt",
             "status": "i",
             "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Mount",
-            "status": "d",
-            "miss_prob": 0.25,
             "importance": 0.1
           },
           {
