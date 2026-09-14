@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-09-13T14:04:33Z",
+    "last_updated": "2026-09-14T16:10:20Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -395,99 +395,6 @@
   ],
   "predictions": [
     {
-      "date": "2026-09-13",
-      "date_parsed": "2026-09-13",
-      "home_team": "MNU",
-      "away_team": "MCI",
-      "home_srs": 0.48,
-      "away_srs": 1.05,
-      "predicted_margin": 0.02,
-      "home_win_prob": 0.508,
-      "favored": "MNU",
-      "underdog": "MCI",
-      "spread": -0.02,
-      "adjustments": {
-        "srs_base": -0.57,
-        "home_advantage": 0.51,
-        "home_advantage_raw": 0.3,
-        "form": 0.106,
-        "rest": 0.0,
-        "injury": -0.025,
-        "home_form": 0.86,
-        "away_form": -0.2,
-        "home_rest_days": 112,
-        "away_rest_days": 112,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.43,
-        "away_injury_score": 0.22,
-        "home_injuries": [
-          {
-            "name": "Baleba",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "De Ligt",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Amad",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Ugarte",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Collyer",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Alleyne",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Doku",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Rodrigo",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Reijnders",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Phillips",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
       "date": "2026-09-14",
       "date_parsed": "2026-09-14",
       "home_team": "LEE",
@@ -656,25 +563,25 @@
       "away_team": "AVL",
       "home_srs": -0.23,
       "away_srs": 0.17,
-      "predicted_margin": -0.78,
-      "home_win_prob": 0.258,
+      "predicted_margin": -0.8,
+      "home_win_prob": 0.253,
       "favored": "AVL",
       "underdog": "TOT",
-      "spread": -0.78,
+      "spread": -0.8,
       "adjustments": {
         "srs_base": -0.4,
         "home_advantage": -0.29,
         "home_advantage_raw": 0.3,
         "form": -0.014,
         "rest": 0.0,
-        "injury": -0.078,
+        "injury": -0.096,
         "home_form": 0.4,
         "away_form": 0.53,
         "home_rest_days": 118,
         "away_rest_days": 118,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.94,
+        "home_injury_score": 1.09,
         "away_injury_score": 0.29,
         "home_injuries": [
           {
@@ -682,6 +589,12 @@
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.8
+          },
+          {
+            "name": "Tonali",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.6
           },
           {
             "name": "Richarlison",
@@ -908,27 +821,33 @@
       "away_team": "SUN",
       "home_srs": 1.05,
       "away_srs": -0.15,
-      "predicted_margin": 2.03,
-      "home_win_prob": 0.955,
+      "predicted_margin": 2.0,
+      "home_win_prob": 0.952,
       "favored": "MCI",
       "underdog": "SUN",
-      "spread": -2.03,
+      "spread": -2.0,
       "adjustments": {
         "srs_base": 1.2,
         "home_advantage": 0.87,
         "home_advantage_raw": 0.3,
         "form": -0.078,
         "rest": 0.0,
-        "injury": 0.036,
+        "injury": 0.004,
         "home_form": -0.2,
         "away_form": 0.58,
         "home_rest_days": 119,
         "away_rest_days": 119,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.22,
+        "home_injury_score": 0.49,
         "away_injury_score": 0.52,
         "home_injuries": [
+          {
+            "name": "Foden",
+            "status": "s",
+            "miss_prob": 1.0,
+            "importance": 0.27
+          },
           {
             "name": "Alleyne",
             "status": "u",
@@ -1076,18 +995,18 @@
       "away_team": "LIV",
       "home_srs": 0.1,
       "away_srs": 0.25,
-      "predicted_margin": 0.57,
-      "home_win_prob": 0.684,
+      "predicted_margin": 0.56,
+      "home_win_prob": 0.681,
       "favored": "BOU",
       "underdog": "LIV",
-      "spread": -0.57,
+      "spread": -0.56,
       "adjustments": {
         "srs_base": -0.15,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": 0.05,
         "rest": 0.0,
-        "injury": 0.043,
+        "injury": 0.031,
         "home_form": 0.24,
         "away_form": -0.26,
         "home_rest_days": 119,
@@ -1095,7 +1014,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.13,
-        "away_injury_score": 0.49,
+        "away_injury_score": 0.39,
         "home_injuries": [
           {
             "name": "Kroupi.Jr",
@@ -1111,12 +1030,6 @@
           }
         ],
         "away_injuries": [
-          {
-            "name": "Gomez",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
           {
             "name": "Bradley",
             "status": "i",
@@ -1163,18 +1076,18 @@
       "away_team": "MNU",
       "home_srs": -0.1,
       "away_srs": 0.48,
-      "predicted_margin": 0.43,
-      "home_win_prob": 0.64,
+      "predicted_margin": 0.42,
+      "home_win_prob": 0.636,
       "favored": "FUL",
       "underdog": "MNU",
-      "spread": -0.43,
+      "spread": -0.42,
       "adjustments": {
         "srs_base": -0.58,
         "home_advantage": 1.03,
         "home_advantage_raw": 0.3,
         "form": -0.061,
         "rest": 0.0,
-        "injury": 0.04,
+        "injury": 0.028,
         "home_form": 0.25,
         "away_form": 0.86,
         "home_rest_days": 119,
@@ -1182,7 +1095,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.1,
-        "away_injury_score": 0.43,
+        "away_injury_score": 0.33,
         "home_injuries": [
           {
             "name": "Cairney",
@@ -1192,12 +1105,6 @@
           }
         ],
         "away_injuries": [
-          {
-            "name": "Baleba",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
           {
             "name": "De Ligt",
             "status": "i",
