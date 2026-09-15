@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-09-14T16:10:20Z",
+    "last_updated": "2026-09-15T14:38:49Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -395,81 +395,6 @@
   ],
   "predictions": [
     {
-      "date": "2026-09-14",
-      "date_parsed": "2026-09-14",
-      "home_team": "LEE",
-      "away_team": "NEW",
-      "home_srs": -0.18,
-      "away_srs": -0.05,
-      "predicted_margin": 0.97,
-      "home_win_prob": 0.791,
-      "favored": "LEE",
-      "underdog": "NEW",
-      "spread": -0.97,
-      "adjustments": {
-        "srs_base": -0.13,
-        "home_advantage": 0.99,
-        "home_advantage_raw": 0.3,
-        "form": 0.014,
-        "rest": 0.0,
-        "injury": 0.096,
-        "home_form": -0.09,
-        "away_form": -0.23,
-        "home_rest_days": 113,
-        "away_rest_days": 113,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.17,
-        "away_injury_score": 0.97,
-        "home_injuries": [
-          {
-            "name": "Gnonto",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Harrison",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Gruev",
-            "status": "d",
-            "miss_prob": 0.75,
-            "importance": 0.1
-          },
-          {
-            "name": "Piroe",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Woltemade",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.67
-          },
-          {
-            "name": "Osula",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.67
-          },
-          {
-            "name": "Joelinton",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
       "date": "2026-09-18",
       "date_parsed": "2026-09-18",
       "home_team": "BRE",
@@ -680,25 +605,25 @@
       "away_team": "ARS",
       "home_srs": 0.15,
       "away_srs": 1.1,
-      "predicted_margin": -0.62,
-      "home_win_prob": 0.304,
+      "predicted_margin": -0.61,
+      "home_win_prob": 0.306,
       "favored": "ARS",
       "underdog": "BHA",
-      "spread": -0.62,
+      "spread": -0.61,
       "adjustments": {
         "srs_base": -0.95,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": -0.159,
         "rest": 0.0,
-        "injury": -0.139,
+        "injury": -0.13,
         "home_form": -0.59,
         "away_form": 1.0,
         "home_rest_days": 118,
         "away_rest_days": 118,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.81,
+        "home_injury_score": 1.73,
         "away_injury_score": 0.65,
         "home_injuries": [
           {
@@ -706,12 +631,6 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 1.0
-          },
-          {
-            "name": "Georginio",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.31
           },
           {
             "name": "Wieffer",
