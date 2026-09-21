@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-09-20T13:57:50Z",
+    "last_updated": "2026-09-21T16:13:20Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -393,63 +393,6 @@
       "home_games": 19
     }
   ],
-  "predictions": [
-    {
-      "date": "2026-09-20",
-      "date_parsed": "2026-09-20",
-      "home_team": "FUL",
-      "away_team": "MNU",
-      "home_srs": -0.1,
-      "away_srs": 0.48,
-      "predicted_margin": 0.43,
-      "home_win_prob": 0.64,
-      "favored": "FUL",
-      "underdog": "MNU",
-      "spread": -0.43,
-      "adjustments": {
-        "srs_base": -0.58,
-        "home_advantage": 1.03,
-        "home_advantage_raw": 0.3,
-        "form": -0.061,
-        "rest": 0.0,
-        "injury": 0.04,
-        "home_form": 0.25,
-        "away_form": 0.86,
-        "home_rest_days": 119,
-        "away_rest_days": 119,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.0,
-        "away_injury_score": 0.33,
-        "home_injuries": [],
-        "away_injuries": [
-          {
-            "name": "De Ligt",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Amad",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Ugarte",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Collyer",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    }
-  ],
+  "predictions": [],
   "simulation": {}
 }
