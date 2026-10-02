@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-10-01T16:53:38Z",
+    "last_updated": "2026-10-02T16:06:55Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -401,25 +401,25 @@
       "away_team": "LEE",
       "home_srs": 1.1,
       "away_srs": -0.18,
-      "predicted_margin": 2.05,
-      "home_win_prob": 0.956,
+      "predicted_margin": 2.03,
+      "home_win_prob": 0.955,
       "favored": "ARS",
       "underdog": "LEE",
-      "spread": -2.05,
+      "spread": -2.03,
       "adjustments": {
         "srs_base": 1.28,
         "home_advantage": 0.71,
         "home_advantage_raw": 0.3,
         "form": 0.109,
         "rest": 0.0,
-        "injury": -0.054,
+        "injury": -0.069,
         "home_form": 1.0,
         "away_form": -0.09,
         "home_rest_days": 139,
         "away_rest_days": 139,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.76,
+        "home_injury_score": 0.88,
         "away_injury_score": 0.3,
         "home_injuries": [
           {
@@ -439,6 +439,12 @@
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.59
+          },
+          {
+            "name": "Tzolis",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.5
           },
           {
             "name": "Saliba",
