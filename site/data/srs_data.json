@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-10-11T16:09:26Z",
+    "last_updated": "2026-10-12T19:38:10Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -401,18 +401,18 @@
       "away_team": "LIV",
       "home_srs": 0.08,
       "away_srs": 0.25,
-      "predicted_margin": 0.91,
-      "home_win_prob": 0.777,
+      "predicted_margin": 0.94,
+      "home_win_prob": 0.782,
       "favored": "BRE",
       "underdog": "LIV",
-      "spread": -0.91,
+      "spread": -0.94,
       "adjustments": {
         "srs_base": -0.17,
         "home_advantage": 0.91,
         "home_advantage_raw": 0.3,
         "form": 0.009,
         "rest": 0.0,
-        "injury": 0.162,
+        "injury": 0.186,
         "home_form": -0.17,
         "away_form": -0.26,
         "home_rest_days": 146,
@@ -420,7 +420,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.96,
-        "away_injury_score": 2.31,
+        "away_injury_score": 2.51,
         "home_injuries": [
           {
             "name": "Schade",
@@ -467,6 +467,12 @@
             "importance": 0.61
           },
           {
+            "name": "Gravenberch",
+            "status": "s",
+            "miss_prob": 1.0,
+            "importance": 0.2
+          },
+          {
             "name": "C.Jones",
             "status": "u",
             "miss_prob": 0.3,
@@ -500,56 +506,38 @@
       "away_team": "AVL",
       "home_srs": -0.05,
       "away_srs": 0.17,
-      "predicted_margin": 0.17,
-      "home_win_prob": 0.556,
+      "predicted_margin": 0.22,
+      "home_win_prob": 0.572,
       "favored": "NEW",
       "underdog": "AVL",
-      "spread": -0.17,
+      "spread": -0.22,
       "adjustments": {
         "srs_base": -0.22,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": -0.076,
         "rest": 0.0,
-        "injury": -0.167,
+        "injury": -0.118,
         "home_form": -0.23,
         "away_form": 0.53,
         "home_rest_days": 146,
         "away_rest_days": 146,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.61,
+        "home_injury_score": 1.2,
         "away_injury_score": 0.21,
         "home_injuries": [
           {
             "name": "Elanga",
             "status": "i",
             "miss_prob": 1.0,
-            "importance": 0.97
+            "importance": 1.0
           },
           {
             "name": "Woltemade",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.65
-          },
-          {
-            "name": "Osula",
-            "status": "d",
-            "miss_prob": 0.5,
-            "importance": 0.65
-          },
-          {
-            "name": "L.Miley",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.39
-          },
-          {
-            "name": "Joelinton",
-            "status": "d",
-            "miss_prob": 0.25,
-            "importance": 0.1
+            "importance": 0.67
           }
         ],
         "away_injuries": [
@@ -662,18 +650,18 @@
       "away_team": "ARS",
       "home_srs": -0.07,
       "away_srs": 1.1,
-      "predicted_margin": -1.4,
-      "home_win_prob": 0.122,
+      "predicted_margin": -1.39,
+      "home_win_prob": 0.124,
       "favored": "ARS",
       "underdog": "NFO",
-      "spread": -1.4,
+      "spread": -1.39,
       "adjustments": {
         "srs_base": -1.17,
         "home_advantage": -0.05,
         "home_advantage_raw": 0.3,
         "form": -0.104,
         "rest": 0.0,
-        "injury": -0.073,
+        "injury": -0.064,
         "home_form": -0.04,
         "away_form": 1.0,
         "home_rest_days": 147,
@@ -681,7 +669,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 1.37,
-        "away_injury_score": 0.76,
+        "away_injury_score": 0.84,
         "home_injuries": [
           {
             "name": "Milenkovi\u0107",
@@ -720,6 +708,18 @@
             "status": "i",
             "miss_prob": 1.0,
             "importance": 0.51
+          },
+          {
+            "name": "Hincapie",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.16
+          },
+          {
+            "name": "Zubimendi",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.16
           },
           {
             "name": "Saliba",
