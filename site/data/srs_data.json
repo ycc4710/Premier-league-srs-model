@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-10-12T19:38:10Z",
+    "last_updated": "2026-10-13T17:22:27Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -506,25 +506,25 @@
       "away_team": "AVL",
       "home_srs": -0.05,
       "away_srs": 0.17,
-      "predicted_margin": 0.22,
-      "home_win_prob": 0.572,
+      "predicted_margin": 0.21,
+      "home_win_prob": 0.568,
       "favored": "NEW",
       "underdog": "AVL",
-      "spread": -0.22,
+      "spread": -0.21,
       "adjustments": {
         "srs_base": -0.22,
         "home_advantage": 0.63,
         "home_advantage_raw": 0.3,
         "form": -0.076,
         "rest": 0.0,
-        "injury": -0.118,
+        "injury": -0.129,
         "home_form": -0.23,
         "away_form": 0.53,
         "home_rest_days": 146,
         "away_rest_days": 146,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 1.2,
+        "home_injury_score": 1.29,
         "away_injury_score": 0.21,
         "home_injuries": [
           {
@@ -538,6 +538,12 @@
             "status": "u",
             "miss_prob": 0.3,
             "importance": 0.67
+          },
+          {
+            "name": "Tour\u00e9",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.37
           }
         ],
         "away_injuries": [
@@ -947,18 +953,18 @@
       "away_team": "MNU",
       "home_srs": -0.17,
       "away_srs": 0.48,
-      "predicted_margin": 0.33,
-      "home_win_prob": 0.609,
+      "predicted_margin": 0.35,
+      "home_win_prob": 0.616,
       "favored": "LEE",
       "underdog": "MNU",
-      "spread": -0.33,
+      "spread": -0.35,
       "adjustments": {
         "srs_base": -0.65,
         "home_advantage": 0.99,
         "home_advantage_raw": 0.3,
         "form": -0.095,
         "rest": 0.0,
-        "injury": 0.085,
+        "injury": 0.106,
         "home_form": -0.09,
         "away_form": 0.86,
         "home_rest_days": 147,
@@ -966,7 +972,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.09,
-        "away_injury_score": 0.8,
+        "away_injury_score": 0.98,
         "home_injuries": [
           {
             "name": "Gnonto",
@@ -988,6 +994,12 @@
           }
         ],
         "away_injuries": [
+          {
+            "name": "Mainoo",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.72
+          },
           {
             "name": "Dorgu",
             "status": "i",
