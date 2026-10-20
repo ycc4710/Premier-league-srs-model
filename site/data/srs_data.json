@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-10-19T16:48:06Z",
+    "last_updated": "2026-10-20T14:41:44Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -174,7 +174,7 @@
       "draws": 11,
       "losses": 13,
       "win_pct": 0.368,
-      "srs": 0.07,
+      "srs": 0.08,
       "mov": 0.08,
       "sos": -0.0,
       "games_played": 38,
@@ -203,6 +203,25 @@
       "home_games": 19
     },
     {
+      "abbreviation": "NFO",
+      "name": "Nottingham Forest FC",
+      "team_id": "nott_forest",
+      "conference": "EPL",
+      "division": "Midlands",
+      "wins": 11,
+      "draws": 11,
+      "losses": 16,
+      "win_pct": 0.289,
+      "srs": -0.07,
+      "mov": -0.08,
+      "sos": 0.0,
+      "games_played": 38,
+      "srs_rank": 11,
+      "standings_rank": 16,
+      "home_advantage": -0.048,
+      "home_games": 19
+    },
+    {
       "abbreviation": "EVE",
       "name": "Everton FC",
       "team_id": "everton",
@@ -216,28 +235,9 @@
       "mov": -0.08,
       "sos": 0.0,
       "games_played": 38,
-      "srs_rank": 11,
+      "srs_rank": 12,
       "standings_rank": 13,
       "home_advantage": 0.112,
-      "home_games": 19
-    },
-    {
-      "abbreviation": "NFO",
-      "name": "Nottingham Forest FC",
-      "team_id": "nott_forest",
-      "conference": "EPL",
-      "division": "Midlands",
-      "wins": 11,
-      "draws": 11,
-      "losses": 16,
-      "win_pct": 0.289,
-      "srs": -0.08,
-      "mov": -0.08,
-      "sos": 0.0,
-      "games_played": 38,
-      "srs_rank": 12,
-      "standings_rank": 16,
-      "home_advantage": -0.048,
       "home_games": 19
     },
     {
@@ -288,7 +288,7 @@
       "draws": 14,
       "losses": 13,
       "win_pct": 0.289,
-      "srs": -0.18,
+      "srs": -0.17,
       "mov": -0.18,
       "sos": 0.01,
       "games_played": 38,
@@ -307,7 +307,7 @@
       "draws": 11,
       "losses": 17,
       "win_pct": 0.263,
-      "srs": -0.23,
+      "srs": -0.22,
       "mov": -0.24,
       "sos": 0.01,
       "games_played": 38,
@@ -345,9 +345,9 @@
       "draws": 9,
       "losses": 19,
       "win_pct": 0.263,
-      "srs": -0.48,
+      "srs": -0.47,
       "mov": -0.5,
-      "sos": 0.02,
+      "sos": 0.03,
       "games_played": 38,
       "srs_rank": 18,
       "standings_rank": 18,
@@ -364,7 +364,7 @@
       "draws": 10,
       "losses": 24,
       "win_pct": 0.105,
-      "srs": -0.93,
+      "srs": -0.92,
       "mov": -0.97,
       "sos": 0.05,
       "games_played": 38,
@@ -383,7 +383,7 @@
       "draws": 11,
       "losses": 24,
       "win_pct": 0.079,
-      "srs": -1.03,
+      "srs": -1.02,
       "mov": -1.08,
       "sos": 0.05,
       "games_played": 38,
@@ -487,19 +487,19 @@
       "home_team": "CHE",
       "away_team": "TOT",
       "home_srs": 0.15,
-      "away_srs": -0.23,
+      "away_srs": -0.22,
       "predicted_margin": 0.54,
       "home_win_prob": 0.674,
       "favored": "CHE",
       "underdog": "TOT",
       "spread": -0.54,
       "adjustments": {
-        "srs_base": 0.38,
+        "srs_base": 0.37,
         "home_advantage": -0.09,
         "home_advantage_raw": 0.3,
         "form": -0.082,
         "rest": 0.0,
-        "injury": 0.33,
+        "injury": 0.342,
         "home_form": -0.42,
         "away_form": 0.4,
         "home_rest_days": 153,
@@ -507,7 +507,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.72,
-        "away_injury_score": 3.47,
+        "away_injury_score": 3.56,
         "home_injuries": [
           {
             "name": "Martinez",
@@ -548,46 +548,52 @@
         ],
         "away_injuries": [
           {
+            "name": "Marmoush",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.83
+          },
+          {
             "name": "Pedro Porro",
             "status": "i",
             "miss_prob": 1.0,
-            "importance": 0.86
+            "importance": 0.83
           },
           {
             "name": "S\u00e1vio",
             "status": "i",
             "miss_prob": 1.0,
-            "importance": 0.71
+            "importance": 0.69
           },
           {
             "name": "Bentancur",
             "status": "s",
             "miss_prob": 1.0,
-            "importance": 0.63
+            "importance": 0.61
           },
           {
             "name": "Richarlison",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.57
+            "importance": 0.56
           },
           {
             "name": "Bergvall",
             "status": "i",
             "miss_prob": 1.0,
-            "importance": 0.43
+            "importance": 0.42
           },
           {
             "name": "Moore",
             "status": "u",
             "miss_prob": 0.3,
-            "importance": 0.43
+            "importance": 0.42
           },
           {
             "name": "Mudryk",
             "status": "i",
             "miss_prob": 1.0,
-            "importance": 0.29
+            "importance": 0.28
           },
           {
             "name": "Romero",
@@ -605,12 +611,6 @@
             "name": "Odobert",
             "status": "i",
             "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Kulusevski",
-            "status": "d",
-            "miss_prob": 0.25,
             "importance": 0.1
           }
         ]
@@ -931,14 +931,14 @@
       "home_team": "SUN",
       "away_team": "LEE",
       "home_srs": -0.15,
-      "away_srs": -0.18,
-      "predicted_margin": 0.74,
-      "home_win_prob": 0.732,
+      "away_srs": -0.17,
+      "predicted_margin": 0.73,
+      "home_win_prob": 0.729,
       "favored": "SUN",
       "underdog": "LEE",
-      "spread": -0.74,
+      "spread": -0.73,
       "adjustments": {
-        "srs_base": 0.03,
+        "srs_base": 0.02,
         "home_advantage": 0.71,
         "home_advantage_raw": 0.3,
         "form": 0.067,
