@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-11-04T17:46:34Z",
+    "last_updated": "2026-11-05T17:51:37Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -397,93 +397,6 @@
     {
       "date": "2026-11-07",
       "date_parsed": "2026-11-07",
-      "home_team": "NFO",
-      "away_team": "MCI",
-      "home_srs": -0.08,
-      "away_srs": 1.05,
-      "predicted_margin": -1.14,
-      "home_win_prob": 0.17,
-      "favored": "MCI",
-      "underdog": "NFO",
-      "spread": -1.14,
-      "adjustments": {
-        "srs_base": -1.13,
-        "home_advantage": -0.05,
-        "home_advantage_raw": 0.3,
-        "form": 0.016,
-        "rest": 0.0,
-        "injury": 0.019,
-        "home_form": -0.04,
-        "away_form": -0.2,
-        "home_rest_days": 167,
-        "away_rest_days": 167,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.66,
-        "away_injury_score": 0.82,
-        "home_injuries": [
-          {
-            "name": "Igor Jesus",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.57
-          },
-          {
-            "name": "Morato",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Hutchinson",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Bakwa",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Semenyo",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.7
-          },
-          {
-            "name": "Alleyne",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Rodrigo",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Reijnders",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Phillips",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    },
-    {
-      "date": "2026-11-07",
-      "date_parsed": "2026-11-07",
       "home_team": "LEE",
       "away_team": "TOT",
       "home_srs": -0.18,
@@ -593,18 +506,18 @@
       "away_team": "NEW",
       "home_srs": -0.1,
       "away_srs": -0.05,
-      "predicted_margin": 1.08,
-      "home_win_prob": 0.816,
+      "predicted_margin": 1.12,
+      "home_win_prob": 0.825,
       "favored": "FUL",
       "underdog": "NEW",
-      "spread": -1.08,
+      "spread": -1.12,
       "adjustments": {
         "srs_base": -0.05,
         "home_advantage": 1.03,
         "home_advantage_raw": 0.3,
         "form": 0.047,
         "rest": 0.0,
-        "injury": 0.053,
+        "injury": 0.091,
         "home_form": 0.25,
         "away_form": -0.23,
         "home_rest_days": 167,
@@ -612,7 +525,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.0,
-        "away_injury_score": 0.44,
+        "away_injury_score": 0.76,
         "home_injuries": [],
         "away_injuries": [
           {
@@ -628,10 +541,103 @@
             "importance": 0.45
           },
           {
+            "name": "Joelinton",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.32
+          },
+          {
             "name": "Fernandez-Pardo",
             "status": "d",
             "miss_prob": 0.25,
             "importance": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-07",
+      "date_parsed": "2026-11-07",
+      "home_team": "NFO",
+      "away_team": "MCI",
+      "home_srs": -0.08,
+      "away_srs": 1.05,
+      "predicted_margin": -1.09,
+      "home_win_prob": 0.181,
+      "favored": "MCI",
+      "underdog": "NFO",
+      "spread": -1.09,
+      "adjustments": {
+        "srs_base": -1.13,
+        "home_advantage": -0.05,
+        "home_advantage_raw": 0.3,
+        "form": 0.016,
+        "rest": 0.0,
+        "injury": 0.07,
+        "home_form": -0.04,
+        "away_form": -0.2,
+        "home_rest_days": 167,
+        "away_rest_days": 167,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.23,
+        "away_injury_score": 0.82,
+        "home_injuries": [
+          {
+            "name": "Igor Jesus",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.57
+          },
+          {
+            "name": "Morato",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Hutchinson",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Bakwa",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Semenyo",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.7
+          },
+          {
+            "name": "Alleyne",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Rodrigo",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Reijnders",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Phillips",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
           }
         ]
       }
