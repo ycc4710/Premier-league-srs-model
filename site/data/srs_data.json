@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-11-08T16:30:42Z",
+    "last_updated": "2026-11-09T20:26:03Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -393,82 +393,6 @@
       "home_games": 19
     }
   ],
-  "predictions": [
-    {
-      "date": "2026-11-08",
-      "date_parsed": "2026-11-08",
-      "home_team": "MNU",
-      "away_team": "AVL",
-      "home_srs": 0.48,
-      "away_srs": 0.17,
-      "predicted_margin": 0.76,
-      "home_win_prob": 0.736,
-      "favored": "MNU",
-      "underdog": "AVL",
-      "spread": -0.76,
-      "adjustments": {
-        "srs_base": 0.31,
-        "home_advantage": 0.51,
-        "home_advantage_raw": 0.3,
-        "form": 0.033,
-        "rest": 0.0,
-        "injury": -0.098,
-        "home_form": 0.86,
-        "away_form": 0.53,
-        "home_rest_days": 168,
-        "away_rest_days": 168,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 0.91,
-        "away_injury_score": 0.09,
-        "home_injuries": [
-          {
-            "name": "\u0160e\u0161ko",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.41
-          },
-          {
-            "name": "Rashford",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.37
-          },
-          {
-            "name": "Ugarte",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          },
-          {
-            "name": "Collyer",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Bailey",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Iling Jr",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          },
-          {
-            "name": "Watkins",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.1
-          }
-        ]
-      }
-    }
-  ],
+  "predictions": [],
   "simulation": {}
 }
