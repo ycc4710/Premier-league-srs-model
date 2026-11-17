@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-11-16T20:00:19Z",
+    "last_updated": "2026-11-17T18:57:23Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -962,6 +962,105 @@
             "status": "u",
             "miss_prob": 0.3,
             "importance": 0.18
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-27",
+      "date_parsed": "2026-11-27",
+      "home_team": "NFO",
+      "away_team": "CHE",
+      "home_srs": -0.08,
+      "away_srs": 0.15,
+      "predicted_margin": -0.07,
+      "home_win_prob": 0.476,
+      "favored": "CHE",
+      "underdog": "NFO",
+      "spread": -0.07,
+      "adjustments": {
+        "srs_base": -0.23,
+        "home_advantage": -0.05,
+        "home_advantage_raw": 0.3,
+        "form": 0.038,
+        "rest": 0.0,
+        "injury": 0.169,
+        "home_form": -0.04,
+        "away_form": -0.42,
+        "home_rest_days": 187,
+        "away_rest_days": 187,
+        "home_rest_score": 1.0,
+        "away_rest_score": 1.0,
+        "home_injury_score": 0.27,
+        "away_injury_score": 1.68,
+        "home_injuries": [
+          {
+            "name": "Schlager",
+            "status": "d",
+            "miss_prob": 0.25,
+            "importance": 0.72
+          },
+          {
+            "name": "Morato",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Hutchinson",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Bakwa",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          }
+        ],
+        "away_injuries": [
+          {
+            "name": "Jo\u00e3o Pedro",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 1.0
+          },
+          {
+            "name": "Lacroix",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.38
+          },
+          {
+            "name": "J\u00f6rgensen",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "James",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.1
+          },
+          {
+            "name": "Chalobah",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
+          },
+          {
+            "name": "Gittens",
+            "status": "i",
+            "miss_prob": 1.0,
+            "importance": 0.1
+          },
+          {
+            "name": "Marc Guiu",
+            "status": "u",
+            "miss_prob": 0.3,
+            "importance": 0.1
           }
         ]
       }
