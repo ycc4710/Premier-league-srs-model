@@ -1,7 +1,7 @@
 {
   "metadata": {
     "season": "2025-26",
-    "last_updated": "2026-11-23T21:54:10Z",
+    "last_updated": "2026-11-24T20:29:54Z",
     "total_games": 380,
     "model_stats": {
       "rmse": 1.48,
@@ -394,69 +394,6 @@
     }
   ],
   "predictions": [
-    {
-      "date": "2026-11-23",
-      "date_parsed": "2026-11-23",
-      "home_team": "BRE",
-      "away_team": "EVE",
-      "home_srs": 0.08,
-      "away_srs": -0.08,
-      "predicted_margin": 1.12,
-      "home_win_prob": 0.824,
-      "favored": "BRE",
-      "underdog": "EVE",
-      "spread": -1.12,
-      "adjustments": {
-        "srs_base": 0.16,
-        "home_advantage": 0.91,
-        "home_advantage_raw": 0.3,
-        "form": 0.056,
-        "rest": 0.0,
-        "injury": -0.01,
-        "home_form": -0.17,
-        "away_form": -0.72,
-        "home_rest_days": 183,
-        "away_rest_days": 183,
-        "home_rest_score": 1.0,
-        "away_rest_score": 1.0,
-        "home_injury_score": 1.07,
-        "away_injury_score": 0.98,
-        "home_injuries": [
-          {
-            "name": "Thiago",
-            "status": "s",
-            "miss_prob": 1.0,
-            "importance": 0.5
-          },
-          {
-            "name": "Collins",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.47
-          },
-          {
-            "name": "Milambo",
-            "status": "i",
-            "miss_prob": 1.0,
-            "importance": 0.1
-          }
-        ],
-        "away_injuries": [
-          {
-            "name": "Tarkowski",
-            "status": "s",
-            "miss_prob": 1.0,
-            "importance": 0.92
-          },
-          {
-            "name": "Beto",
-            "status": "u",
-            "miss_prob": 0.3,
-            "importance": 0.19
-          }
-        ]
-      }
-    },
     {
       "date": "2026-11-27",
       "date_parsed": "2026-11-27",
@@ -987,7 +924,7 @@
       "home_srs": -0.08,
       "away_srs": 0.25,
       "predicted_margin": -0.33,
-      "home_win_prob": 0.392,
+      "home_win_prob": 0.393,
       "favored": "LIV",
       "underdog": "EVE",
       "spread": -0.33,
@@ -997,21 +934,21 @@
         "home_advantage_raw": 0.3,
         "form": -0.047,
         "rest": 0.0,
-        "injury": -0.065,
+        "injury": -0.063,
         "home_form": -0.72,
         "away_form": -0.26,
         "home_rest_days": 189,
         "away_rest_days": 189,
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
-        "home_injury_score": 0.98,
+        "home_injury_score": 0.96,
         "away_injury_score": 0.44,
         "home_injuries": [
           {
             "name": "Tarkowski",
             "status": "s",
             "miss_prob": 1.0,
-            "importance": 0.92
+            "importance": 0.9
           },
           {
             "name": "Beto",
@@ -1242,7 +1179,7 @@
       "home_srs": 0.17,
       "away_srs": -0.08,
       "predicted_margin": 1.07,
-      "home_win_prob": 0.815,
+      "home_win_prob": 0.814,
       "favored": "AVL",
       "underdog": "EVE",
       "spread": -1.07,
@@ -1252,7 +1189,7 @@
         "home_advantage_raw": 0.3,
         "form": 0.126,
         "rest": 0.0,
-        "injury": 0.107,
+        "injury": 0.105,
         "home_form": 0.53,
         "away_form": -0.72,
         "home_rest_days": 192,
@@ -1260,7 +1197,7 @@
         "home_rest_score": 1.0,
         "away_rest_score": 1.0,
         "home_injury_score": 0.09,
-        "away_injury_score": 0.98,
+        "away_injury_score": 0.96,
         "home_injuries": [
           {
             "name": "Bailey",
@@ -1286,7 +1223,7 @@
             "name": "Tarkowski",
             "status": "s",
             "miss_prob": 1.0,
-            "importance": 0.92
+            "importance": 0.9
           },
           {
             "name": "Beto",
